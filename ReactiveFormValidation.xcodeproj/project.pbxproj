@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C6892C45F029735FDB4E716 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59DDAE8DE35E77CC67A8CA4 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework */; };
 		4962E0DADA83EC274C1E2B07 /* Pods_ReactiveFormValidation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B352D663BCF56C45553C74 /* Pods_ReactiveFormValidation.framework */; };
 		4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B7D2BF54FEB00469895 /* AppDelegate.swift */; };
 		4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */; };
@@ -16,20 +15,11 @@
 		4A810B872BF54FEC00469895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B862BF54FEC00469895 /* Assets.xcassets */; };
 		4A810B8A2BF54FEC00469895 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B892BF54FEC00469895 /* Base */; };
 		4A810B952BF54FEC00469895 /* ReactiveFormValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */; };
-		4A810B9F2BF54FEC00469895 /* ReactiveFormValidationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B9E2BF54FEC00469895 /* ReactiveFormValidationUITests.swift */; };
-		4A810BA12BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810BA02BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift */; };
 		A5757476E3D443BEAD2D3564 /* Pods_ReactiveFormValidationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		4A810B912BF54FEC00469895 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4A810B722BF54FEB00469895 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A810B792BF54FEB00469895;
-			remoteInfo = ReactiveFormValidation;
-		};
-		4A810B9B2BF54FEC00469895 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4A810B722BF54FEB00469895 /* Project object */;
 			proxyType = 1;
@@ -53,9 +43,7 @@
 		4A810B8B2BF54FEC00469895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormValidationTests.swift; sourceTree = "<group>"; };
-		4A810B9A2BF54FEC00469895 /* ReactiveFormValidationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormValidationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A810B9E2BF54FEC00469895 /* ReactiveFormValidationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormValidationUITests.swift; sourceTree = "<group>"; };
-		4A810BA02BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormValidationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReactiveFormValidation.xctestplan; sourceTree = "<group>"; };
 		89B352D663BCF56C45553C74 /* Pods_ReactiveFormValidation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59DDAE8DE35E77CC67A8CA4 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,14 +68,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A810B972BF54FEC00469895 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C6892C45F029735FDB4E716 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,7 +76,6 @@
 			children = (
 				4A810B7C2BF54FEB00469895 /* ReactiveFormValidation */,
 				4A810B932BF54FEC00469895 /* ReactiveFormValidationTests */,
-				4A810B9D2BF54FEC00469895 /* ReactiveFormValidationUITests */,
 				4A810B7B2BF54FEB00469895 /* Products */,
 				8658B824B9662E71304769F1 /* Pods */,
 				BCE55D0646F90818FE08C006 /* Frameworks */,
@@ -108,7 +87,6 @@
 			children = (
 				4A810B7A2BF54FEB00469895 /* ReactiveFormValidation.app */,
 				4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */,
-				4A810B9A2BF54FEC00469895 /* ReactiveFormValidationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,18 +108,10 @@
 		4A810B932BF54FEC00469895 /* ReactiveFormValidationTests */ = {
 			isa = PBXGroup;
 			children = (
+				4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */,
 				4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */,
 			);
 			path = ReactiveFormValidationTests;
-			sourceTree = "<group>";
-		};
-		4A810B9D2BF54FEC00469895 /* ReactiveFormValidationUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4A810B9E2BF54FEC00469895 /* ReactiveFormValidationUITests.swift */,
-				4A810BA02BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift */,
-			);
-			path = ReactiveFormValidationUITests;
 			sourceTree = "<group>";
 		};
 		8658B824B9662E71304769F1 /* Pods */ = {
@@ -154,7 +124,6 @@
 				0040A9B24DF28889302007B4 /* Pods-ReactiveFormValidationTests.debug.xcconfig */,
 				3B8314ADDDBC0E0ED2F85AC1 /* Pods-ReactiveFormValidationTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,26 +178,6 @@
 			productReference = 4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4A810B992BF54FEC00469895 /* ReactiveFormValidationUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4A810BAA2BF54FEC00469895 /* Build configuration list for PBXNativeTarget "ReactiveFormValidationUITests" */;
-			buildPhases = (
-				DE10E8257E0FB2C571997E3B /* [CP] Check Pods Manifest.lock */,
-				4A810B962BF54FEC00469895 /* Sources */,
-				4A810B972BF54FEC00469895 /* Frameworks */,
-				4A810B982BF54FEC00469895 /* Resources */,
-				E3DA025808F67F8E458B8D6F /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4A810B9C2BF54FEC00469895 /* PBXTargetDependency */,
-			);
-			name = ReactiveFormValidationUITests;
-			productName = ReactiveFormValidationUITests;
-			productReference = 4A810B9A2BF54FEC00469895 /* ReactiveFormValidationUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -243,10 +192,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					4A810B8F2BF54FEC00469895 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 4A810B792BF54FEB00469895;
-					};
-					4A810B992BF54FEC00469895 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 4A810B792BF54FEB00469895;
 					};
@@ -267,7 +212,6 @@
 			targets = (
 				4A810B792BF54FEB00469895 /* ReactiveFormValidation */,
 				4A810B8F2BF54FEC00469895 /* ReactiveFormValidationTests */,
-				4A810B992BF54FEC00469895 /* ReactiveFormValidationUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -284,13 +228,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4A810B8E2BF54FEC00469895 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4A810B982BF54FEC00469895 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,45 +298,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE10E8257E0FB2C571997E3B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReactiveFormValidation-ReactiveFormValidationUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E3DA025808F67F8E458B8D6F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactiveFormValidation-ReactiveFormValidationUITests/Pods-ReactiveFormValidation-ReactiveFormValidationUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReactiveFormValidation-ReactiveFormValidationUITests/Pods-ReactiveFormValidation-ReactiveFormValidationUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactiveFormValidation-ReactiveFormValidationUITests/Pods-ReactiveFormValidation-ReactiveFormValidationUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -421,15 +319,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A810B962BF54FEC00469895 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A810BA12BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift in Sources */,
-				4A810B9F2BF54FEC00469895 /* ReactiveFormValidationUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -437,11 +326,6 @@
 			isa = PBXTargetDependency;
 			target = 4A810B792BF54FEB00469895 /* ReactiveFormValidation */;
 			targetProxy = 4A810B912BF54FEC00469895 /* PBXContainerItemProxy */;
-		};
-		4A810B9C2BF54FEC00469895 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4A810B792BF54FEB00469895 /* ReactiveFormValidation */;
-			targetProxy = 4A810B9B2BF54FEC00469895 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -680,42 +564,6 @@
 			};
 			name = Release;
 		};
-		4A810BAB2BF54FEC00469895 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF49E49E963A23F0101D14AC /* Pods-ReactiveFormValidation-ReactiveFormValidationUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcosapostolo.ReactiveFormValidationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ReactiveFormValidation;
-			};
-			name = Debug;
-		};
-		4A810BAC2BF54FEC00469895 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 356834C5789FF172EB23A306 /* Pods-ReactiveFormValidation-ReactiveFormValidationUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcosapostolo.ReactiveFormValidationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ReactiveFormValidation;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -742,15 +590,6 @@
 			buildConfigurations = (
 				4A810BA82BF54FEC00469895 /* Debug */,
 				4A810BA92BF54FEC00469895 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4A810BAA2BF54FEC00469895 /* Build configuration list for PBXNativeTarget "ReactiveFormValidationUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A810BAB2BF54FEC00469895 /* Debug */,
-				4A810BAC2BF54FEC00469895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

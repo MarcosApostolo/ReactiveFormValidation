@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "FDAC7B3A-8CFB-432E-8B2F-6B3FDBE8A6F9",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ReactiveFormValidation.xcodeproj",
+      "identifier" : "4A810B792BF54FEB00469895",
+      "name" : "ReactiveFormValidation"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ReactiveFormValidation.xcodeproj",
+        "identifier" : "4A810B8F2BF54FEC00469895",
+        "name" : "ReactiveFormValidationTests"
+      }
+    }
+  ],
+  "version" : 1
+}
