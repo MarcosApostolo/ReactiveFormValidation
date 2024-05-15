@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B7D2BF54FEB00469895 /* AppDelegate.swift */; };
+		4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */; };
+		4A810B822BF54FEB00469895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B812BF54FEB00469895 /* ViewController.swift */; };
+		4A810B852BF54FEB00469895 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B842BF54FEB00469895 /* Base */; };
+		4A810B872BF54FEC00469895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B862BF54FEC00469895 /* Assets.xcassets */; };
+		4A810B8A2BF54FEC00469895 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B892BF54FEC00469895 /* Base */; };
+		4A810B952BF54FEC00469895 /* ReactiveFormValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */; };
+		4A810B9F2BF54FEC00469895 /* ReactiveFormValidationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B9E2BF54FEC00469895 /* ReactiveFormValidationUITests.swift */; };
+		4A810BA12BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810BA02BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A810B912BF54FEC00469895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A810B722BF54FEB00469895 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A810B792BF54FEB00469895;
+			remoteInfo = ReactiveFormValidation;
+		};
+		4A810B9B2BF54FEC00469895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A810B722BF54FEB00469895 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A810B792BF54FEB00469895;
+			remoteInfo = ReactiveFormValidation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A810B7A2BF54FEB00469895 /* ReactiveFormValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveFormValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A810B7D2BF54FEB00469895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4A810B812BF54FEB00469895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A810B842BF54FEB00469895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A810B862BF54FEC00469895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A810B892BF54FEC00469895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A810B8B2BF54FEC00469895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormValidationTests.swift; sourceTree = "<group>"; };
+		4A810B9A2BF54FEC00469895 /* ReactiveFormValidationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormValidationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A810B9E2BF54FEC00469895 /* ReactiveFormValidationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormValidationUITests.swift; sourceTree = "<group>"; };
+		4A810BA02BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormValidationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A810B772BF54FEB00469895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A810B8D2BF54FEC00469895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A810B972BF54FEC00469895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A810B712BF54FEB00469895 = {
+			isa = PBXGroup;
+			children = (
+				4A810B7C2BF54FEB00469895 /* ReactiveFormValidation */,
+				4A810B932BF54FEC00469895 /* ReactiveFormValidationTests */,
+				4A810B9D2BF54FEC00469895 /* ReactiveFormValidationUITests */,
+				4A810B7B2BF54FEB00469895 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A810B7B2BF54FEB00469895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A810B7A2BF54FEB00469895 /* ReactiveFormValidation.app */,
+				4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */,
+				4A810B9A2BF54FEC00469895 /* ReactiveFormValidationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A810B7C2BF54FEB00469895 /* ReactiveFormValidation */ = {
+			isa = PBXGroup;
+			children = (
+				4A810B7D2BF54FEB00469895 /* AppDelegate.swift */,
+				4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */,
+				4A810B812BF54FEB00469895 /* ViewController.swift */,
+				4A810B832BF54FEB00469895 /* Main.storyboard */,
+				4A810B862BF54FEC00469895 /* Assets.xcassets */,
+				4A810B882BF54FEC00469895 /* LaunchScreen.storyboard */,
+				4A810B8B2BF54FEC00469895 /* Info.plist */,
+			);
+			path = ReactiveFormValidation;
+			sourceTree = "<group>";
+		};
+		4A810B932BF54FEC00469895 /* ReactiveFormValidationTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */,
+			);
+			path = ReactiveFormValidationTests;
+			sourceTree = "<group>";
+		};
+		4A810B9D2BF54FEC00469895 /* ReactiveFormValidationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A810B9E2BF54FEC00469895 /* ReactiveFormValidationUITests.swift */,
+				4A810BA02BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift */,
+			);
+			path = ReactiveFormValidationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A810B792BF54FEB00469895 /* ReactiveFormValidation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A810BA42BF54FEC00469895 /* Build configuration list for PBXNativeTarget "ReactiveFormValidation" */;
+			buildPhases = (
+				4A810B762BF54FEB00469895 /* Sources */,
+				4A810B772BF54FEB00469895 /* Frameworks */,
+				4A810B782BF54FEB00469895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactiveFormValidation;
+			productName = ReactiveFormValidation;
+			productReference = 4A810B7A2BF54FEB00469895 /* ReactiveFormValidation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A810B8F2BF54FEC00469895 /* ReactiveFormValidationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A810BA72BF54FEC00469895 /* Build configuration list for PBXNativeTarget "ReactiveFormValidationTests" */;
+			buildPhases = (
+				4A810B8C2BF54FEC00469895 /* Sources */,
+				4A810B8D2BF54FEC00469895 /* Frameworks */,
+				4A810B8E2BF54FEC00469895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A810B922BF54FEC00469895 /* PBXTargetDependency */,
+			);
+			name = ReactiveFormValidationTests;
+			productName = ReactiveFormValidationTests;
+			productReference = 4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A810B992BF54FEC00469895 /* ReactiveFormValidationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A810BAA2BF54FEC00469895 /* Build configuration list for PBXNativeTarget "ReactiveFormValidationUITests" */;
+			buildPhases = (
+				4A810B962BF54FEC00469895 /* Sources */,
+				4A810B972BF54FEC00469895 /* Frameworks */,
+				4A810B982BF54FEC00469895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A810B9C2BF54FEC00469895 /* PBXTargetDependency */,
+			);
+			name = ReactiveFormValidationUITests;
+			productName = ReactiveFormValidationUITests;
+			productReference = 4A810B9A2BF54FEC00469895 /* ReactiveFormValidationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A810B722BF54FEB00469895 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					4A810B792BF54FEB00469895 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					4A810B8F2BF54FEC00469895 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 4A810B792BF54FEB00469895;
+					};
+					4A810B992BF54FEC00469895 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 4A810B792BF54FEB00469895;
+					};
+				};
+			};
+			buildConfigurationList = 4A810B752BF54FEB00469895 /* Build configuration list for PBXProject "ReactiveFormValidation" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A810B712BF54FEB00469895;
+			productRefGroup = 4A810B7B2BF54FEB00469895 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A810B792BF54FEB00469895 /* ReactiveFormValidation */,
+				4A810B8F2BF54FEC00469895 /* ReactiveFormValidationTests */,
+				4A810B992BF54FEC00469895 /* ReactiveFormValidationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A810B782BF54FEB00469895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A810B872BF54FEC00469895 /* Assets.xcassets in Resources */,
+				4A810B8A2BF54FEC00469895 /* Base in Resources */,
+				4A810B852BF54FEB00469895 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A810B8E2BF54FEC00469895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A810B982BF54FEC00469895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A810B762BF54FEB00469895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A810B822BF54FEB00469895 /* ViewController.swift in Sources */,
+				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
+				4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A810B8C2BF54FEC00469895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A810B952BF54FEC00469895 /* ReactiveFormValidationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A810B962BF54FEC00469895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A810BA12BF54FEC00469895 /* ReactiveFormValidationUITestsLaunchTests.swift in Sources */,
+				4A810B9F2BF54FEC00469895 /* ReactiveFormValidationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A810B922BF54FEC00469895 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A810B792BF54FEB00469895 /* ReactiveFormValidation */;
+			targetProxy = 4A810B912BF54FEC00469895 /* PBXContainerItemProxy */;
+		};
+		4A810B9C2BF54FEC00469895 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A810B792BF54FEB00469895 /* ReactiveFormValidation */;
+			targetProxy = 4A810B9B2BF54FEC00469895 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A810B832BF54FEB00469895 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A810B842BF54FEB00469895 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4A810B882BF54FEC00469895 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A810B892BF54FEC00469895 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A810BA22BF54FEC00469895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A810BA32BF54FEC00469895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A810BA52BF54FEC00469895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReactiveFormValidation/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcosapostolo.ReactiveFormValidation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A810BA62BF54FEC00469895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReactiveFormValidation/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcosapostolo.ReactiveFormValidation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A810BA82BF54FEC00469895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcosapostolo.ReactiveFormValidationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveFormValidation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReactiveFormValidation";
+			};
+			name = Debug;
+		};
+		4A810BA92BF54FEC00469895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcosapostolo.ReactiveFormValidationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveFormValidation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReactiveFormValidation";
+			};
+			name = Release;
+		};
+		4A810BAB2BF54FEC00469895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcosapostolo.ReactiveFormValidationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ReactiveFormValidation;
+			};
+			name = Debug;
+		};
+		4A810BAC2BF54FEC00469895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcosapostolo.ReactiveFormValidationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ReactiveFormValidation;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A810B752BF54FEB00469895 /* Build configuration list for PBXProject "ReactiveFormValidation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A810BA22BF54FEC00469895 /* Debug */,
+				4A810BA32BF54FEC00469895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A810BA42BF54FEC00469895 /* Build configuration list for PBXNativeTarget "ReactiveFormValidation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A810BA52BF54FEC00469895 /* Debug */,
+				4A810BA62BF54FEC00469895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A810BA72BF54FEC00469895 /* Build configuration list for PBXNativeTarget "ReactiveFormValidationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A810BA82BF54FEC00469895 /* Debug */,
+				4A810BA92BF54FEC00469895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A810BAA2BF54FEC00469895 /* Build configuration list for PBXNativeTarget "ReactiveFormValidationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A810BAB2BF54FEC00469895 /* Debug */,
+				4A810BAC2BF54FEC00469895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A810B722BF54FEB00469895 /* Project object */;
+}
