@@ -34,11 +34,29 @@ final class ReactiveFormValidationTests: XCTestCase {
         XCTAssertFalse(sut.nameErrorLabel.isHidden)
     }
     
+    func test_tapOnView_dismissesKeyboard() {
+        let sut = makeSUT()
+        
+        putInViewHierarchy(sut)
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertFalse(sut.nameTextField.isFirstResponder)
+        
+        sut.nameTextField.becomeFirstResponder()
+        
+        XCTAssertTrue(sut.nameTextField.isFirstResponder)
+        
+        sut.dismissKeyboard()
+        
+        XCTAssertFalse(sut.nameTextField.isFirstResponder)
+    }
+    
     // MARK: Helpers
-    func makeSUT() -> ViewController {
+    func makeSUT(file: StaticString = #file, line: UInt = #line) -> ViewController {
         let sut = UIComposer.makeView()
         
-        checkForMemoryLeaks(sut)
+        checkForMemoryLeaks(sut, file: file, line: line)
         
         return sut
     }
@@ -65,3 +83,4 @@ extension XCTestCase {
         }
     }
 }
+

@@ -65,6 +65,8 @@ class ViewController: UIViewController {
             nameErrorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             nameErrorLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 16),
         ])
+        
+        view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
     func bind() {
@@ -104,6 +106,10 @@ class ViewController: UIViewController {
         viewModel.formIsValid
             .bind(to: submitButton.rx.isEnabled)
             .disposed(by: disposeBag)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
