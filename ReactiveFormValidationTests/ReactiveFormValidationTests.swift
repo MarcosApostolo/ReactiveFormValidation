@@ -52,6 +52,18 @@ final class ReactiveFormValidationTests: XCTestCase {
         XCTAssertFalse(sut.nameTextField.isFirstResponder)
     }
     
+    func test_allFieldValid_enablesSubmitButton() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertFalse(sut.submitButton.isEnabled)
+        
+        simulateTyping(on: sut.nameTextField, value: "any name")
+        
+        XCTAssertTrue(sut.submitButton.isEnabled)
+    }
+    
     // MARK: Helpers
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> ViewController {
         let sut = UIComposer.makeView()
@@ -62,8 +74,10 @@ final class ReactiveFormValidationTests: XCTestCase {
     }
     
     func simulateTyping(on textField: UITextField, value: String) {
+        textField.sendActions(for: .editingDidBegin)
         textField.text = value
         textField.sendActions(for: .editingChanged)
+        textField.sendActions(for: .editingDidEnd)
     }
     
     func putInViewHierarchy(_ vc: UIViewController) {

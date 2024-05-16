@@ -43,7 +43,7 @@ class NameTextFieldController: UIView {
         NSLayoutConstraint.activate([
             nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-            nameTextField.centerYAnchor.constraint(equalTo: centerYAnchor),
+            nameTextField.topAnchor.constraint(equalTo: topAnchor),
             nameTextField.heightAnchor.constraint(equalToConstant: 32)
         ])
         
@@ -51,6 +51,7 @@ class NameTextFieldController: UIView {
             nameErrorLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             nameErrorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             nameErrorLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 16),
+            nameErrorLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
         
         bind()

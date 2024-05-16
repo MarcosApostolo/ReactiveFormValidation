@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         let button = UIButton()
         
         button.isEnabled = false
+        button.setTitle("Continuar", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
         
         return button
     }()
@@ -34,8 +36,24 @@ class ViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubview(nameTextFieldController)
+        view.addSubview(submitButton)
         
-        view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        nameTextFieldController.translatesAutoresizingMaskIntoConstraints = false
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        
+        NSLayoutConstraint.activate([
+            nameTextFieldController.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            nameTextFieldController.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            nameTextFieldController.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+        ])
+        
+        NSLayoutConstraint.activate([
+            submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            submitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
+        ])
     }
     
     func bind() {
@@ -56,6 +74,12 @@ class ViewController: UIViewController {
         
         viewModel.formIsValid
             .bind(to: submitButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        viewModel.formIsValid
+            .subscribe(onNext: { [weak self] isValid in
+                self?.submitButton.alpha = isValid ? 1.0 : 0.5
+            })
             .disposed(by: disposeBag)
     }
     
