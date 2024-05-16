@@ -84,3 +84,12 @@ extension XCTestCase {
     }
 }
 
+extension ViewController {
+    var nameErrorLabel: UILabel {
+        self.nameTextFieldController.nameErrorLabel
+    }
+    
+    var nameTextField: UITextField {
+        self.nameTextFieldController.nameTextField
+    }
+}

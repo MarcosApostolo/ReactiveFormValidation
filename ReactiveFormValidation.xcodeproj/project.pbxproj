@@ -16,6 +16,8 @@
 		4A810B952BF54FEC00469895 /* ReactiveFormValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */; };
 		4AFF0E292BF5537D00F46A8B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* ViewModel.swift */; };
 		4AFF0E2B2BF5594400F46A8B /* UIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */; };
+		4AFF0E2E2BF591EF00F46A8B /* NameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2D2BF591EF00F46A8B /* NameTextFieldController.swift */; };
+		4AFF0E302BF5936200F46A8B /* NameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2F2BF5936200F46A8B /* NameTextFieldViewModel.swift */; };
 		A5757476E3D443BEAD2D3564 /* Pods_ReactiveFormValidationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReactiveFormValidation.xctestplan; sourceTree = "<group>"; };
 		4AFF0E282BF5537D00F46A8B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComposer.swift; sourceTree = "<group>"; };
+		4AFF0E2D2BF591EF00F46A8B /* NameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldController.swift; sourceTree = "<group>"; };
+		4AFF0E2F2BF5936200F46A8B /* NameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldViewModel.swift; sourceTree = "<group>"; };
 		89B352D663BCF56C45553C74 /* Pods_ReactiveFormValidation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59DDAE8DE35E77CC67A8CA4 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,7 @@
 		4A810B7C2BF54FEB00469895 /* ReactiveFormValidation */ = {
 			isa = PBXGroup;
 			children = (
+				4AFF0E2C2BF591D300F46A8B /* Components */,
 				4A810B7D2BF54FEB00469895 /* AppDelegate.swift */,
 				4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */,
 				4A810B812BF54FEB00469895 /* ViewController.swift */,
@@ -115,6 +120,15 @@
 				4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */,
 			);
 			path = ReactiveFormValidationTests;
+			sourceTree = "<group>";
+		};
+		4AFF0E2C2BF591D300F46A8B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF0E2D2BF591EF00F46A8B /* NameTextFieldController.swift */,
+				4AFF0E2F2BF5936200F46A8B /* NameTextFieldViewModel.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		8658B824B9662E71304769F1 /* Pods */ = {
@@ -308,7 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A810B822BF54FEB00469895 /* ViewController.swift in Sources */,
+				4AFF0E302BF5936200F46A8B /* NameTextFieldViewModel.swift in Sources */,
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
+				4AFF0E2E2BF591EF00F46A8B /* NameTextFieldController.swift in Sources */,
 				4AFF0E2B2BF5594400F46A8B /* UIComposer.swift in Sources */,
 				4AFF0E292BF5537D00F46A8B /* ViewModel.swift in Sources */,
 				4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */,
