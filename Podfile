@@ -6,15 +6,11 @@ target 'ReactiveFormValidation' do
   use_frameworks!
 
   # Pods for ReactiveFormValidation
-    pod 'RxSwift', '6.7.1'
-    pod 'RxCocoa', '6.7.1'
+  pod 'RxSwift', '6.7.1'
+  pod 'RxCocoa', '6.7.1'
 
   target 'ReactiveFormValidationTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ReactiveFormValidationUITests' do
     # Pods for testing
   end
 

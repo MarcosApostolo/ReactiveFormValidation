@@ -6,31 +6,62 @@
 //
 
 import XCTest
+import UIKit
 @testable import ReactiveFormValidation
 
 final class ReactiveFormValidationTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_invalidNameFieldAndNotFocused_displayErrorMessage_disablesSubmitButton() {
+        let sut = makeSUT()
+        
+        putInViewHierarchy(sut)
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertFalse(sut.submitButton.isEnabled)
+        XCTAssertTrue(sut.nameErrorLabel.isHidden)
+        
+        sut.nameTextField.becomeFirstResponder()
+        
+        XCTAssertTrue(sut.nameTextField.isFirstResponder)
+        XCTAssertFalse(sut.submitButton.isEnabled)
+        XCTAssertTrue(sut.nameErrorLabel.isHidden)
+        
+        sut.nameTextField.resignFirstResponder()
+        
+        XCTAssertEqual(sut.nameTextField.text?.isEmpty, true)
+        XCTAssertFalse(sut.nameTextField.isFirstResponder)
+        XCTAssertFalse(sut.submitButton.isEnabled)
+        XCTAssertFalse(sut.nameErrorLabel.isHidden)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    // MARK: Helpers
+    func makeSUT() -> ViewController {
+        let sut = UIComposer.makeView()
+        
+        checkForMemoryLeaks(sut)
+        
+        return sut
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func simulateTyping(on textField: UITextField, value: String) {
+        textField.text = value
+        textField.sendActions(for: .editingChanged)
     }
+    
+    func putInViewHierarchy(_ vc: UIViewController) {
+        let window: UIWindow? = UIWindow()
+        
+        window?.rootViewController = vc
+        
+        window?.addSubview(vc.view)
+    }
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+
+extension XCTestCase {
+    func checkForMemoryLeaks(_ instance: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, file: file, line: line)
         }
     }
-
 }

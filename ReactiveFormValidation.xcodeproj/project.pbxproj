@@ -11,10 +11,11 @@
 		4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B7D2BF54FEB00469895 /* AppDelegate.swift */; };
 		4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */; };
 		4A810B822BF54FEB00469895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B812BF54FEB00469895 /* ViewController.swift */; };
-		4A810B852BF54FEB00469895 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B842BF54FEB00469895 /* Base */; };
 		4A810B872BF54FEC00469895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B862BF54FEC00469895 /* Assets.xcassets */; };
 		4A810B8A2BF54FEC00469895 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B892BF54FEC00469895 /* Base */; };
 		4A810B952BF54FEC00469895 /* ReactiveFormValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */; };
+		4AFF0E292BF5537D00F46A8B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* ViewModel.swift */; };
+		4AFF0E2B2BF5594400F46A8B /* UIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */; };
 		A5757476E3D443BEAD2D3564 /* Pods_ReactiveFormValidationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,13 +38,14 @@
 		4A810B7D2BF54FEB00469895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4A810B812BF54FEB00469895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4A810B842BF54FEB00469895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A810B862BF54FEC00469895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A810B892BF54FEC00469895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A810B8B2BF54FEC00469895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormValidationTests.swift; sourceTree = "<group>"; };
 		4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReactiveFormValidation.xctestplan; sourceTree = "<group>"; };
+		4AFF0E282BF5537D00F46A8B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComposer.swift; sourceTree = "<group>"; };
 		89B352D663BCF56C45553C74 /* Pods_ReactiveFormValidation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59DDAE8DE35E77CC67A8CA4 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,10 +99,11 @@
 				4A810B7D2BF54FEB00469895 /* AppDelegate.swift */,
 				4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */,
 				4A810B812BF54FEB00469895 /* ViewController.swift */,
-				4A810B832BF54FEB00469895 /* Main.storyboard */,
 				4A810B862BF54FEC00469895 /* Assets.xcassets */,
 				4A810B882BF54FEC00469895 /* LaunchScreen.storyboard */,
 				4A810B8B2BF54FEC00469895 /* Info.plist */,
+				4AFF0E282BF5537D00F46A8B /* ViewModel.swift */,
+				4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */,
 			);
 			path = ReactiveFormValidation;
 			sourceTree = "<group>";
@@ -223,7 +226,6 @@
 			files = (
 				4A810B872BF54FEC00469895 /* Assets.xcassets in Resources */,
 				4A810B8A2BF54FEC00469895 /* Base in Resources */,
-				4A810B852BF54FEB00469895 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +309,8 @@
 			files = (
 				4A810B822BF54FEB00469895 /* ViewController.swift in Sources */,
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
+				4AFF0E2B2BF5594400F46A8B /* UIComposer.swift in Sources */,
+				4AFF0E292BF5537D00F46A8B /* ViewModel.swift in Sources */,
 				4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,14 +334,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4A810B832BF54FEB00469895 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A810B842BF54FEB00469895 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4A810B882BF54FEC00469895 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -386,7 +382,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -449,7 +445,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -480,7 +476,6 @@
 				INFOPLIST_FILE = ReactiveFormValidation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -508,7 +503,6 @@
 				INFOPLIST_FILE = ReactiveFormValidation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

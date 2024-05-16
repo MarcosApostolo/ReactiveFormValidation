@@ -17,7 +17,6 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:ReactiveFormValidation.xcodeproj",
         "identifier" : "4A810B8F2BF54FEC00469895",
