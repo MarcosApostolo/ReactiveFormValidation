@@ -26,4 +26,12 @@ class NameTextFieldViewModel {
                 return !isValid && !isFocused
             }
     }
+
+    var nameTextFieldPlaceholder: String {
+        "Name"
+    }
+    
+    var nameErrorRequiredError: String {
+        "Name is required!"
+    }
 }

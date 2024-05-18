@@ -63,9 +63,6 @@ class ViewController: UIViewController {
             return
         }
         
-        nameTextFieldController.textField.placeholder = viewModel.nameTextFieldPlaceholder
-        nameTextFieldController.errorLabel.text = viewModel.nameErrorRequiredError
-        
         nameTextFieldController.textField.rx
             .text
             .orEmpty

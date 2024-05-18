@@ -31,6 +31,9 @@ class NameTextFieldController {
     }
     
     func bind() {
+        textField.placeholder = viewModel.nameTextFieldPlaceholder
+        errorLabel.text = viewModel.nameErrorRequiredError
+        
         textField.rx.text.orEmpty
             .bind(to: viewModel.textFieldValue)
             .disposed(by: disposeBag)

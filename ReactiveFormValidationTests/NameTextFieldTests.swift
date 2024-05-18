@@ -29,6 +29,7 @@ final class NameTextFieldTests: XCTestCase {
         XCTAssertEqual(sut.textField.text?.isEmpty, true)
         XCTAssertFalse(sut.textField.isFirstResponder)
         XCTAssertFalse(sut.errorLabel.isHidden)
+        XCTAssertEqual(sut.errorLabel.text, "Name is required!")
     }
     
     // MARK: Helpers
