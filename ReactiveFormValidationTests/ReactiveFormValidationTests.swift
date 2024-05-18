@@ -10,30 +10,6 @@ import UIKit
 @testable import ReactiveFormValidation
 
 final class ReactiveFormValidationTests: XCTestCase {
-    func test_invalidNameFieldAndNotFocused_displayErrorMessage_disablesSubmitButton() {
-        let sut = makeSUT()
-        
-        putInViewHierarchy(sut)
-        
-        sut.loadViewIfNeeded()
-        
-        XCTAssertFalse(sut.submitButton.isEnabled)
-        XCTAssertTrue(sut.nameErrorLabel.isHidden)
-        
-        sut.nameTextField.becomeFirstResponder()
-        
-        XCTAssertTrue(sut.nameTextField.isFirstResponder)
-        XCTAssertFalse(sut.submitButton.isEnabled)
-        XCTAssertTrue(sut.nameErrorLabel.isHidden)
-        
-        sut.nameTextField.resignFirstResponder()
-        
-        XCTAssertEqual(sut.nameTextField.text?.isEmpty, true)
-        XCTAssertFalse(sut.nameTextField.isFirstResponder)
-        XCTAssertFalse(sut.submitButton.isEnabled)
-        XCTAssertFalse(sut.nameErrorLabel.isHidden)
-    }
-    
     func test_tapOnView_dismissesKeyboard() {
         let sut = makeSUT()
         
@@ -100,10 +76,18 @@ extension XCTestCase {
 
 extension ViewController {
     var nameErrorLabel: UILabel {
-        self.nameTextFieldController.nameErrorLabel
+        self.nameTextFieldController.errorLabel
     }
     
     var nameTextField: UITextField {
-        self.nameTextFieldController.nameTextField
+        self.nameTextFieldController.textField
+    }
+    
+    var emailErrorLabel: UILabel {
+        self.emailTextFieldController.errorLabel
+    }
+    
+    var emailTextField: UITextField {
+        self.emailTextFieldController.textField
     }
 }

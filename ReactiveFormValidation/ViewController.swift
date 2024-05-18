@@ -7,7 +7,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 
 class ViewController: UIViewController {
     var viewModel: ViewModel? {
@@ -19,6 +18,8 @@ class ViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private(set) var nameTextFieldController = NameTextFieldController()
+    
+    private(set) var emailTextFieldController = EmailTextFieldController()
     
     private(set) lazy var submitButton: UIButton = {
         let button = UIButton()
@@ -35,18 +36,19 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
-        view.addSubview(nameTextFieldController)
+        view.addSubview(nameTextFieldController.textFieldView)
+        view.addSubview(emailTextFieldController.textFieldView)
         view.addSubview(submitButton)
         
-        nameTextFieldController.translatesAutoresizingMaskIntoConstraints = false
+        nameTextFieldController.textFieldView.translatesAutoresizingMaskIntoConstraints = false
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
         NSLayoutConstraint.activate([
-            nameTextFieldController.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            nameTextFieldController.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            nameTextFieldController.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            nameTextFieldController.textFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            nameTextFieldController.textFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            nameTextFieldController.textFieldView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
         ])
         
         NSLayoutConstraint.activate([
@@ -61,14 +63,17 @@ class ViewController: UIViewController {
             return
         }
         
-        nameTextFieldController.nameTextField.rx
+        nameTextFieldController.textField.placeholder = viewModel.nameTextFieldPlaceholder
+        nameTextFieldController.errorLabel.text = viewModel.nameErrorRequiredError
+        
+        nameTextFieldController.textField.rx
             .text
             .orEmpty
             .bind(to: viewModel.nameTextFieldValue)
             .disposed(by: disposeBag)
         
         nameTextFieldController.viewModel
-            .nameFieldIsValid
+            .fieldIsValid
             .bind(to: viewModel.nameTextFieldisValid)
             .disposed(by: disposeBag)
         

@@ -15,4 +15,12 @@ class ViewModel {
     var formIsValid: Observable<Bool> {
         return nameTextFieldisValid.asObservable()
     }
+    
+    var nameTextFieldPlaceholder: String {
+        "Name"
+    }
+    
+    var nameErrorRequiredError: String {
+        "Name is Required"
+    }
 }

@@ -14,10 +14,15 @@
 		4A810B872BF54FEC00469895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B862BF54FEC00469895 /* Assets.xcassets */; };
 		4A810B8A2BF54FEC00469895 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B892BF54FEC00469895 /* Base */; };
 		4A810B952BF54FEC00469895 /* ReactiveFormValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */; };
+		4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */; };
+		4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */; };
+		4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */; };
+		4AA1A99D2BF94CCF0052D813 /* EmailTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */; };
+		4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */; };
 		4AFF0E292BF5537D00F46A8B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* ViewModel.swift */; };
 		4AFF0E2B2BF5594400F46A8B /* UIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */; };
-		4AFF0E2E2BF591EF00F46A8B /* NameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2D2BF591EF00F46A8B /* NameTextFieldController.swift */; };
-		4AFF0E302BF5936200F46A8B /* NameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2F2BF5936200F46A8B /* NameTextFieldViewModel.swift */; };
+		4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */; };
+		4AFF0E3E2BF5A33300F46A8B /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3D2BF5A33300F46A8B /* TextFieldView.swift */; };
 		A5757476E3D443BEAD2D3564 /* Pods_ReactiveFormValidationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,10 +51,15 @@
 		4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormValidationTests.swift; sourceTree = "<group>"; };
 		4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReactiveFormValidation.xctestplan; sourceTree = "<group>"; };
+		4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldViewModel.swift; sourceTree = "<group>"; };
+		4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldController.swift; sourceTree = "<group>"; };
+		4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldViewModel.swift; sourceTree = "<group>"; };
+		4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldViewController.swift; sourceTree = "<group>"; };
+		4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldTests.swift; sourceTree = "<group>"; };
 		4AFF0E282BF5537D00F46A8B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComposer.swift; sourceTree = "<group>"; };
-		4AFF0E2D2BF591EF00F46A8B /* NameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldController.swift; sourceTree = "<group>"; };
-		4AFF0E2F2BF5936200F46A8B /* NameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldViewModel.swift; sourceTree = "<group>"; };
+		4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldTests.swift; sourceTree = "<group>"; };
+		4AFF0E3D2BF5A33300F46A8B /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		89B352D663BCF56C45553C74 /* Pods_ReactiveFormValidation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59DDAE8DE35E77CC67A8CA4 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +110,9 @@
 		4A810B7C2BF54FEB00469895 /* ReactiveFormValidation */ = {
 			isa = PBXGroup;
 			children = (
-				4AFF0E2C2BF591D300F46A8B /* Components */,
+				4AA1A9992BF94C9E0052D813 /* EmailTextField */,
+				4AA1A9942BF94C120052D813 /* NameTextField */,
+				4AFF0E362BF59D5A00F46A8B /* TextField */,
 				4A810B7D2BF54FEB00469895 /* AppDelegate.swift */,
 				4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */,
 				4A810B812BF54FEB00469895 /* ViewController.swift */,
@@ -118,17 +130,36 @@
 			children = (
 				4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */,
 				4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */,
+				4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */,
+				4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */,
 			);
 			path = ReactiveFormValidationTests;
 			sourceTree = "<group>";
 		};
-		4AFF0E2C2BF591D300F46A8B /* Components */ = {
+		4AA1A9942BF94C120052D813 /* NameTextField */ = {
 			isa = PBXGroup;
 			children = (
-				4AFF0E2D2BF591EF00F46A8B /* NameTextFieldController.swift */,
-				4AFF0E2F2BF5936200F46A8B /* NameTextFieldViewModel.swift */,
+				4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */,
+				4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */,
 			);
-			path = Components;
+			path = NameTextField;
+			sourceTree = "<group>";
+		};
+		4AA1A9992BF94C9E0052D813 /* EmailTextField */ = {
+			isa = PBXGroup;
+			children = (
+				4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */,
+				4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */,
+			);
+			path = EmailTextField;
+			sourceTree = "<group>";
+		};
+		4AFF0E362BF59D5A00F46A8B /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF0E3D2BF5A33300F46A8B /* TextFieldView.swift */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		8658B824B9662E71304769F1 /* Pods */ = {
@@ -322,12 +353,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A810B822BF54FEB00469895 /* ViewController.swift in Sources */,
-				4AFF0E302BF5936200F46A8B /* NameTextFieldViewModel.swift in Sources */,
+				4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */,
+				4AFF0E3E2BF5A33300F46A8B /* TextFieldView.swift in Sources */,
+				4AA1A99D2BF94CCF0052D813 /* EmailTextFieldViewController.swift in Sources */,
+				4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */,
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
-				4AFF0E2E2BF591EF00F46A8B /* NameTextFieldController.swift in Sources */,
 				4AFF0E2B2BF5594400F46A8B /* UIComposer.swift in Sources */,
 				4AFF0E292BF5537D00F46A8B /* ViewModel.swift in Sources */,
 				4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */,
+				4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +369,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */,
 				4A810B952BF54FEC00469895 /* ReactiveFormValidationTests.swift in Sources */,
+				4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
