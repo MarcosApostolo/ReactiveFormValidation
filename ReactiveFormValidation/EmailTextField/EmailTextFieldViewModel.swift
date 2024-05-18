@@ -16,7 +16,7 @@ class EmailTextFieldViewModel {
     var fieldIsValid: Observable<Bool> {
         return Observable
             .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
-                return isTouched && !value.isEmpty
+                return isTouched && isValidEmail(email: value) && !value.isEmpty
             }
     }
     
@@ -24,6 +24,21 @@ class EmailTextFieldViewModel {
         return Observable
             .combineLatest(fieldIsValid, textFieldIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
+            }
+    }
+    
+    var errorLabel: Observable<String> {
+        return Observable
+            .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
+                if value.isEmpty {
+                    return "Email is required!"
+                }
+                
+                if !isValidEmail(email: value) {
+                    return "Please type an valid email"
+                }
+                
+                return ""
             }
     }
 }

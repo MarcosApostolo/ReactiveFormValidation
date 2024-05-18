@@ -31,6 +31,26 @@ final class EmailTextFieldTests: XCTestCase {
         XCTAssertFalse(sut.errorLabel.isHidden)
     }
     
+    func test_invalidEmailAndNotFocused_displayErrorMessage() {
+        let sut = makeSUT()
+        
+        putInViewHierarchy(sut)
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertTrue(sut.errorLabel.isHidden)
+        
+        sut.textField.becomeFirstResponder()
+        
+        XCTAssertTrue(sut.textField.isFirstResponder)
+        XCTAssertTrue(sut.errorLabel.isHidden)
+        
+        simulateTyping(on: sut.textField, value: "invalidEmail")
+        
+        XCTAssertFalse(sut.errorLabel.isHidden)
+        XCTAssertEqual(sut.errorLabel.text, "Please type an valid email")
+    }
+    
     // MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> TestHelperViewController {
         let sut = TestHelperViewController()

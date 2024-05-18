@@ -19,6 +19,8 @@
 		4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */; };
 		4AA1A99D2BF94CCF0052D813 /* EmailTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */; };
 		4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */; };
+		4AA1A9A12BF94ED70052D813 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9A02BF94ED70052D813 /* Helpers.swift */; };
+		4AA1A9A42BF94FA40052D813 /* ValidationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9A32BF94FA40052D813 /* ValidationHelpers.swift */; };
 		4AFF0E292BF5537D00F46A8B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* ViewModel.swift */; };
 		4AFF0E2B2BF5594400F46A8B /* UIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */; };
 		4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */; };
@@ -56,6 +58,8 @@
 		4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldViewModel.swift; sourceTree = "<group>"; };
 		4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldViewController.swift; sourceTree = "<group>"; };
 		4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldTests.swift; sourceTree = "<group>"; };
+		4AA1A9A02BF94ED70052D813 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		4AA1A9A32BF94FA40052D813 /* ValidationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelpers.swift; sourceTree = "<group>"; };
 		4AFF0E282BF5537D00F46A8B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComposer.swift; sourceTree = "<group>"; };
 		4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldTests.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		4A810B7C2BF54FEB00469895 /* ReactiveFormValidation */ = {
 			isa = PBXGroup;
 			children = (
+				4AA1A9A22BF94F9A0052D813 /* Helpers */,
 				4AA1A9992BF94C9E0052D813 /* EmailTextField */,
 				4AA1A9942BF94C120052D813 /* NameTextField */,
 				4AFF0E362BF59D5A00F46A8B /* TextField */,
@@ -132,6 +137,7 @@
 				4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */,
 				4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */,
 				4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */,
+				4AA1A9A02BF94ED70052D813 /* Helpers.swift */,
 			);
 			path = ReactiveFormValidationTests;
 			sourceTree = "<group>";
@@ -152,6 +158,14 @@
 				4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */,
 			);
 			path = EmailTextField;
+			sourceTree = "<group>";
+		};
+		4AA1A9A22BF94F9A0052D813 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4AA1A9A32BF94FA40052D813 /* ValidationHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4AFF0E362BF59D5A00F46A8B /* TextField */ = {
@@ -360,6 +374,7 @@
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
 				4AFF0E2B2BF5594400F46A8B /* UIComposer.swift in Sources */,
 				4AFF0E292BF5537D00F46A8B /* ViewModel.swift in Sources */,
+				4AA1A9A42BF94FA40052D813 /* ValidationHelpers.swift in Sources */,
 				4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */,
 				4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */,
 			);
@@ -372,6 +387,7 @@
 				4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */,
 				4A810B952BF54FEC00469895 /* ReactiveFormValidationTests.swift in Sources */,
 				4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */,
+				4AA1A9A12BF94ED70052D813 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
