@@ -35,10 +35,10 @@ class TextFieldView: UIView {
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-                    textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-                    textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-                    textField.topAnchor.constraint(equalTo: topAnchor),
-                    textField.heightAnchor.constraint(equalToConstant: 32)
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            textField.topAnchor.constraint(equalTo: topAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 32)
         ])
         
         NSLayoutConstraint.activate([
