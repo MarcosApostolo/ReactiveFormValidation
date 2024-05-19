@@ -28,18 +28,17 @@ class EmailTextFieldViewModel {
     }
     
     var errorLabel: Observable<String> {
-        return Observable
-            .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
-                if value.isEmpty {
-                    return "Email is required!"
-                }
-                
-                if !isValidEmail(email: value) {
-                    return "Please type an valid email"
-                }
-                
-                return ""
+        return textFieldValue.asObservable().map({ value in
+            if value.isEmpty {
+                return "Email is required!"
             }
+            
+            if !isValidEmail(email: value) {
+                return "Please type an valid email"
+            }
+            
+            return ""
+        })
     }
 }
 
