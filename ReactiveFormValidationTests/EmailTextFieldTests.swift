@@ -51,6 +51,25 @@ final class EmailTextFieldTests: XCTestCase {
         XCTAssertEqual(sut.errorLabel.text, "Please type an valid email")
     }
     
+    func test_validEmail_doesNotDisplayErrorMessage() {
+        let sut = makeSUT()
+        
+        putInViewHierarchy(sut)
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertTrue(sut.errorLabel.isHidden)
+        
+        sut.textField.becomeFirstResponder()
+        
+        XCTAssertTrue(sut.textField.isFirstResponder)
+        XCTAssertTrue(sut.errorLabel.isHidden)
+        
+        simulateTyping(on: sut.textField, value: "email@email.com")
+        
+        XCTAssertTrue(sut.errorLabel.isHidden)
+    }
+    
     // MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> TestHelperViewController {
         let sut = TestHelperViewController()
