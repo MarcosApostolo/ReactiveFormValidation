@@ -16,7 +16,7 @@ class UsernameTextFieldViewModel {
     var fieldIsValid: Observable<Bool> {
         return Observable
             .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
-                return isTouched && !value.isEmpty
+                return isTouched && value.count <= 32 && !value.isEmpty
             }
     }
     
@@ -26,12 +26,26 @@ class UsernameTextFieldViewModel {
                 return !isValid && !isFocused
             }
     }
+    
+    var errorLabel: Observable<String> {
+        return textFieldValue.asObservable().map({ value in
+            if value.isEmpty {
+                return "Username is required!"
+            }
+            
+            if value.count > 32 {
+                return "Username too long! Must have less than 32 characters."
+            }
+            
+            return ""
+        })
+    }
 
     var textFieldPlaceholder: String {
         "Username"
     }
     
-    var requiredError: String {
-        "Username is required!"
+    var usernameTooLongError: String {
+        "Username too long! Must have less than 32 characters."
     }
 }

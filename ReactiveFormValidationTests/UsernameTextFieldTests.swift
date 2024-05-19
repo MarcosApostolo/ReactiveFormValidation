@@ -27,6 +27,18 @@ final class UsernameTextFieldTests: XCTestCase {
         
         assertThat(sut.textFieldController, hasError: "Username is required!")
     }
+    
+    func test_moreThan16Characters_displayErrorMessage() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        assertNoErrorOn(sut.textFieldController)
+        
+        simulateTyping(on: sut.textField, value: "username with more than thirty two characters")
+        
+        assertThat(sut.textFieldController, hasError: "Username too long! Must have less than 32 characters.")
+    }
 
     // MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> TestHelperViewController {

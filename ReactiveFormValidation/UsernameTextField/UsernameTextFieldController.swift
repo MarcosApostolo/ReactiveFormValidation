@@ -32,7 +32,6 @@ class UsernameTextFieldController {
     
     func bind() {
         textField.placeholder = viewModel.textFieldPlaceholder
-        errorLabel.text = viewModel.requiredError
         
         textField.rx.text.orEmpty
             .bind(to: viewModel.textFieldValue)
@@ -61,6 +60,11 @@ class UsernameTextFieldController {
             .skip(1)
             .map { !$0 }
             .bind(to: errorLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .errorLabel
+            .bind(to: errorLabel.rx.text)
             .disposed(by: disposeBag)
     }
     
