@@ -17,19 +17,40 @@ final class NameTextFieldTests: XCTestCase {
         
         sut.loadViewIfNeeded()
         
-        XCTAssertTrue(sut.errorLabel.isHidden)
+        assertNoErrorOn(sut.textFieldController)
         
         sut.textField.becomeFirstResponder()
         
         XCTAssertTrue(sut.textField.isFirstResponder)
-        XCTAssertTrue(sut.errorLabel.isHidden)
+        assertNoErrorOn(sut.textFieldController)
         
         sut.textField.resignFirstResponder()
         
-        XCTAssertEqual(sut.textField.text?.isEmpty, true)
-        XCTAssertFalse(sut.textField.isFirstResponder)
-        XCTAssertFalse(sut.errorLabel.isHidden)
-        XCTAssertEqual(sut.errorLabel.text, "Name is required!")
+        assertThat(sut.textFieldController, hasError: "Name is required!")
+    }
+    
+    func test_focusedNameField_doesNotDislpayErrorMessage() {
+        let sut = makeSUT()
+        
+        putInViewHierarchy(sut)
+        
+        sut.loadViewIfNeeded()
+        
+        assertNoErrorOn(sut.textFieldController)
+        
+        sut.textField.becomeFirstResponder()
+        
+        XCTAssertTrue(sut.textField.isFirstResponder)
+        assertNoErrorOn(sut.textFieldController)
+        
+        sut.textField.resignFirstResponder()
+        
+        assertThat(sut.textFieldController, hasError: "Name is required!")
+        
+        sut.textField.becomeFirstResponder()
+        
+        XCTAssertTrue(sut.textField.isFirstResponder)
+        assertNoErrorOn(sut.textFieldController)
     }
     
     // MARK: Helpers
@@ -37,6 +58,15 @@ final class NameTextFieldTests: XCTestCase {
         let sut = TestHelperViewController()
                 
         return sut
+    }
+    
+    private func assertThat(_ sut: NameTextFieldController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertFalse(sut.errorLabel.isHidden, file: file, line: line)
+        XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
+    }
+    
+    private func assertNoErrorOn(_ sut: NameTextFieldController) {
+        XCTAssertTrue(sut.errorLabel.isHidden)
     }
 
     private class TestHelperViewController: UIViewController {
