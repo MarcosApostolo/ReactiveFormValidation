@@ -38,14 +38,6 @@ final class NameTextFieldTests: XCTestCase {
                 
         return sut
     }
-    
-    func putInViewHierarchy(_ vc: UIViewController) {
-        let window: UIWindow? = UIWindow()
-        
-        window?.rootViewController = vc
-        
-        window?.addSubview(vc.view)
-    }
 
     private class TestHelperViewController: UIViewController {
         private(set) var textFieldController = NameTextFieldController()

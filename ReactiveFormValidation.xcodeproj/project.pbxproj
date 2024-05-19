@@ -91,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A0002132BFA4AB5002AA0CA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4AA1A9A02BF94ED70052D813 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4A810B712BF54FEB00469895 = {
 			isa = PBXGroup;
 			children = (
@@ -133,11 +141,11 @@
 		4A810B932BF54FEC00469895 /* ReactiveFormValidationTests */ = {
 			isa = PBXGroup;
 			children = (
+				4A0002132BFA4AB5002AA0CA /* Helpers */,
 				4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */,
 				4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */,
 				4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */,
 				4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */,
-				4AA1A9A02BF94ED70052D813 /* Helpers.swift */,
 			);
 			path = ReactiveFormValidationTests;
 			sourceTree = "<group>";
