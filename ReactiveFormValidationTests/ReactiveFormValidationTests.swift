@@ -28,16 +28,38 @@ final class ReactiveFormValidationTests: XCTestCase {
         XCTAssertFalse(sut.nameTextField.isFirstResponder)
     }
     
-    func test_allFieldValid_enablesSubmitButton() {
+    func test_onLoad_submitButtonIsDisabled() {
         let sut = makeSUT()
         
         sut.loadViewIfNeeded()
         
         XCTAssertFalse(sut.submitButton.isEnabled)
+    }
+    
+    func test_allFieldValid_enablesSubmitButton() {
+        let sut = makeSUT()
         
+        sut.loadViewIfNeeded()
+                
         simulateTyping(on: sut.nameTextField, value: "any name")
+        simulateTyping(on: sut.emailTextField, value: "email@email.com")
         
         XCTAssertTrue(sut.submitButton.isEnabled)
+    }
+    
+    func test_anyInvalidField_disablesSubmitButton() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        simulateTyping(on: sut.nameTextField, value: "any name")
+        simulateTyping(on: sut.emailTextField, value: "email@email.com")
+        
+        XCTAssertTrue(sut.submitButton.isEnabled)
+        
+        simulateTyping(on: sut.emailTextField, value: "invalid email")
+        
+        XCTAssertFalse(sut.submitButton.isEnabled)
     }
     
     // MARK: Helpers

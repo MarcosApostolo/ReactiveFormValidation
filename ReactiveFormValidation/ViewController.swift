@@ -74,6 +74,11 @@ class ViewController: UIViewController {
             .bind(to: viewModel.nameTextFieldisValid)
             .disposed(by: disposeBag)
         
+        emailTextFieldController.viewModel
+            .fieldIsValid
+            .bind(to: viewModel.emaiTextFieldisValid)
+            .disposed(by: disposeBag)
+        
         viewModel.formIsValid
             .bind(to: submitButton.rx.isEnabled)
             .disposed(by: disposeBag)
