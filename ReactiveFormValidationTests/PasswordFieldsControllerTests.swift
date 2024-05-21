@@ -11,9 +11,7 @@ import XCTest
 final class PasswordFieldsControllerTests: XCTestCase {
     func test_emptyOrLessthanMinLengthPassword_onNewPasswordField_displayMinLengthErrorMessage() {
         let sut = makeSUT()
-        
-        putInViewHierarchy(sut)
-        
+                
         sut.loadViewIfNeeded()
         
         assertNoErrorOn(sut.textFieldController)
@@ -29,9 +27,7 @@ final class PasswordFieldsControllerTests: XCTestCase {
     
     func test_passwordWithMinLength_onNewPasswordField_doesNotDisplayMinLengthErrorMessage() {
         let sut = makeSUT()
-        
-        putInViewHierarchy(sut)
-        
+                
         sut.loadViewIfNeeded()
         
         assertNoErrorOn(sut.textFieldController)
@@ -46,9 +42,7 @@ final class PasswordFieldsControllerTests: XCTestCase {
         
         let passwordEqualToMaxLength = "0123456789012345"
         let passwordWithMoreThanMaxLength = "very very very long password"
-        
-        putInViewHierarchy(sut)
-        
+                
         sut.loadViewIfNeeded()
         
         assertNoErrorOn(sut.textFieldController)
