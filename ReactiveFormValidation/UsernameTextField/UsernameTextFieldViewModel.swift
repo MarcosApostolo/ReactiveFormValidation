@@ -12,6 +12,7 @@ class UsernameTextFieldViewModel {
     var textFieldValue = BehaviorSubject(value: "")
     var textFieldIsTouched = BehaviorSubject(value: false)
     var textFieldIsFocused = BehaviorSubject(value: false)
+    var usernameStatus = PublishSubject<UsernameStatus>()
     
     private let disposeBag = DisposeBag()
     
@@ -48,5 +49,9 @@ class UsernameTextFieldViewModel {
 
     var textFieldPlaceholder: String {
         "Username"
+    }
+    
+    var usernameError: String {
+        "Username is already used."
     }
 }

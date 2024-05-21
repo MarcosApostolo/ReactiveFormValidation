@@ -79,6 +79,23 @@ class UsernameTextFieldController {
             .subscribe(on: MainScheduler.instance)
             .bind(to: errorLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        viewModel
+            .usernameStatus
+            .map({ $0 == .used })
+            .map({ !$0 })
+            .bind(to: errorLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .usernameStatus
+            .debug("RxSwift usernameStatus")
+            .subscribe(on: MainScheduler.instance)
+            .map({ [weak self] status in
+                status == .used ? self?.viewModel.usernameError : nil
+            })
+            .bind(to: errorLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     func bindValidateUsernameButton() {
@@ -92,16 +109,7 @@ class UsernameTextFieldController {
                 return validateUniqueUsername("")
             })
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { status in
-                if status == .used {
-                    print("RxSwift passou aqui")
-                    self.errorLabel.isHidden = false
-                    self.errorLabel.text = "Username is already used."
-                } else {
-                    self.errorLabel.isHidden = true
-                    self.errorLabel.text = nil
-                }
-            })
+            .bind(to: viewModel.usernameStatus)
             .disposed(by: disposeBag)
     }
     
