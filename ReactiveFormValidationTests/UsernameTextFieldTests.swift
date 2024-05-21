@@ -6,29 +6,31 @@
 //
 
 import XCTest
+import RxSwift
 @testable import ReactiveFormValidation
 
-final class UsernameTextFieldTests: XCTestCase {
+final class UsernameTextFieldTests: XCTestCase {    
+    private let disposeBag = DisposeBag()
+    
     func test_emptyUsernameAndNotFocused_displayRequiredErrorMessage() {
         let sut = makeSUT()
         
         putInViewHierarchy(sut)
-        
         sut.loadViewIfNeeded()
         
         assertNoErrorOn(sut.textFieldController)
         
         sut.textField.becomeFirstResponder()
-        
         XCTAssertTrue(sut.textField.isFirstResponder)
+        
         assertNoErrorOn(sut.textFieldController)
         
         sut.textField.resignFirstResponder()
-        
+                                
         assertThat(sut.textFieldController, hasError: "Username is required!")
     }
     
-    func test_moreThan16Characters_displayErrorMessage() {
+    func test_moreThan32Characters_displayErrorMessage() {        
         let sut = makeSUT()
         
         sut.loadViewIfNeeded()
@@ -36,14 +38,66 @@ final class UsernameTextFieldTests: XCTestCase {
         assertNoErrorOn(sut.textFieldController)
         
         simulateTyping(on: sut.textField, value: "username with more than thirty two characters")
-        
+                        
         assertThat(sut.textFieldController, hasError: "Username too long! Must have less than 32 characters.")
+    }
+    
+    func test_onNonUniqueUsername_displayErrorMessage() {
+        let single = Single<UsernameStatus>.create(subscribe: { single in
+            single(.success(.used))
+            
+            return Disposables.create()
+        })
+
+        let sut = makeSUT(validateUniqueUsername: { _ in
+            return single
+        })
+        
+        sut.loadViewIfNeeded()
+        
+        assertNoErrorOn(sut.textFieldController)
+        
+        simulateTyping(on: sut.textField, value: "non unique username")
+        
+        sut.usernameButton.sendActions(for: .touchUpInside)
+                  
+        assertThat(sut.textFieldController, hasError: "Username is already used.")
+    }
+    
+    func test_onUniqueUsername_doesNotDisplayErrorMessage() {
+        let single = Single<UsernameStatus>.create(subscribe: { single in
+            single(.success(.unused))
+            
+            return Disposables.create()
+        })
+
+        let sut = makeSUT(validateUniqueUsername: { _ in
+            return single
+        })
+        
+        sut.loadViewIfNeeded()
+        
+        assertNoErrorOn(sut.textFieldController)
+        
+        simulateTyping(on: sut.textField, value: "unique username")
+        
+        sut.usernameButton.sendActions(for: .touchUpInside)
+                  
+        assertNoErrorOn(sut.textFieldController)
     }
 
     // MARK: Helpers
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> TestHelperViewController {
+    private func makeSUT(
+        validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) },
+        file: StaticString = #file,
+        line: UInt = #line
+    ) -> TestHelperViewController {
         let sut = TestHelperViewController()
-                
+        
+        sut.textFieldController.validateUniqueUsername = validateUniqueUsername
+        
+        checkForMemoryLeaks(sut, file: file, line: line)
+                        
         return sut
     }
     
@@ -52,17 +106,18 @@ final class UsernameTextFieldTests: XCTestCase {
         XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
     }
     
-    private func assertNoErrorOn(_ sut: UsernameTextFieldController) {
-        XCTAssertTrue(sut.errorLabel.isHidden)
+    private func assertNoErrorOn(_ sut: UsernameTextFieldController, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(sut.errorLabel.isHidden, file: file, line: line)
     }
     
     private class TestHelperViewController: UIViewController {
-        private(set) var textFieldController = UsernameTextFieldController()
-        
+        let textFieldController = UsernameTextFieldController()
+                
         override func viewDidLoad() {
             super.viewDidLoad()
             
             view.addSubview(textFieldController.textFieldView)
+            view.addSubview(textFieldController.validateUsernameButton)
         }
         
         var errorLabel: UILabel {
@@ -72,5 +127,10 @@ final class UsernameTextFieldTests: XCTestCase {
         var textField: UITextField {
             textFieldController.textField
         }
+        
+        var usernameButton: UIButton {
+            textFieldController.validateUsernameButton
+        }
+
     }
 }

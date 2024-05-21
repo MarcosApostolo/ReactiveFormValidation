@@ -12,10 +12,15 @@ class UsernameTextFieldViewModel {
     var textFieldValue = BehaviorSubject(value: "")
     var textFieldIsTouched = BehaviorSubject(value: false)
     var textFieldIsFocused = BehaviorSubject(value: false)
-
+    
+    private let disposeBag = DisposeBag()
+    
     var fieldIsValid: Observable<Bool> {
         return Observable
-            .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
+            .combineLatest(
+                textFieldValue,
+                textFieldIsTouched
+            ) { value, isTouched in
                 return isTouched && value.count <= 32 && !value.isEmpty
             }
     }
@@ -43,9 +48,5 @@ class UsernameTextFieldViewModel {
 
     var textFieldPlaceholder: String {
         "Username"
-    }
-    
-    var usernameTooLongError: String {
-        "Username too long! Must have less than 32 characters."
     }
 }

@@ -18,6 +18,14 @@ class UsernameTextFieldController {
         return TextFieldView()
     }()
     
+    private(set) lazy var validateUsernameButton: UIButton = {
+        let button = UIButton()
+        
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+        
+        return button
+    }()
+    
     var textField: UITextField {
         textFieldView.textField
     }
@@ -25,6 +33,8 @@ class UsernameTextFieldController {
     var errorLabel: UILabel {
         textFieldView.errorLabel
     }
+    
+    var validateUniqueUsername: ((String) -> Single<UsernameStatus>)?
     
     init() {
         bind()
@@ -57,6 +67,8 @@ class UsernameTextFieldController {
 
         viewModel
             .displayErrorLabel
+            .debug("RxSwift displayErrorLabel")
+            .subscribe(on: MainScheduler.instance)
             .skip(1)
             .map { !$0 }
             .bind(to: errorLabel.rx.isHidden)
@@ -64,7 +76,29 @@ class UsernameTextFieldController {
         
         viewModel
             .errorLabel
+            .debug("RxSwift errorLabel")
+            .subscribe(on: MainScheduler.instance)
             .bind(to: errorLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    @objc func handleTap() {
+        guard let validateUniqueUsername = validateUniqueUsername else {
+            return
+        }
+        
+        validateUniqueUsername("")
+            .observe(on: MainScheduler.instance)
+            .subscribe(onSuccess: { status in
+                if status == .used {
+                    print("RxSwift passou aqui")
+                    self.errorLabel.isHidden = false
+                    self.errorLabel.text = "Username is already used."
+                } else {
+                    self.errorLabel.isHidden = true
+                    self.errorLabel.text = nil
+                }
+            })
             .disposed(by: disposeBag)
     }
     

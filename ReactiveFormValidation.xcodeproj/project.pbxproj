@@ -11,6 +11,7 @@
 		4A0002192BFA5585002AA0CA /* UsernameTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0002182BFA5585002AA0CA /* UsernameTextFieldTests.swift */; };
 		4A00021E2BFA56AB002AA0CA /* UsernameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00021D2BFA56AB002AA0CA /* UsernameTextFieldController.swift */; };
 		4A0002222BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0002212BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift */; };
+		4A2DE87C2BFC07A20044D337 /* UsernameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DE87B2BFC07A20044D337 /* UsernameStatus.swift */; };
 		4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B7D2BF54FEB00469895 /* AppDelegate.swift */; };
 		4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */; };
 		4A810B822BF54FEB00469895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B812BF54FEB00469895 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		4A0002182BFA5585002AA0CA /* UsernameTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextFieldTests.swift; sourceTree = "<group>"; };
 		4A00021D2BFA56AB002AA0CA /* UsernameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextFieldController.swift; sourceTree = "<group>"; };
 		4A0002212BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextFieldViewModel.swift; sourceTree = "<group>"; };
+		4A2DE87B2BFC07A20044D337 /* UsernameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameStatus.swift; sourceTree = "<group>"; };
 		4A810B7A2BF54FEB00469895 /* ReactiveFormValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveFormValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A810B7D2BF54FEB00469895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				4A810B8B2BF54FEC00469895 /* Info.plist */,
 				4AFF0E282BF5537D00F46A8B /* ViewModel.swift */,
 				4AFF0E2A2BF5594400F46A8B /* UIComposer.swift */,
+				4A2DE87B2BFC07A20044D337 /* UsernameStatus.swift */,
 			);
 			path = ReactiveFormValidation;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				4A810B822BF54FEB00469895 /* ViewController.swift in Sources */,
 				4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */,
 				4AFF0E3E2BF5A33300F46A8B /* TextFieldView.swift in Sources */,
+				4A2DE87C2BFC07A20044D337 /* UsernameStatus.swift in Sources */,
 				4AA1A99D2BF94CCF0052D813 /* EmailTextFieldViewController.swift in Sources */,
 				4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */,
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
