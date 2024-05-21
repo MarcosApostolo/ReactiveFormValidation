@@ -9,8 +9,15 @@ import Foundation
 
 class PasswordValidatorPolicy {
     static let minLength = 8
+    static let maxLength = 16
     
-    static func isPasswordLengthValid(_ password: String) -> Bool {
+    private init() {}
+    
+    static func isPasswordMinLengthValid(_ password: String) -> Bool {
         return password.count >= PasswordValidatorPolicy.minLength
+    }
+    
+    static func isPasswordMaxLengthValid(_ password: String) -> Bool {
+        return password.count <= PasswordValidatorPolicy.maxLength
     }
 }

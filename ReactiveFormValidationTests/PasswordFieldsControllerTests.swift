@@ -40,6 +40,27 @@ final class PasswordFieldsControllerTests: XCTestCase {
         
         assertNoErrorOn(sut.textFieldController)
     }
+    
+    func test_moreThanMaxLengthPassword_displayMaxLengthErrorMessage() {
+        let sut = makeSUT()
+        
+        let passwordEqualToMaxLength = "0123456789012345"
+        let passwordWithMoreThanMaxLength = "very very very long password"
+        
+        putInViewHierarchy(sut)
+        
+        sut.loadViewIfNeeded()
+        
+        assertNoErrorOn(sut.textFieldController)
+        
+        simulateTyping(on: sut.newPasswordTextField, value: passwordWithMoreThanMaxLength)
+        
+        assertThat(sut.textFieldController, hasError: "Password length must be no longer than 16 characters")
+        
+        simulateTyping(on: sut.newPasswordTextField, value: passwordEqualToMaxLength)
+        
+        assertNoErrorOn(sut.textFieldController)
+    }
         
     // MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> TestHelperViewController {
