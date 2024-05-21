@@ -16,7 +16,7 @@ class PasswordFieldsViewModel {
     var newPasswordFieldIsValid: Observable<Bool> {
         return Observable
             .combineLatest(newPasswordValue, newPasswordValueIsTouched, newPasswordValueIsFocused) { value, isTouched, isFocused in
-                return isTouched && value.count >= 8
+                return isTouched && PasswordValidatorPolicy.isPasswordLengthValid(value)
             }.share()
     }
     
@@ -31,8 +31,8 @@ class PasswordFieldsViewModel {
         return newPasswordValue
             .asObservable()
             .map { value in
-                if value.count < 8 {
-                    return "Password length must be at least 8 characters"
+                if !PasswordValidatorPolicy.isPasswordLengthValid(value) {
+                    return "Password length must be at least \(PasswordValidatorPolicy.minLength) characters"
                 }
                 
                 return ""
