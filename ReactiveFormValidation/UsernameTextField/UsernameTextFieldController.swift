@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
 
 class UsernameTextFieldController {
     private let disposeBag = DisposeBag()
@@ -19,11 +20,7 @@ class UsernameTextFieldController {
     }()
     
     private(set) lazy var validateUsernameButton: UIButton = {
-        let button = UIButton()
-        
-        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        
-        return button
+        UIButton()
     }()
     
     var textField: UITextField {
@@ -34,7 +31,11 @@ class UsernameTextFieldController {
         textFieldView.errorLabel
     }
     
-    var validateUniqueUsername: ((String) -> Single<UsernameStatus>)?
+    var validateUniqueUsername: ((String) -> Single<UsernameStatus>)? {
+        didSet {
+            bindValidateUsernameButton()
+        }
+    }
     
     init() {
         bind()
@@ -67,7 +68,6 @@ class UsernameTextFieldController {
 
         viewModel
             .displayErrorLabel
-            .debug("RxSwift displayErrorLabel")
             .subscribe(on: MainScheduler.instance)
             .skip(1)
             .map { !$0 }
@@ -76,20 +76,23 @@ class UsernameTextFieldController {
         
         viewModel
             .errorLabel
-            .debug("RxSwift errorLabel")
             .subscribe(on: MainScheduler.instance)
             .bind(to: errorLabel.rx.text)
             .disposed(by: disposeBag)
     }
     
-    @objc func handleTap() {
+    func bindValidateUsernameButton() {
         guard let validateUniqueUsername = validateUniqueUsername else {
             return
         }
         
-        validateUniqueUsername("")
+        validateUsernameButton.rx
+            .tap
+            .flatMap({ _ in
+                return validateUniqueUsername("")
+            })
             .observe(on: MainScheduler.instance)
-            .subscribe(onSuccess: { status in
+            .subscribe(onNext: { status in
                 if status == .used {
                     print("RxSwift passou aqui")
                     self.errorLabel.isHidden = false
