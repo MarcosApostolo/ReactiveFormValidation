@@ -33,6 +33,7 @@ final class PasswordFieldsControllerTests: XCTestCase {
         assertNoErrorOn(sut.textFieldController)
         
         simulateTyping(on: sut.newPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.confirmPasswordTextField, value: "12345678")
         
         assertNoErrorOn(sut.textFieldController)
     }
@@ -52,8 +53,23 @@ final class PasswordFieldsControllerTests: XCTestCase {
         assertThat(sut.textFieldController, hasError: "Password length must be no longer than 16 characters")
         
         simulateTyping(on: sut.newPasswordTextField, value: passwordEqualToMaxLength)
+        simulateTyping(on: sut.confirmPasswordTextField, value: passwordEqualToMaxLength)
         
         assertNoErrorOn(sut.textFieldController)
+    }
+    
+    func test_unmatchingPasswords_displayUnmatchingErrorMessage() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        assertNoErrorOn(sut.textFieldController)
+        
+        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
+        
+        simulateTyping(on: sut.confirmPasswordTextField, value: "123456789")
+        
+        assertThat(sut.textFieldController, hasError: "Passwords don't match.")
     }
         
     // MARK: Helpers
@@ -89,6 +105,10 @@ final class PasswordFieldsControllerTests: XCTestCase {
         
         var newPasswordTextField: UITextField {
             textFieldController.newPasswordTextField
+        }
+        
+        var confirmPasswordTextField: UITextField {
+            textFieldController.confirmPasswordTextField
         }
     }
 }

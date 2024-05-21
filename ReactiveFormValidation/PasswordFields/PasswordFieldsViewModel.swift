@@ -12,34 +12,47 @@ class PasswordFieldsViewModel {
     var newPasswordValue = BehaviorSubject(value: "")
     var newPasswordValueIsTouched = BehaviorSubject(value: false)
     var newPasswordValueIsFocused = BehaviorSubject(value: false)
+    
+    var confirmPasswordValue = BehaviorSubject(value: "")
 
-    var newPasswordFieldIsValid: Observable<Bool> {
+    var passwordsAreValid: Observable<Bool> {
         return Observable
-            .combineLatest(newPasswordValue, newPasswordValueIsTouched, newPasswordValueIsFocused) { value, isTouched, isFocused in
-                return isTouched && PasswordValidatorPolicy.isPasswordMinLengthValid(value) && PasswordValidatorPolicy.isPasswordMaxLengthValid(value)
-            }.share()
+            .combineLatest(
+                newPasswordValue,
+                newPasswordValueIsTouched,
+                confirmPasswordValue
+            ) { newValue, isTouched, confirmValue in
+                return isTouched
+                    && PasswordValidatorPolicy.isPasswordMinLengthValid(newValue)
+                    && PasswordValidatorPolicy.isPasswordMaxLengthValid(newValue)
+                    && newValue == confirmValue
+            }
+            .distinctUntilChanged()
+            .share()
     }
     
     var displayErrorLabel: Observable<Bool> {
         return Observable
-            .combineLatest(newPasswordFieldIsValid, newPasswordValueIsFocused) { isValid, isFocused in
+            .combineLatest(passwordsAreValid, newPasswordValueIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
             }
     }
     
     var errorLabel: Observable<String> {
-        return newPasswordValue
-            .asObservable()
-            .map { value in
-                if !PasswordValidatorPolicy.isPasswordMinLengthValid(value) {
-                    return "Password length must be at least \(PasswordValidatorPolicy.minLength) characters"
-                }
-                
-                if !PasswordValidatorPolicy.isPasswordMaxLengthValid(value) {
-                    return "Password length must be no longer than \(PasswordValidatorPolicy.maxLength) characters"
-                }
-                
-                return ""
+        return Observable.combineLatest(newPasswordValue, confirmPasswordValue) { newValue, confirmValue in
+            if !PasswordValidatorPolicy.isPasswordMinLengthValid(newValue) {
+                return "Password length must be at least \(PasswordValidatorPolicy.minLength) characters"
+            }
+            
+            if !PasswordValidatorPolicy.isPasswordMaxLengthValid(newValue) {
+                return "Password length must be no longer than \(PasswordValidatorPolicy.maxLength) characters"
+            }
+            
+            if newValue != confirmValue {
+                return "Passwords don't match."
+            }
+
+            return ""
         }
     }
 

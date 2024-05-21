@@ -18,6 +18,10 @@ class PasswordFieldsController {
         UITextField()
     }()
     
+    private(set) lazy var confirmPasswordTextField: UITextField = {
+        UITextField()
+    }()
+    
     private(set) lazy var errorLabel: UILabel = {
         let label = UILabel()
         
@@ -63,6 +67,10 @@ class PasswordFieldsController {
         viewModel
             .errorLabel
             .bind(to: errorLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        confirmPasswordTextField.rx.text.orEmpty
+            .bind(to: viewModel.confirmPasswordValue)
             .disposed(by: disposeBag)
     }
 }
