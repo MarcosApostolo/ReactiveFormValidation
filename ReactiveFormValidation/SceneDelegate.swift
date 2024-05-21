@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let vc = UIComposer.makeView()
+        let vc = UIComposer.makeView(validateUniqueUsername: { _ in
+            .just(.unused)
+        })
         
         let window = UIWindow(windowScene: windowScene)
         

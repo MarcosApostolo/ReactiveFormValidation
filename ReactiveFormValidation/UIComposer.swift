@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import RxSwift
 
 class UIComposer {
-    static func makeView() -> ViewController {
+    static func makeView(validateUniqueUsername: @escaping (String) -> Single<UsernameStatus>) -> ViewController {
         let vc = ViewController()
+        
+        vc.usernameTextFieldController.validateUniqueUsername = validateUniqueUsername
         
         let viewModel = ViewModel()
         

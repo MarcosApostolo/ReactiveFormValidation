@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     
     private(set) var emailTextFieldController = EmailTextFieldController()
     
+    private(set) var usernameTextFieldController = UsernameTextFieldController()
+    
     private(set) lazy var submitButton: UIButton = {
         let button = UIButton()
         
@@ -77,6 +79,11 @@ class ViewController: UIViewController {
         emailTextFieldController.viewModel
             .fieldIsValid
             .bind(to: viewModel.emaiTextFieldisValid)
+            .disposed(by: disposeBag)
+        
+        usernameTextFieldController.viewModel
+            .fieldsAreValid
+            .bind(to: viewModel.usernameTextFieldIsValid)
             .disposed(by: disposeBag)
         
         viewModel.formIsValid

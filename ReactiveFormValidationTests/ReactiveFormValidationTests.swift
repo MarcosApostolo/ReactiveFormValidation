@@ -7,6 +7,7 @@
 
 import XCTest
 import UIKit
+import RxSwift
 @testable import ReactiveFormValidation
 
 final class ReactiveFormValidationTests: XCTestCase {
@@ -43,6 +44,8 @@ final class ReactiveFormValidationTests: XCTestCase {
                 
         simulateTyping(on: sut.nameTextField, value: "any name")
         simulateTyping(on: sut.emailTextField, value: "email@email.com")
+        simulateTyping(on: sut.usernameTextField, value: "unique username")
+        sut.validateUsernameButton.sendActions(for: .touchUpInside)
         
         XCTAssertTrue(sut.submitButton.isEnabled)
     }
@@ -54,6 +57,8 @@ final class ReactiveFormValidationTests: XCTestCase {
         
         simulateTyping(on: sut.nameTextField, value: "any name")
         simulateTyping(on: sut.emailTextField, value: "email@email.com")
+        simulateTyping(on: sut.usernameTextField, value: "unique username")
+        sut.validateUsernameButton.sendActions(for: .touchUpInside)
         
         XCTAssertTrue(sut.submitButton.isEnabled)
         
@@ -63,8 +68,12 @@ final class ReactiveFormValidationTests: XCTestCase {
     }
     
     // MARK: Helpers
-    func makeSUT(file: StaticString = #file, line: UInt = #line) -> ViewController {
-        let sut = UIComposer.makeView()
+    func makeSUT(
+        validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) },
+        file: StaticString = #file,
+        line: UInt = #line
+    ) -> ViewController {
+        let sut = UIComposer.makeView(validateUniqueUsername: validateUniqueUsername)
         
         checkForMemoryLeaks(sut, file: file, line: line)
         
@@ -104,5 +113,13 @@ extension ViewController {
     
     var emailTextField: UITextField {
         self.emailTextFieldController.textField
+    }
+    
+    var usernameTextField: UITextField {
+        self.usernameTextFieldController.textField
+    }
+    
+    var validateUsernameButton: UIButton {
+        self.usernameTextFieldController.validateUsernameButton
     }
 }

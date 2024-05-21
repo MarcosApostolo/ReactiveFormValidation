@@ -17,7 +17,7 @@ class NameTextFieldViewModel {
         return Observable
             .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
                 return isTouched && !value.isEmpty
-            }
+            }.share()
     }
     
     var displayErrorLabel: Observable<Bool> {

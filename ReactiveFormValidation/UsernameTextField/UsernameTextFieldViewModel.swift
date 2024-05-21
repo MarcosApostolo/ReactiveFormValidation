@@ -23,7 +23,7 @@ class UsernameTextFieldViewModel {
                 textFieldIsTouched
             ) { value, isTouched in
                 return isTouched && value.count <= 32 && !value.isEmpty
-            }
+            }.share()
     }
     
     var displayErrorLabel: Observable<Bool> {
@@ -45,6 +45,14 @@ class UsernameTextFieldViewModel {
             
             return ""
         })
+    }
+    
+    var fieldsAreValid: Observable<Bool> {
+        return Observable
+            .combineLatest(
+                fieldIsValid,
+                usernameStatus.map({ $0 == .unused })
+            ) { $0 && $1 }.share()
     }
 
     var textFieldPlaceholder: String {
