@@ -25,19 +25,6 @@ final class PasswordFieldsControllerTests: XCTestCase {
         assertThat(sut.textFieldController, hasError: "Password length must be at least 8 characters")
     }
     
-    func test_passwordWithMinLength_onNewPasswordField_doesNotDisplayMinLengthErrorMessage() {
-        let sut = makeSUT()
-                
-        sut.loadViewIfNeeded()
-        
-        assertNoErrorOn(sut.textFieldController)
-        
-        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
-        simulateTyping(on: sut.confirmPasswordTextField, value: "12345678")
-        
-        assertNoErrorOn(sut.textFieldController)
-    }
-    
     func test_moreThanMaxLengthPassword_displayMaxLengthErrorMessage() {
         let sut = makeSUT()
         
@@ -70,6 +57,19 @@ final class PasswordFieldsControllerTests: XCTestCase {
         simulateTyping(on: sut.confirmPasswordTextField, value: "123456789")
         
         assertThat(sut.textFieldController, hasError: "Passwords don't match.")
+    }
+    
+    func test_passwordsAreValid_doesNotDisplayErrorMessage() {
+        let sut = makeSUT()
+                
+        sut.loadViewIfNeeded()
+        
+        assertNoErrorOn(sut.textFieldController)
+        
+        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.confirmPasswordTextField, value: "12345678")
+        
+        assertNoErrorOn(sut.textFieldController)
     }
         
     // MARK: Helpers
