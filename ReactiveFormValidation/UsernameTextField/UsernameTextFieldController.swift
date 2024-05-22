@@ -89,7 +89,6 @@ class UsernameTextFieldController {
         
         viewModel
             .usernameStatus
-            .debug("RxSwift usernameStatus")
             .subscribe(on: MainScheduler.instance)
             .map({ [weak self] status in
                 status == .used ? self?.viewModel.usernameError : nil

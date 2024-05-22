@@ -36,6 +36,7 @@ class PasswordFieldsViewModel {
             .combineLatest(passwordsAreValid, newPasswordValueIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
             }
+            .distinctUntilChanged()
     }
     
     var errorLabel: Observable<String> {
@@ -54,6 +55,7 @@ class PasswordFieldsViewModel {
 
             return ""
         }
+        .distinctUntilChanged()
     }
 
     var nameTextFieldPlaceholder: String {

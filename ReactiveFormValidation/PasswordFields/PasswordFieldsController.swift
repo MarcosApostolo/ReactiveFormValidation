@@ -36,6 +36,7 @@ class PasswordFieldsController {
     
     func bind() {
         newPasswordTextField.rx.text.orEmpty
+            .distinctUntilChanged()
             .bind(to: viewModel.newPasswordValue)
             .disposed(by: disposeBag)
 
@@ -70,6 +71,7 @@ class PasswordFieldsController {
             .disposed(by: disposeBag)
         
         confirmPasswordTextField.rx.text.orEmpty
+            .distinctUntilChanged()
             .bind(to: viewModel.confirmPasswordValue)
             .disposed(by: disposeBag)
     }

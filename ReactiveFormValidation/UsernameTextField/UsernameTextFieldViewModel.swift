@@ -23,7 +23,9 @@ class UsernameTextFieldViewModel {
                 textFieldIsTouched
             ) { value, isTouched in
                 return isTouched && value.count <= 32 && !value.isEmpty
-            }.share()
+            }
+            .distinctUntilChanged()
+            .share()
     }
     
     var displayErrorLabel: Observable<Bool> {
@@ -31,6 +33,7 @@ class UsernameTextFieldViewModel {
             .combineLatest(fieldIsValid, textFieldIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
             }
+            .distinctUntilChanged()
     }
     
     var errorLabel: Observable<String> {
@@ -45,6 +48,7 @@ class UsernameTextFieldViewModel {
             
             return ""
         })
+        .distinctUntilChanged()
     }
     
     var fieldsAreValid: Observable<Bool> {
@@ -52,7 +56,9 @@ class UsernameTextFieldViewModel {
             .combineLatest(
                 fieldIsValid,
                 usernameStatus.map({ $0 == .unused })
-            ) { $0 && $1 }.share()
+            ) { $0 && $1 }
+            .distinctUntilChanged()
+            .share()
     }
 
     var textFieldPlaceholder: String {

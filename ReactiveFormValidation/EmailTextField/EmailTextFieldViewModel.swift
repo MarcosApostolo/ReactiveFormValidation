@@ -18,6 +18,7 @@ class EmailTextFieldViewModel {
             .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
                 return isTouched && isValidEmail(email: value) && !value.isEmpty
             }
+            .distinctUntilChanged()
     }
     
     var displayErrorLabel: Observable<Bool> {
@@ -25,6 +26,7 @@ class EmailTextFieldViewModel {
             .combineLatest(fieldIsValid, textFieldIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
             }
+            .distinctUntilChanged()
     }
     
     var errorLabel: Observable<String> {
@@ -39,6 +41,7 @@ class EmailTextFieldViewModel {
             
             return ""
         })
+        .distinctUntilChanged()
     }
 }
 

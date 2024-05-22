@@ -17,7 +17,10 @@ class NameTextFieldViewModel {
         return Observable
             .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
                 return isTouched && !value.isEmpty
-            }.share()
+            }
+            .distinctUntilChanged()
+            
+            .share()
     }
     
     var displayErrorLabel: Observable<Bool> {
@@ -25,7 +28,8 @@ class NameTextFieldViewModel {
             .combineLatest(fieldIsValid, textFieldIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
             }
-    }
+            .distinctUntilChanged()
+   }
 
     var nameTextFieldPlaceholder: String {
         "Name"
