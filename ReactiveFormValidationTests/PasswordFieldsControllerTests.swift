@@ -82,7 +82,6 @@ final class PasswordFieldsControllerTests: XCTestCase {
     private func assertThat(_ sut: PasswordFieldsController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
         XCTAssertFalse(sut.errorLabel.isHidden, file: file, line: line)
         XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
-        
     }
     
     private func assertNoErrorOn(_ sut: PasswordFieldsController, file: StaticString = #file, line: UInt = #line) {

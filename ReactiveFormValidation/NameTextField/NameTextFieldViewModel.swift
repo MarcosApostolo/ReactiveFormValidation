@@ -15,7 +15,7 @@ class NameTextFieldViewModel {
 
     var fieldIsValid: Observable<Bool> {
         return Observable
-            .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
+            .combineLatest(textFieldValue, textFieldIsTouched) { value, isTouched in
                 return isTouched && !value.isEmpty
             }
             .distinctUntilChanged()

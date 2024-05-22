@@ -15,7 +15,7 @@ class EmailTextFieldViewModel {
 
     var fieldIsValid: Observable<Bool> {
         return Observable
-            .combineLatest(textFieldValue, textFieldIsTouched, textFieldIsFocused) { value, isTouched, isFocused in
+            .combineLatest(textFieldValue, textFieldIsTouched) { value, isTouched in
                 return isTouched && isValidEmail(email: value) && !value.isEmpty
             }
             .distinctUntilChanged()
