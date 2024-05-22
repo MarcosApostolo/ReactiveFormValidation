@@ -13,9 +13,15 @@ class ViewModel {
     var nameTextFieldisValid = BehaviorSubject(value: false)
     var emaiTextFieldisValid = BehaviorSubject(value: false)
     var usernameTextFieldIsValid = BehaviorSubject(value: false)
+    var passwordFieldsAreValid = BehaviorSubject(value: false)
 
     var formIsValid: Observable<Bool> {
         return Observable
-            .combineLatest(nameTextFieldisValid, emaiTextFieldisValid, usernameTextFieldIsValid) { $0 && $1 && $2 }
+            .combineLatest(
+                nameTextFieldisValid,
+                emaiTextFieldisValid,
+                usernameTextFieldIsValid,
+                passwordFieldsAreValid
+            ) { $0 && $1 && $2 && $3 }
     }
 }

@@ -12,7 +12,7 @@ import RxSwift
 class PasswordFieldsController {
     private let disposeBag = DisposeBag()
     
-    private let viewModel = PasswordFieldsViewModel()
+    let viewModel = PasswordFieldsViewModel()
     
     private(set) lazy var newPasswordTextField: UITextField = {
         UITextField()

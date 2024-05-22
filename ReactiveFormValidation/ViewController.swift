@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     
     private(set) var usernameTextFieldController = UsernameTextFieldController()
     
+    private(set) var passwordFieldsController = PasswordFieldsController()
+    
     private(set) lazy var submitButton: UIButton = {
         let button = UIButton()
         
@@ -84,6 +86,11 @@ class ViewController: UIViewController {
         usernameTextFieldController.viewModel
             .fieldsAreValid
             .bind(to: viewModel.usernameTextFieldIsValid)
+            .disposed(by: disposeBag)
+        
+        passwordFieldsController.viewModel
+            .passwordsAreValid
+            .bind(to: viewModel.passwordFieldsAreValid)
             .disposed(by: disposeBag)
         
         viewModel.formIsValid

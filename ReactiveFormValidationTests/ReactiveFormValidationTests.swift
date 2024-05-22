@@ -45,6 +45,8 @@ final class ReactiveFormValidationTests: XCTestCase {
         simulateTyping(on: sut.nameTextField, value: "any name")
         simulateTyping(on: sut.emailTextField, value: "email@email.com")
         simulateTyping(on: sut.usernameTextField, value: "unique username")
+        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.confirmPasswordTextField, value: "12345678")
         sut.validateUsernameButton.sendActions(for: .touchUpInside)
         
         XCTAssertTrue(sut.submitButton.isEnabled)
@@ -58,6 +60,8 @@ final class ReactiveFormValidationTests: XCTestCase {
         simulateTyping(on: sut.nameTextField, value: "any name")
         simulateTyping(on: sut.emailTextField, value: "email@email.com")
         simulateTyping(on: sut.usernameTextField, value: "unique username")
+        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.confirmPasswordTextField, value: "12345678")
         sut.validateUsernameButton.sendActions(for: .touchUpInside)
         
         XCTAssertTrue(sut.submitButton.isEnabled)
@@ -121,5 +125,13 @@ extension ViewController {
     
     var validateUsernameButton: UIButton {
         self.usernameTextFieldController.validateUsernameButton
+    }
+    
+    var newPasswordTextField: UITextField {
+        self.passwordFieldsController.newPasswordTextField
+    }
+    
+    var confirmPasswordTextField: UITextField {
+        self.passwordFieldsController.confirmPasswordTextField
     }
 }
