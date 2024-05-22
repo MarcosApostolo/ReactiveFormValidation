@@ -9,6 +9,16 @@
     }
   ],
   "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "IMAGE_DIFF_DIR",
+        "value" : "$(SOURCE_ROOT)\/$(PROJECT_NAME)Tests\/snapshots\/FailureDiffs"
+      },
+      {
+        "key" : "FB_REFERENCE_IMAGE_DIR",
+        "value" : "$(SOURCE_ROOT)\/$(PROJECT_NAME)Tests\/snapshots\/"
+      }
+    ],
     "targetForVariableExpansion" : {
       "containerPath" : "container:ReactiveFormValidation.xcodeproj",
       "identifier" : "4A810B792BF54FEB00469895",

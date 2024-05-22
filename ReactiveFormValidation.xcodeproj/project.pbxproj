@@ -133,6 +133,13 @@
 			path = PasswordFields;
 			sourceTree = "<group>";
 		};
+		4A606B822BFD798F00AEE729 /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = snapshots;
+			sourceTree = "<group>";
+		};
 		4A810B712BF54FEB00469895 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +186,7 @@
 		4A810B932BF54FEC00469895 /* ReactiveFormValidationTests */ = {
 			isa = PBXGroup;
 			children = (
+				4A606B822BFD798F00AEE729 /* snapshots */,
 				4A0002132BFA4AB5002AA0CA /* Helpers */,
 				4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */,
 				4A810B942BF54FEC00469895 /* ReactiveFormValidationTests.swift */,
@@ -277,6 +285,7 @@
 				4A810B8C2BF54FEC00469895 /* Sources */,
 				4A810B8D2BF54FEC00469895 /* Frameworks */,
 				4A810B8E2BF54FEC00469895 /* Resources */,
+				B77599C931C2764FD86D33E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,6 +414,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B77599C931C2764FD86D33E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactiveFormValidationTests/Pods-ReactiveFormValidationTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactiveFormValidationTests/Pods-ReactiveFormValidationTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactiveFormValidationTests/Pods-ReactiveFormValidationTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

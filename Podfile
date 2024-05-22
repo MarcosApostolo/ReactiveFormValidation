@@ -11,7 +11,7 @@ target 'ReactiveFormValidation' do
 
   target 'ReactiveFormValidationTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'iOSSnapshotTestCase'
   end
 
 end
