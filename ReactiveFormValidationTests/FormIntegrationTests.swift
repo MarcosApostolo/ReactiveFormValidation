@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 @testable import ReactiveFormValidation
 
-final class ReactiveFormValidationTests: XCTestCase {
+final class FormIntegrationTests: XCTestCase {
     func test_tapOnView_dismissesKeyboard() {
         let sut = makeSUT()
         
@@ -76,8 +76,8 @@ final class ReactiveFormValidationTests: XCTestCase {
         validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) },
         file: StaticString = #file,
         line: UInt = #line
-    ) -> ViewController {
-        let sut = UIComposer.makeView(validateUniqueUsername: validateUniqueUsername)
+    ) -> FormViewController {
+        let sut = FormUIComposer.makeView(validateUniqueUsername: validateUniqueUsername)
         
         checkForMemoryLeaks(sut, file: file, line: line)
         
@@ -102,7 +102,7 @@ extension XCTestCase {
     }
 }
 
-extension ViewController {
+extension FormViewController {
     var nameErrorLabel: UILabel {
         self.nameTextFieldController.errorLabel
     }

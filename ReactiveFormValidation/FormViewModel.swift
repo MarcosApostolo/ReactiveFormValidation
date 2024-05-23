@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class ViewModel {
+class FormViewModel {
     var nameTextFieldValue = BehaviorSubject(value: "")
     var nameTextFieldisValid = BehaviorSubject(value: false)
     var emaiTextFieldisValid = BehaviorSubject(value: false)

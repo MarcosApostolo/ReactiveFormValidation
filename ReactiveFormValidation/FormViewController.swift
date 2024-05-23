@@ -8,8 +8,8 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController {
-    var viewModel: ViewModel? {
+class FormViewController: UIViewController {
+    var viewModel: FormViewModel? {
         didSet {
             bind()
         }

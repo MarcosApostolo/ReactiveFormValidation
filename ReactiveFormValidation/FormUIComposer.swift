@@ -8,15 +8,15 @@
 import Foundation
 import RxSwift
 
-class UIComposer {
-    static func makeView(validateUniqueUsername: @escaping (String) -> Single<UsernameStatus>) -> ViewController {
-        let vc = ViewController()
+class FormUIComposer {
+    static func makeView(validateUniqueUsername: @escaping (String) -> Single<UsernameStatus>) -> FormViewController {
+        let vc = FormViewController()
         
         let usernameViewModel = UsernameTextFieldViewModel(validateUniqueUsername: validateUniqueUsername)
                 
         vc.usernameTextFieldController.viewModel = usernameViewModel
         
-        let viewModel = ViewModel()
+        let viewModel = FormViewModel()
         
         vc.viewModel = viewModel
         
