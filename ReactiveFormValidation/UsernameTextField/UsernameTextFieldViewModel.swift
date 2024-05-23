@@ -16,6 +16,12 @@ class UsernameTextFieldViewModel {
     
     private let disposeBag = DisposeBag()
     
+    let validateUniqueUsername: (String) -> Single<UsernameStatus>
+    
+    init(validateUniqueUsername: @escaping (String) -> Single<UsernameStatus>) {
+        self.validateUniqueUsername = validateUniqueUsername
+    }
+    
     var fieldIsValid: Observable<Bool> {
         return Observable
             .combineLatest(

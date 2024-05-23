@@ -13,7 +13,11 @@ import RxCocoa
 class UsernameTextFieldController {
     private let disposeBag = DisposeBag()
     
-    var viewModel = UsernameTextFieldViewModel()
+    var viewModel: UsernameTextFieldViewModel? {
+        didSet {
+            bind()
+        }
+    }
     
     private(set) lazy var textFieldView: TextFieldView = {
         return TextFieldView()
@@ -31,17 +35,11 @@ class UsernameTextFieldController {
         textFieldView.errorLabel
     }
     
-    var validateUniqueUsername: ((String) -> Single<UsernameStatus>)? {
-        didSet {
-            bindValidateUsernameButton()
-        }
-    }
-    
-    init() {
-        bind()
-    }
-    
     func bind() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        
         textField.placeholder = viewModel.textFieldPlaceholder
         
         textField.rx.text.orEmpty
@@ -90,22 +88,16 @@ class UsernameTextFieldController {
         viewModel
             .usernameStatus
             .subscribe(on: MainScheduler.instance)
-            .map({ [weak self] status in
-                status == .used ? self?.viewModel.usernameError : nil
+            .map({ status in
+                status == .used ? viewModel.usernameError : nil
             })
             .bind(to: errorLabel.rx.text)
             .disposed(by: disposeBag)
-    }
-    
-    func bindValidateUsernameButton() {
-        guard let validateUniqueUsername = validateUniqueUsername else {
-            return
-        }
         
         validateUsernameButton.rx
             .tap
             .flatMap({ _ in
-                return validateUniqueUsername("")
+                return viewModel.validateUniqueUsername("")
             })
             .observe(on: MainScheduler.instance)
             .bind(to: viewModel.usernameStatus)

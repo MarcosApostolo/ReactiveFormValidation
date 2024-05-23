@@ -83,7 +83,7 @@ class ViewController: UIViewController {
             .bind(to: viewModel.emaiTextFieldisValid)
             .disposed(by: disposeBag)
         
-        usernameTextFieldController.viewModel
+        usernameTextFieldController.viewModel?
             .fieldsAreValid
             .bind(to: viewModel.usernameTextFieldIsValid)
             .disposed(by: disposeBag)

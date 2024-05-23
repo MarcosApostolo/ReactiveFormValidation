@@ -94,7 +94,9 @@ final class UsernameTextFieldTests: XCTestCase {
     ) -> TestHelperViewController {
         let sut = TestHelperViewController()
         
-        sut.textFieldController.validateUniqueUsername = validateUniqueUsername
+        let viewModel = UsernameTextFieldViewModel(validateUniqueUsername: validateUniqueUsername)
+        
+        sut.textFieldController.viewModel = viewModel
         
         checkForMemoryLeaks(sut, file: file, line: line)
                         
