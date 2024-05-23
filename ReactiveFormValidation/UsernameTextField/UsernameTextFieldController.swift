@@ -27,6 +27,10 @@ class UsernameTextFieldController {
         UIButton()
     }()
     
+    private(set) lazy var loadingIndicator: UIActivityIndicatorView = {
+        UIActivityIndicatorView()
+    }()
+    
     var textField: UITextField {
         textFieldView.textField
     }
@@ -96,12 +100,20 @@ class UsernameTextFieldController {
         
         validateUsernameButton.rx
             .tap
-            .flatMap({ _ in
-                return viewModel.validateUniqueUsername("")
-            })
-            .observe(on: MainScheduler.instance)
-            .bind(to: viewModel.usernameStatus)
+            .subscribe(onNext: { viewModel.onValidateUsername() })
             .disposed(by: disposeBag)
+        
+        viewModel
+            .isLoading
+            .debug("isLoading")
+            .subscribe(onNext: { [weak self] isLoading in
+            if isLoading {
+                self?.loadingIndicator.startAnimating()
+            } else {
+                self?.loadingIndicator.stopAnimating()
+            }
+        })
+        .disposed(by: disposeBag)
     }
     
 }

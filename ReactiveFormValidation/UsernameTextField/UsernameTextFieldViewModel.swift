@@ -9,10 +9,15 @@ import Foundation
 import RxSwift
 
 class UsernameTextFieldViewModel {
+    private enum validationError: Error {
+        case requestError
+    }
+    
     var textFieldValue = BehaviorSubject(value: "")
     var textFieldIsTouched = BehaviorSubject(value: false)
     var textFieldIsFocused = BehaviorSubject(value: false)
     var usernameStatus = PublishSubject<UsernameStatus>()
+    var isLoading = BehaviorSubject(value: false)
     
     private let disposeBag = DisposeBag()
     
@@ -65,6 +70,25 @@ class UsernameTextFieldViewModel {
             ) { $0 && $1 }
             .distinctUntilChanged()
             .share()
+    }
+    
+    func onValidateUsername() {
+        do {
+            isLoading.onNext(true)
+            
+            let text = try self.textFieldValue.value()
+            
+            self.validateUniqueUsername(text)
+                .subscribe(onSuccess: { [weak self] status in
+                    self?.usernameStatus.onNext(status)
+                    self?.isLoading.onNext(false)
+                }, onFailure: { [weak self] _ in
+                    self?.isLoading.onNext(false)
+                })
+                .disposed(by: disposeBag)
+        } catch {
+            isLoading.onNext(false)
+        }
     }
 
     var textFieldPlaceholder: String {

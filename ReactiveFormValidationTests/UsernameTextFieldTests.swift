@@ -85,6 +85,31 @@ final class UsernameTextFieldTests: XCTestCase {
                   
         assertNoErrorOn(sut.textFieldController)
     }
+    
+    func test_onUniqueValidation_displayLoading() {
+        let sut = TestHelperViewController()
+        
+        let viewModel = UsernameTextFieldViewModel(validateUniqueUsername: { _ in
+            Single<UsernameStatus>.create(subscribe: { single in
+                XCTAssertTrue(sut.loadingIndicator.isAnimating)
+                
+                single(.success(.unused))
+                
+                return Disposables.create {
+                    XCTAssertFalse(sut.loadingIndicator.isAnimating)
+                }
+            })
+        })
+        
+        sut.textFieldController.viewModel = viewModel
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertFalse(sut.loadingIndicator.isAnimating)
+        
+        simulateTyping(on: sut.textField, value: "unique username")
+        sut.usernameButton.sendActions(for: .touchUpInside)
+    }
 
     // MARK: Helpers
     private func makeSUT(
@@ -134,5 +159,8 @@ final class UsernameTextFieldTests: XCTestCase {
             textFieldController.validateUsernameButton
         }
 
+        var loadingIndicator: UIActivityIndicatorView {
+            textFieldController.loadingIndicator
+        }
     }
 }
