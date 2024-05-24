@@ -64,6 +64,8 @@ class EmailTextFieldController {
             .errorLabel
             .bind(to: errorLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        textField.placeholder = viewModel.emailTextFieldPlaceholder
     }
     
 }

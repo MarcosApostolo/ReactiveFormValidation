@@ -42,9 +42,14 @@ class FormViewController: UIViewController {
         
         view.addSubview(nameTextFieldController.textFieldView)
         view.addSubview(emailTextFieldController.textFieldView)
+        view.addSubview(usernameTextFieldController.textFieldView)
+        view.addSubview(passwordFieldsController.passwordsView)
         view.addSubview(submitButton)
         
         nameTextFieldController.textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        emailTextFieldController.textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        usernameTextFieldController.textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        passwordFieldsController.passwordsView.translatesAutoresizingMaskIntoConstraints = false
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
@@ -53,6 +58,24 @@ class FormViewController: UIViewController {
             nameTextFieldController.textFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             nameTextFieldController.textFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             nameTextFieldController.textFieldView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+        ])
+        
+        NSLayoutConstraint.activate([
+            emailTextFieldController.textFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emailTextFieldController.textFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emailTextFieldController.textFieldView.topAnchor.constraint(equalTo: nameTextFieldController.textFieldView.bottomAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            usernameTextFieldController.textFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            usernameTextFieldController.textFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            usernameTextFieldController.textFieldView.topAnchor.constraint(equalTo: emailTextFieldController.textFieldView.bottomAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            passwordFieldsController.passwordsView.topAnchor.constraint(equalTo: usernameTextFieldController.textFieldView.bottomAnchor),
+            passwordFieldsController.passwordsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            passwordFieldsController.passwordsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
         
         NSLayoutConstraint.activate([

@@ -14,21 +14,19 @@ class PasswordFieldsController {
     
     let viewModel = PasswordFieldsViewModel()
     
-    private(set) lazy var newPasswordTextField: UITextField = {
-        UITextField()
-    }()
+    let passwordsView = PasswordView()
     
-    private(set) lazy var confirmPasswordTextField: UITextField = {
-        UITextField()
-    }()
+    var newPasswordTextField: UITextField {
+        passwordsView.newPasswordTextField
+    }
     
-    private(set) lazy var errorLabel: UILabel = {
-        let label = UILabel()
-        
-        label.isHidden = true
-        
-        return label
-    }()
+    var errorLabel: UILabel {
+        passwordsView.errorLabel
+    }
+    
+    var confirmPasswordTextField: UITextField {
+        passwordsView.confirmPasswordTextField
+    }
     
     init() {
         bind()
@@ -74,5 +72,8 @@ class PasswordFieldsController {
             .distinctUntilChanged()
             .bind(to: viewModel.confirmPasswordValue)
             .disposed(by: disposeBag)
+        
+        newPasswordTextField.placeholder = viewModel.newPasswordPlaceholder
+        confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
     }
 }

@@ -19,7 +19,7 @@ class TextFieldView: UIView {
     }()
     private(set) lazy var errorLabel: UILabel = {
         let label = UILabel()
-                
+                        
         label.isHidden = true
         
         return label
@@ -44,7 +44,7 @@ class TextFieldView: UIView {
         NSLayoutConstraint.activate([
             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-            errorLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 16),
+            errorLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4),
             errorLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }

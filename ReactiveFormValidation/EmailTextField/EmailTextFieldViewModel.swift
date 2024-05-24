@@ -43,5 +43,9 @@ class EmailTextFieldViewModel {
         })
         .distinctUntilChanged()
     }
+    
+    var emailTextFieldPlaceholder: String {
+        "Email"
+    }
 }
 

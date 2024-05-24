@@ -58,7 +58,11 @@ class PasswordFieldsViewModel {
         .distinctUntilChanged()
     }
 
-    var nameTextFieldPlaceholder: String {
+    var newPasswordPlaceholder: String {
         "New Password"
+    }
+    
+    var confirmPasswordPlaceholder: String {
+        "Confirm Password"
     }
 }
