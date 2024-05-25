@@ -102,7 +102,7 @@ extension XCTestCase {
     }
 }
 
-extension FormViewController {
+private extension FormViewController {
     var nameErrorLabel: UILabel {
         self.nameTextFieldController.errorLabel
     }

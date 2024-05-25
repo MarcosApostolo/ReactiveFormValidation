@@ -22,6 +22,9 @@ class TextFieldView: UIView {
                         
         label.isHidden = true
         
+        label.font = .preferredFont(forTextStyle: .caption1)
+        label.textColor = .red
+        
         return label
     }()
     
