@@ -29,7 +29,7 @@ class NameTextFieldViewModel {
                 return !isValid && !isFocused
             }
             .distinctUntilChanged()
-   }
+    }
 
     var nameTextFieldPlaceholder: String {
         "Name"

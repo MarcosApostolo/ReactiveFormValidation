@@ -50,7 +50,7 @@ class PasswordView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            confirmPasswordTextField.topAnchor.constraint(equalTo: newPasswordTextField.bottomAnchor, constant: 16),
+            confirmPasswordTextField.topAnchor.constraint(equalTo: newPasswordTextField.bottomAnchor, constant: 22),
             confirmPasswordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant:  24),
             confirmPasswordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
         ])

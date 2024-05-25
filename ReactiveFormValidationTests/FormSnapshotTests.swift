@@ -10,7 +10,7 @@ import FBSnapshotTestCase
 @testable import ReactiveFormValidation
 
 final class FormSnapshotTests: FBSnapshotTestCase {
-    func test_formWithInitialState() {
+    func test_formWithInitialState() {        
         let sut = makeSUT()
         
         sut.loadViewIfNeeded()
