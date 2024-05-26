@@ -29,8 +29,10 @@ class FormViewController: UIViewController {
         let button = UIButton()
         
         button.isEnabled = false
-        button.setTitle("Continuar", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitle("Continue", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .blue
+        button.layer.cornerRadius = 24
         
         return button
     }()
@@ -79,10 +81,11 @@ class FormViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            submitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
-        ])
+            submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            submitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24),
+            submitButton.heightAnchor.constraint(equalToConstant: 48)
+        ])        
     }
     
     func bind() {
