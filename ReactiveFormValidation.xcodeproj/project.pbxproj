@@ -13,7 +13,6 @@
 		4A0002222BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0002212BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift */; };
 		4A2DE87C2BFC07A20044D337 /* UsernameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DE87B2BFC07A20044D337 /* UsernameStatus.swift */; };
 		4A4AD11E2C0136E5000A58B2 /* FormSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4AD11D2C0136E5000A58B2 /* FormSnapshotTests.swift */; };
-		4A4AD1202C013817000A58B2 /* test_formWithInitialState_FORM_WITH_INITIAL_STATE@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4AD11F2C013817000A58B2 /* test_formWithInitialState_FORM_WITH_INITIAL_STATE@3x.png */; };
 		4A4AD1222C013DC4000A58B2 /* PasswordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4AD1212C013DC4000A58B2 /* PasswordsView.swift */; };
 		4A606B782BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A606B772BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift */; };
 		4A606B7B2BFD4CEC00AEE729 /* PasswordFieldsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A606B7A2BFD4CEC00AEE729 /* PasswordFieldsController.swift */; };
@@ -25,6 +24,16 @@
 		4A810B872BF54FEC00469895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B862BF54FEC00469895 /* Assets.xcassets */; };
 		4A810B8A2BF54FEC00469895 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4A810B892BF54FEC00469895 /* Base */; };
 		4A810B952BF54FEC00469895 /* FormIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A810B942BF54FEC00469895 /* FormIntegrationTests.swift */; };
+		4A8E00912C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E00872C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT_393x852.png */; };
+		4A8E00922C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_LIGHT_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E00882C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_LIGHT_393x852.png */; };
+		4A8E00932C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E00892C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK_393x852.png */; };
+		4A8E00942C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_DARK_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E008A2C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_DARK_393x852.png */; };
+		4A8E00952C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E008B2C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT_393x852.png */; };
+		4A8E00962C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_LIGHT_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E008C2C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_LIGHT_393x852.png */; };
+		4A8E00972C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_DARK_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E008D2C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_DARK_393x852.png */; };
+		4A8E00982C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E008E2C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT_393x852.png */; };
+		4A8E00992C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E008F2C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK_393x852.png */; };
+		4A8E009A2C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK_393x852.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E00902C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK_393x852.png */; };
 		4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */; };
 		4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */; };
 		4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */; };
@@ -32,7 +41,6 @@
 		4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */; };
 		4AA1A9A12BF94ED70052D813 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9A02BF94ED70052D813 /* Helpers.swift */; };
 		4AA1A9A42BF94FA40052D813 /* ValidationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9A32BF94FA40052D813 /* ValidationHelpers.swift */; };
-		4AA4C0CA2C021A0B009731DE /* test_withNameError_FORM_WITH_NAME_ERROR@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA4C0C92C021A0B009731DE /* test_withNameError_FORM_WITH_NAME_ERROR@3x.png */; };
 		4AFF0E292BF5537D00F46A8B /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */; };
 		4AFF0E2B2BF5594400F46A8B /* FormUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */; };
 		4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */; };
@@ -60,7 +68,6 @@
 		4A0002212BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextFieldViewModel.swift; sourceTree = "<group>"; };
 		4A2DE87B2BFC07A20044D337 /* UsernameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameStatus.swift; sourceTree = "<group>"; };
 		4A4AD11D2C0136E5000A58B2 /* FormSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSnapshotTests.swift; sourceTree = "<group>"; };
-		4A4AD11F2C013817000A58B2 /* test_formWithInitialState_FORM_WITH_INITIAL_STATE@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_formWithInitialState_FORM_WITH_INITIAL_STATE@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_formWithInitialState_FORM_WITH_INITIAL_STATE@3x.png"; sourceTree = "<group>"; };
 		4A4AD1212C013DC4000A58B2 /* PasswordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsView.swift; sourceTree = "<group>"; };
 		4A606B772BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldsControllerTests.swift; sourceTree = "<group>"; };
 		4A606B7A2BFD4CEC00AEE729 /* PasswordFieldsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldsController.swift; sourceTree = "<group>"; };
@@ -76,6 +83,16 @@
 		4A810B902BF54FEC00469895 /* ReactiveFormValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A810B942BF54FEC00469895 /* FormIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormIntegrationTests.swift; sourceTree = "<group>"; };
 		4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReactiveFormValidation.xctestplan; sourceTree = "<group>"; };
+		4A8E00872C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT_393x852.png; sourceTree = "<group>"; };
+		4A8E00882C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_LIGHT_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_LIGHT_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_LIGHT_393x852.png; sourceTree = "<group>"; };
+		4A8E00892C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK_393x852.png; sourceTree = "<group>"; };
+		4A8E008A2C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_DARK_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_withInvalidEmailError_INVALID_EMAIL_ERROR_DARK_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_withInvalidEmailError_INVALID_EMAIL_ERROR_DARK_393x852.png; sourceTree = "<group>"; };
+		4A8E008B2C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT_393x852.png; sourceTree = "<group>"; };
+		4A8E008C2C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_LIGHT_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_formWithInitialState_INITIAL_STATE_LIGHT_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_formWithInitialState_INITIAL_STATE_LIGHT_393x852.png; sourceTree = "<group>"; };
+		4A8E008D2C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_DARK_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_formWithInitialState_INITIAL_STATE_DARK_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_formWithInitialState_INITIAL_STATE_DARK_393x852.png; sourceTree = "<group>"; };
+		4A8E008E2C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT_393x852.png; sourceTree = "<group>"; };
+		4A8E008F2C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK_393x852.png; sourceTree = "<group>"; };
+		4A8E00902C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK_393x852.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK_393x852.png; path = _64/ReactiveFormValidationTests.FormSnapshotTests/test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK_393x852.png; sourceTree = "<group>"; };
 		4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldViewModel.swift; sourceTree = "<group>"; };
 		4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldController.swift; sourceTree = "<group>"; };
 		4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldViewModel.swift; sourceTree = "<group>"; };
@@ -83,7 +100,6 @@
 		4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldTests.swift; sourceTree = "<group>"; };
 		4AA1A9A02BF94ED70052D813 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		4AA1A9A32BF94FA40052D813 /* ValidationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelpers.swift; sourceTree = "<group>"; };
-		4AA4C0C92C021A0B009731DE /* test_withNameError_FORM_WITH_NAME_ERROR@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withNameError_FORM_WITH_NAME_ERROR@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withNameError_FORM_WITH_NAME_ERROR@3x.png"; sourceTree = "<group>"; };
 		4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUIComposer.swift; sourceTree = "<group>"; };
 		4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldTests.swift; sourceTree = "<group>"; };
@@ -145,8 +161,16 @@
 		4A606B822BFD798F00AEE729 /* snapshots */ = {
 			isa = PBXGroup;
 			children = (
-				4A4AD11F2C013817000A58B2 /* test_formWithInitialState_FORM_WITH_INITIAL_STATE@3x.png */,
-				4AA4C0C92C021A0B009731DE /* test_withNameError_FORM_WITH_NAME_ERROR@3x.png */,
+				4A8E008D2C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_DARK_393x852.png */,
+				4A8E008C2C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_LIGHT_393x852.png */,
+				4A8E00902C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK_393x852.png */,
+				4A8E008B2C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT_393x852.png */,
+				4A8E008A2C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_DARK_393x852.png */,
+				4A8E00872C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT_393x852.png */,
+				4A8E00892C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK_393x852.png */,
+				4A8E008E2C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT_393x852.png */,
+				4A8E008F2C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK_393x852.png */,
+				4A8E00882C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_LIGHT_393x852.png */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -361,8 +385,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A4AD1202C013817000A58B2 /* test_formWithInitialState_FORM_WITH_INITIAL_STATE@3x.png in Resources */,
-				4AA4C0CA2C021A0B009731DE /* test_withNameError_FORM_WITH_NAME_ERROR@3x.png in Resources */,
+				4A8E00932C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK_393x852.png in Resources */,
+				4A8E00972C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_DARK_393x852.png in Resources */,
+				4A8E00962C037BB0006D6447 /* test_formWithInitialState_INITIAL_STATE_LIGHT_393x852.png in Resources */,
+				4A8E00952C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT_393x852.png in Resources */,
+				4A8E00912C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT_393x852.png in Resources */,
+				4A8E00992C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK_393x852.png in Resources */,
+				4A8E009A2C037BB0006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK_393x852.png in Resources */,
+				4A8E00942C037BB0006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_DARK_393x852.png in Resources */,
+				4A8E00982C037BB0006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT_393x852.png in Resources */,
+				4A8E00922C037BB0006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_LIGHT_393x852.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
