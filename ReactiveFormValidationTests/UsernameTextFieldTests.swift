@@ -160,7 +160,7 @@ final class UsernameTextFieldTests: XCTestCase {
         }
 
         var loadingIndicator: UIActivityIndicatorView {
-            textFieldController.loadingIndicator
+            textFieldController.validateUsernameButton.loadingIndicator
         }
     }
 }

@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let vc = FormUIComposer.makeView(validateUniqueUsername: { _ in
             .just(.unused)
+            .delay(.seconds(5), scheduler: MainScheduler.instance)
         })
         
         let window = UIWindow(windowScene: windowScene)

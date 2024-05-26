@@ -41,6 +41,9 @@
 		4A8E011C2C0387DA006D6447 /* test_withLongUsernameError_LONG_USERNAME_ERROR_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E011A2C0387DA006D6447 /* test_withLongUsernameError_LONG_USERNAME_ERROR_DARK@3x.png */; };
 		4A8E011F2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E011D2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_DARK@3x.png */; };
 		4A8E01202C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E011E2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_LIGHT@3x.png */; };
+		4A8E01222C03D08A006D6447 /* ValidateUsernameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E01212C03D08A006D6447 /* ValidateUsernameButton.swift */; };
+		4A8E01292C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E01272C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png */; };
+		4A8E012A2C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E01282C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png */; };
 		4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */; };
 		4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */; };
 		4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */; };
@@ -107,6 +110,9 @@
 		4A8E011A2C0387DA006D6447 /* test_withLongUsernameError_LONG_USERNAME_ERROR_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withLongUsernameError_LONG_USERNAME_ERROR_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withLongUsernameError_LONG_USERNAME_ERROR_DARK@3x.png"; sourceTree = "<group>"; };
 		4A8E011D2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_DARK@3x.png"; sourceTree = "<group>"; };
 		4A8E011E2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_LIGHT@3x.png"; sourceTree = "<group>"; };
+		4A8E01212C03D08A006D6447 /* ValidateUsernameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUsernameButton.swift; sourceTree = "<group>"; };
+		4A8E01272C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png"; sourceTree = "<group>"; };
+		4A8E01282C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png"; sourceTree = "<group>"; };
 		4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldViewModel.swift; sourceTree = "<group>"; };
 		4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldController.swift; sourceTree = "<group>"; };
 		4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldViewModel.swift; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 			children = (
 				4A00021D2BFA56AB002AA0CA /* UsernameTextFieldController.swift */,
 				4A0002212BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift */,
+				4A8E01212C03D08A006D6447 /* ValidateUsernameButton.swift */,
 			);
 			path = UsernameTextField;
 			sourceTree = "<group>";
@@ -192,6 +199,8 @@
 				4A8E01192C0387DA006D6447 /* test_withLongUsernameError_LONG_USERNAME_ERROR_LIGHT@3x.png */,
 				4A8E011D2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_DARK@3x.png */,
 				4A8E011E2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_LIGHT@3x.png */,
+				4A8E01272C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png */,
+				4A8E01282C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -407,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8E01122C038527006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK@3x.png in Resources */,
+				4A8E01292C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png in Resources */,
 				4A8E01132C038527006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK@3x.png in Resources */,
 				4A8E01172C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_IPHONE_SE@3x.png in Resources */,
 				4A8E011F2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_DARK@3x.png in Resources */,
@@ -423,6 +433,7 @@
 				4A8E01202C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_LIGHT@3x.png in Resources */,
 				4A8E011B2C0387DA006D6447 /* test_withLongUsernameError_LONG_USERNAME_ERROR_LIGHT@3x.png in Resources */,
 				4A8E01152C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_IPHONE_PRO_MAX@3x.png in Resources */,
+				4A8E012A2C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +534,7 @@
 				4AA1A99D2BF94CCF0052D813 /* EmailTextFieldViewController.swift in Sources */,
 				4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */,
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
+				4A8E01222C03D08A006D6447 /* ValidateUsernameButton.swift in Sources */,
 				4A0002222BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift in Sources */,
 				4AFF0E2B2BF5594400F46A8B /* FormUIComposer.swift in Sources */,
 				4A00021E2BFA56AB002AA0CA /* UsernameTextFieldController.swift in Sources */,

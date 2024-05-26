@@ -79,7 +79,6 @@ final class FormSnapshotTests: FBSnapshotTestCase {
     }
     
     func test_withNonUniqueUsernameError() {
-        recordMode = true
         let sut = makeSUT(validateUniqueUsername: { _ in
             .just(.used)
         })
@@ -90,6 +89,19 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "NON_UNIQUE_USERNAME_ERROR_LIGHT")
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "NON_UNIQUE_USERNAME_ERROR_DARK")
+    }
+    
+    func test_withUsernameValidationLoading() {
+        let sut = makeSUT(validateUniqueUsername: { _ in
+            .never()
+        })
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateNonUniqueUsernameError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "USERNAME_VALIDATION_LOADING_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "USERNAME_VALIDATION_LOADING_DARK")
     }
     
     // MARK: Helpers

@@ -23,12 +23,8 @@ class UsernameTextFieldController {
         return TextFieldView()
     }()
     
-    private(set) lazy var validateUsernameButton: UIButton = {
-        UIButton()
-    }()
-    
-    private(set) lazy var loadingIndicator: UIActivityIndicatorView = {
-        UIActivityIndicatorView()
+    private(set) lazy var validateUsernameButton: ValidateUsernameButton = {
+        ValidateUsernameButton()
     }()
     
     var textField: UITextField {
@@ -37,6 +33,11 @@ class UsernameTextFieldController {
     
     var errorLabel: UILabel {
         textFieldView.errorLabel
+    }
+    
+    init() {
+        textFieldView.textField.rightView = validateUsernameButton
+        textFieldView.textField.rightViewMode = .always
     }
     
     func bind() {
@@ -93,7 +94,7 @@ class UsernameTextFieldController {
             .usernameStatus
             .subscribe(on: MainScheduler.instance)
             .map({ status in
-                status == .used ? viewModel.usernameError : nil
+                status == .used ? viewModel.usernameError : ""
             })
             .bind(to: errorLabel.rx.text)
             .disposed(by: disposeBag)
@@ -105,13 +106,13 @@ class UsernameTextFieldController {
         
         viewModel
             .isLoading
-            .debug("isLoading")
+            .skip(1)
             .subscribe(onNext: { [weak self] isLoading in
-            if isLoading {
-                self?.loadingIndicator.startAnimating()
-            } else {
-                self?.loadingIndicator.stopAnimating()
-            }
+                if isLoading {
+                    self?.validateUsernameButton.startLoading()
+                } else {
+                    self?.validateUsernameButton.stopLoading()
+                }
         })
         .disposed(by: disposeBag)
     }
