@@ -7,14 +7,10 @@
 
 import XCTest
 import FBSnapshotTestCase
+import RxSwift
 @testable import ReactiveFormValidation
 
 final class FormSnapshotTests: FBSnapshotTestCase {
-    override func setUp() {
-        super.setUp()
-        fileNameOptions = .screenSize
-    }
-    
     func test_formWithInitialState() {
         let sut = makeSUT()
         
@@ -22,6 +18,9 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "INITIAL_STATE_LIGHT")
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "INITIAL_STATE_DARK")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE)), identifier: "INITIAL_STATE_IPHONE_SE")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE1)), identifier: "INITIAL_STATE_IPHONE_SE_1STGEN")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhone15ProMax)), identifier: "INITIAL_STATE_IPHONE_PRO_MAX")
     }
 
     func test_withNameRequiredError() {
@@ -68,11 +67,36 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "USERNAME_REQUIRED_ERROR_DARK")
     }
     
-    // MARK: Helpers
-    func makeSUT() -> FormViewController {
-        let sut = FormUIComposer.makeView(validateUniqueUsername: { _ in
-            .just(.unused)
+    func test_withLongUsernameError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateLongUsernameError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "LONG_USERNAME_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "LONG_USERNAME_ERROR_DARK")
+    }
+    
+    func test_withNonUniqueUsernameError() {
+        recordMode = true
+        let sut = makeSUT(validateUniqueUsername: { _ in
+            .just(.used)
         })
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateNonUniqueUsernameError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "NON_UNIQUE_USERNAME_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "NON_UNIQUE_USERNAME_ERROR_DARK")
+    }
+    
+    // MARK: Helpers
+    func makeSUT(
+        validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) }
+    ) -> FormViewController {
+        let sut = FormUIComposer.makeView(validateUniqueUsername: validateUniqueUsername)
         
         return sut
     }
@@ -104,15 +128,52 @@ private extension FormViewController {
         usernameTextFieldController.viewModel?.textFieldIsFocused.onNext(true)
         usernameTextFieldController.viewModel?.textFieldIsFocused.onNext(false)
     }
+    
+    func simulateLongUsernameError() {
+        simulateTyping(on: usernameTextFieldController.textField, value: "username with more than thirty two characters")
+    }
+    
+    func simulateNonUniqueUsernameError() {
+        simulateTyping(on: usernameTextFieldController.textField, value: "non unique username")
+        
+        usernameTextFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
+    }
 }
 
 struct SnapshotConfiguration {
     let size: CGSize
     let traitCollection: UITraitCollection
     
-    static func iPhone(style: UIUserInterfaceStyle, contentSize: UIContentSizeCategory = .medium) -> SnapshotConfiguration {
+    struct Dimension {
+        let width: Int
+        let height: Int
+    }
+    
+    enum Device {
+        case iPhone15
+        case iPhoneSE
+        case iPhoneSE1
+        case iPhone15ProMax
+        
+        func getDeviceDimensions() -> Dimension {
+            switch self {
+            case .iPhone15:
+                return Dimension(width: 393, height: 852)
+            case .iPhoneSE:
+                return Dimension(width: 375, height: 667)
+            case .iPhoneSE1:
+                return Dimension(width: 320, height: 568)
+            case .iPhone15ProMax:
+                return Dimension(width: 430, height: 932)
+            }
+        }
+    }
+    
+    static func iPhone(style: UIUserInterfaceStyle, device: Device = .iPhone15, contentSize: UIContentSizeCategory = .medium) -> SnapshotConfiguration {
+        let dimensions = device.getDeviceDimensions()
+        
         return SnapshotConfiguration(
-            size: CGSize(width: 390, height: 844),
+            size: CGSize(width: dimensions.width, height: dimensions.height),
             traitCollection: UITraitCollection(mutations: { traits in
                 traits.forceTouchCapability = .unavailable
                 traits.layoutDirection = .leftToRight
