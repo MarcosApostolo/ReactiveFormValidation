@@ -57,6 +57,11 @@
 		4AC8EAC62C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EAC42C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_DARK@3x.png */; };
 		4AC8EAC92C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EAC72C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_DARK@3x.png */; };
 		4AC8EACA2C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EAC82C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_LIGHT@3x.png */; };
+		4AC8EAD02C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_PRO_MAX@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EACB2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_PRO_MAX@3x.png */; };
+		4AC8EAD12C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE_1STGEN@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EACC2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE_1STGEN@3x.png */; };
+		4AC8EAD22C0557260073106C /* test_withValidForm_VALID_FORM_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EACD2C0557260073106C /* test_withValidForm_VALID_FORM_DARK@3x.png */; };
+		4AC8EAD32C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EACE2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png */; };
+		4AC8EAD42C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EACF2C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png */; };
 		4AFF0E292BF5537D00F46A8B /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */; };
 		4AFF0E2B2BF5594400F46A8B /* FormUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */; };
 		4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */; };
@@ -132,6 +137,11 @@
 		4AC8EAC42C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_DARK@3x.png"; sourceTree = "<group>"; };
 		4AC8EAC72C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_DARK@3x.png"; sourceTree = "<group>"; };
 		4AC8EAC82C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_LIGHT@3x.png"; sourceTree = "<group>"; };
+		4AC8EACB2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_PRO_MAX@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withValidForm_VALID_FORM_IPHONE_PRO_MAX@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withValidForm_VALID_FORM_IPHONE_PRO_MAX@3x.png"; sourceTree = "<group>"; };
+		4AC8EACC2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE_1STGEN@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withValidForm_VALID_FORM_IPHONE_SE_1STGEN@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withValidForm_VALID_FORM_IPHONE_SE_1STGEN@3x.png"; sourceTree = "<group>"; };
+		4AC8EACD2C0557260073106C /* test_withValidForm_VALID_FORM_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withValidForm_VALID_FORM_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withValidForm_VALID_FORM_DARK@3x.png"; sourceTree = "<group>"; };
+		4AC8EACE2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withValidForm_VALID_FORM_IPHONE_SE@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withValidForm_VALID_FORM_IPHONE_SE@3x.png"; sourceTree = "<group>"; };
+		4AC8EACF2C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withValidForm_VALID_FORM_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withValidForm_VALID_FORM_LIGHT@3x.png"; sourceTree = "<group>"; };
 		4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUIComposer.swift; sourceTree = "<group>"; };
 		4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldTests.swift; sourceTree = "<group>"; };
@@ -219,6 +229,11 @@
 				4AC8EAC32C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png */,
 				4AC8EAC72C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_DARK@3x.png */,
 				4AC8EAC82C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_LIGHT@3x.png */,
+				4AC8EACD2C0557260073106C /* test_withValidForm_VALID_FORM_DARK@3x.png */,
+				4AC8EACB2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_PRO_MAX@3x.png */,
+				4AC8EACC2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE_1STGEN@3x.png */,
+				4AC8EACE2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png */,
+				4AC8EACF2C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -445,6 +460,7 @@
 				4A8E01162C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_DARK@3x.png in Resources */,
 				4AC8EAC52C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png in Resources */,
 				4A8E01112C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_IPHONE_SE_1STGEN@3x.png in Resources */,
+				4AC8EAD42C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png in Resources */,
 				4AC8EAC22C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_LIGHT@3x.png in Resources */,
 				4A8E010F2C038527006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT@3x.png in Resources */,
 				4A8E010C2C038527006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK@3x.png in Resources */,
@@ -452,10 +468,14 @@
 				4AC8EAC92C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_DARK@3x.png in Resources */,
 				4A8E01102C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_LIGHT@3x.png in Resources */,
 				4A8E011C2C0387DA006D6447 /* test_withLongUsernameError_LONG_USERNAME_ERROR_DARK@3x.png in Resources */,
+				4AC8EAD02C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_PRO_MAX@3x.png in Resources */,
+				4AC8EAD32C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png in Resources */,
+				4AC8EAD12C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE_1STGEN@3x.png in Resources */,
 				4A8E01182C038527006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_LIGHT@3x.png in Resources */,
 				4A8E01202C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_LIGHT@3x.png in Resources */,
 				4A8E011B2C0387DA006D6447 /* test_withLongUsernameError_LONG_USERNAME_ERROR_LIGHT@3x.png in Resources */,
 				4AC8EAC12C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_DARK@3x.png in Resources */,
+				4AC8EAD22C0557260073106C /* test_withValidForm_VALID_FORM_DARK@3x.png in Resources */,
 				4A8E01152C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_IPHONE_PRO_MAX@3x.png in Resources */,
 				4A8E012A2C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png in Resources */,
 			);

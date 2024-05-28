@@ -137,6 +137,20 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "UNMATCHING_PASSWORD_ERROR_DARK")
     }
     
+    func test_withValidForm() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateValidForm()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "VALID_FORM_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "VALID_FORM_DARK")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE)), identifier: "VALID_FORM_IPHONE_SE")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE1)), identifier: "VALID_FORM_IPHONE_SE_1STGEN")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhone15ProMax)), identifier: "VALID_FORM_IPHONE_PRO_MAX")
+    }
+    
     // MARK: Helpers
     func makeSUT(
         validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) }
@@ -195,6 +209,15 @@ private extension FormViewController {
     func simulateUnmatchingPasswordError() {
         simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "12345678")
         simulateTyping(on: passwordFieldsController.confirmPasswordTextField, value: "123456789")
+    }
+    
+    func simulateValidForm() {
+        simulateTyping(on: nameTextFieldController.textField, value: "A name")
+        simulateTyping(on: emailTextFieldController.textField, value: "email@email.com")
+        simulateTyping(on: usernameTextFieldController.textField, value: "a username")
+        usernameTextFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
+        simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "12345678")
+        simulateTyping(on: passwordFieldsController.confirmPasswordTextField, value: "12345678")
     }
 }
 

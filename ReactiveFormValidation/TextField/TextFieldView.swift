@@ -49,6 +49,7 @@ class TextFieldView: UIView {
             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             errorLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4),
             errorLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
+            errorLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 12)
         ])
     }
     
