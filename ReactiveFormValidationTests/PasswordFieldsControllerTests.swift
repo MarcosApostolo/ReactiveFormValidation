@@ -71,6 +71,23 @@ final class PasswordFieldsControllerTests: XCTestCase {
         
         assertNoErrorOn(sut.textFieldController)
     }
+    
+    func test_onNewPasswordButtonTap_displayPassword() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertTrue(sut.newPasswordTextField.isSecureTextEntry)
+        XCTAssertTrue(sut.confirmPasswordTextField.isSecureTextEntry)
+        
+        sut.toggleNewPasswordVisibility()
+        
+        XCTAssertFalse(sut.newPasswordTextField.isSecureTextEntry)
+        
+        sut.toggleConfirmPasswordVisibility()
+        
+        XCTAssertFalse(sut.confirmPasswordTextField.isSecureTextEntry)
+    }
         
     // MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> TestHelperViewController {
@@ -108,6 +125,14 @@ final class PasswordFieldsControllerTests: XCTestCase {
         
         var confirmPasswordTextField: UITextField {
             textFieldController.confirmPasswordTextField
+        }
+        
+        func toggleNewPasswordVisibility() {
+            textFieldController.newPasswordVisibilityButton.sendActions(for: .touchUpInside)
+        }
+        
+        func toggleConfirmPasswordVisibility() {
+            textFieldController.confirmPasswordVisibilityButton.sendActions(for: .touchUpInside)
         }
     }
 }

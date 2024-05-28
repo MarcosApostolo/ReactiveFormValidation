@@ -51,6 +51,9 @@
 		4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */; };
 		4AA1A9A12BF94ED70052D813 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9A02BF94ED70052D813 /* Helpers.swift */; };
 		4AA1A9A42BF94FA40052D813 /* ValidationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9A32BF94FA40052D813 /* ValidationHelpers.swift */; };
+		4AA2B89A2C067B540002DCB7 /* PasswordVisibilityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2B8992C067B540002DCB7 /* PasswordVisibilityButton.swift */; };
+		4AA2B89D2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA2B89B2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png */; };
+		4AA2B89E2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA2B89C2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png */; };
 		4AC8EAC12C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EABF2C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_DARK@3x.png */; };
 		4AC8EAC22C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EAC02C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_LIGHT@3x.png */; };
 		4AC8EAC52C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EAC32C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png */; };
@@ -131,6 +134,9 @@
 		4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldTests.swift; sourceTree = "<group>"; };
 		4AA1A9A02BF94ED70052D813 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		4AA1A9A32BF94FA40052D813 /* ValidationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelpers.swift; sourceTree = "<group>"; };
+		4AA2B8992C067B540002DCB7 /* PasswordVisibilityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVisibilityButton.swift; sourceTree = "<group>"; };
+		4AA2B89B2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png"; sourceTree = "<group>"; };
+		4AA2B89C2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png"; sourceTree = "<group>"; };
 		4AC8EABF2C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_DARK@3x.png"; sourceTree = "<group>"; };
 		4AC8EAC02C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_LIGHT@3x.png"; sourceTree = "<group>"; };
 		4AC8EAC32C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png"; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 				4A606B7A2BFD4CEC00AEE729 /* PasswordFieldsController.swift */,
 				4A606B7C2BFD4E9C00AEE729 /* PasswordFieldsViewModel.swift */,
 				4A4AD1212C013DC4000A58B2 /* PasswordsView.swift */,
+				4AA2B8992C067B540002DCB7 /* PasswordVisibilityButton.swift */,
 			);
 			path = PasswordFields;
 			sourceTree = "<group>";
@@ -234,6 +241,8 @@
 				4AC8EACC2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE_1STGEN@3x.png */,
 				4AC8EACE2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png */,
 				4AC8EACF2C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png */,
+				4AA2B89B2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png */,
+				4AA2B89C2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -455,12 +464,14 @@
 				4A8E01132C038527006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_DARK@3x.png in Resources */,
 				4A8E01172C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_IPHONE_SE@3x.png in Resources */,
 				4A8E011F2C038A22006D6447 /* test_withNonUniqueUsernameError_NON_UNIQUE_USERNAME_ERROR_DARK@3x.png in Resources */,
+				4AA2B89D2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png in Resources */,
 				4A8E010E2C038527006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT@3x.png in Resources */,
 				4A8E010D2C038527006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT@3x.png in Resources */,
 				4A8E01162C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_DARK@3x.png in Resources */,
 				4AC8EAC52C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png in Resources */,
 				4A8E01112C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_IPHONE_SE_1STGEN@3x.png in Resources */,
 				4AC8EAD42C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png in Resources */,
+				4AA2B89E2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png in Resources */,
 				4AC8EAC22C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_LIGHT@3x.png in Resources */,
 				4A8E010F2C038527006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT@3x.png in Resources */,
 				4A8E010C2C038527006D6447 /* test_withUsernameRequiredError_USERNAME_REQUIRED_ERROR_DARK@3x.png in Resources */,
@@ -575,6 +586,7 @@
 				4A606B7B2BFD4CEC00AEE729 /* PasswordFieldsController.swift in Sources */,
 				4A606B7F2BFD5FAF00AEE729 /* PasswordValidatorPolicy.swift in Sources */,
 				4A2DE87C2BFC07A20044D337 /* UsernameStatus.swift in Sources */,
+				4AA2B89A2C067B540002DCB7 /* PasswordVisibilityButton.swift in Sources */,
 				4AA1A99D2BF94CCF0052D813 /* EmailTextFieldViewController.swift in Sources */,
 				4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */,
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,

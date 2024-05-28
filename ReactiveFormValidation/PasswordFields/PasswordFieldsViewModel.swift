@@ -14,6 +14,9 @@ class PasswordFieldsViewModel {
     var newPasswordValueIsFocused = BehaviorSubject(value: false)
     
     var confirmPasswordValue = BehaviorSubject(value: "")
+    
+    var newPasswordVisibility = BehaviorSubject(value: true)
+    var confirmPasswordVisibility = BehaviorSubject(value: true)
 
     var passwordsAreValid: Observable<Bool> {
         return Observable

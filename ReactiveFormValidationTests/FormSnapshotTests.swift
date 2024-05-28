@@ -10,7 +10,7 @@ import FBSnapshotTestCase
 import RxSwift
 @testable import ReactiveFormValidation
 
-final class FormSnapshotTests: FBSnapshotTestCase {    
+final class FormSnapshotTests: FBSnapshotTestCase {
     func test_formWithInitialState() {
         let sut = makeSUT()
         
@@ -137,6 +137,17 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "UNMATCHING_PASSWORD_ERROR_DARK")
     }
     
+    func test_withPasswordsVisible() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.makePasswordsVisible()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORDS_VISIBLE_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORDS_VISIBLE_DARK")
+    }
+    
     func test_withValidForm() {
         let sut = makeSUT()
         
@@ -218,6 +229,13 @@ private extension FormViewController {
         usernameTextFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
         simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "12345678")
         simulateTyping(on: passwordFieldsController.confirmPasswordTextField, value: "12345678")
+    }
+    
+    func makePasswordsVisible() {
+        simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "12345678")
+        simulateTyping(on: passwordFieldsController.confirmPasswordTextField, value: "12345678")
+        passwordFieldsController.newPasswordVisibilityButton.sendActions(for: .touchUpInside)
+        passwordFieldsController.confirmPasswordVisibilityButton.sendActions(for: .touchUpInside)
     }
 }
 

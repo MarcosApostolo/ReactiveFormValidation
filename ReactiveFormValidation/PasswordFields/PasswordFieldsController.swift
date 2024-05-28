@@ -28,6 +28,14 @@ class PasswordFieldsController {
         passwordsView.confirmPasswordTextField
     }
     
+    var newPasswordVisibilityButton: PasswordVisibilityButton {
+        passwordsView.newPasswordVisibilityButton
+    }
+    
+    var confirmPasswordVisibilityButton: PasswordVisibilityButton {
+        passwordsView.confirmPasswordVisibilityButton
+    }
+    
     init() {
         bind()
     }
@@ -73,7 +81,73 @@ class PasswordFieldsController {
             .bind(to: viewModel.confirmPasswordValue)
             .disposed(by: disposeBag)
         
+        viewModel
+            .confirmPasswordVisibility
+            .subscribe(onNext: { isSecure in
+                self.confirmPasswordTextField.isSecureTextEntry = isSecure
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .newPasswordVisibility
+            .subscribe(onNext: { isSecure in
+                self.newPasswordTextField.isSecureTextEntry = isSecure
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .newPasswordVisibility
+            .subscribe(onNext: { [weak self] isSecure in
+                if isSecure {
+                    self?.newPasswordVisibilityButton.hide()
+                } else {
+                    self?.newPasswordVisibilityButton.show()
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .confirmPasswordVisibility
+            .subscribe(onNext: { [weak self] isSecure in
+                if isSecure {
+                    self?.confirmPasswordVisibilityButton.hide()
+                } else {
+                    self?.confirmPasswordVisibilityButton.show()
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        confirmPasswordVisibilityButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                
+                viewModel
+                    .confirmPasswordVisibility
+                    .onNext(!self.confirmPasswordTextField.isSecureTextEntry)
+            })
+            .disposed(by: disposeBag)
+        
+        newPasswordVisibilityButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                
+                viewModel
+                    .newPasswordVisibility
+                    .onNext(!self.newPasswordTextField.isSecureTextEntry)
+            })
+            .disposed(by: disposeBag)
+                
         newPasswordTextField.placeholder = viewModel.newPasswordPlaceholder
         confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
+        
+        newPasswordTextField.rightView = newPasswordVisibilityButton
+        newPasswordTextField.rightViewMode = .always
+        
+        confirmPasswordTextField.rightView = confirmPasswordVisibilityButton
+        confirmPasswordTextField.rightViewMode = .always
     }
 }

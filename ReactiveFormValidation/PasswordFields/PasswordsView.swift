@@ -17,6 +17,9 @@ class PasswordView: UIView {
         return textField
     }()
     
+    private(set) lazy var newPasswordVisibilityButton = PasswordVisibilityButton()
+    private(set) lazy var confirmPasswordVisibilityButton = PasswordVisibilityButton()
+    
     private(set) lazy var confirmPasswordTextField: UITextField = {
         let textField = UITextField()
         
@@ -65,6 +68,9 @@ class PasswordView: UIView {
             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             errorLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        
+        newPasswordTextField.rightView = newPasswordVisibilityButton
+        confirmPasswordTextField.rightView = confirmPasswordVisibilityButton
     }
     
     required init?(coder: NSCoder) {
