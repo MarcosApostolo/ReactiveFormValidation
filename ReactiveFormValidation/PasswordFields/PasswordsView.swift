@@ -12,6 +12,7 @@ class PasswordView: UIView {
         let textField = UITextField()
         
         textField.borderStyle = .roundedRect
+        textField.isSecureTextEntry = true
         
         return textField
     }()
@@ -20,6 +21,7 @@ class PasswordView: UIView {
         let textField = UITextField()
         
         textField.borderStyle = .roundedRect
+        textField.isSecureTextEntry = true
         
         return textField
     }()
@@ -28,6 +30,8 @@ class PasswordView: UIView {
         let label = UILabel()
         
         label.isHidden = true
+        label.font = .preferredFont(forTextStyle: .caption1)
+        label.textColor = .red
         
         return label
     }()
@@ -56,7 +60,7 @@ class PasswordView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            errorLabel.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 12),
+            errorLabel.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 4),
             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant:  24),
             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             errorLabel.bottomAnchor.constraint(equalTo: bottomAnchor)

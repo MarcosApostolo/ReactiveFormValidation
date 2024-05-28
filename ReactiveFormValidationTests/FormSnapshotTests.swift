@@ -104,6 +104,39 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "USERNAME_VALIDATION_LOADING_DARK")
     }
     
+    func test_withPasswordMinLengthError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulatePasswordMinLengthError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORD_MIN_LENGTH_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORD_MIN_LENGTH_ERROR_DARK")
+    }
+    
+    func test_withPasswordMaxLengthError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulatePasswordMaxLengthError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORD_MAX_LENGTH_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORD_MAX_LENGTH_ERROR_DARK")
+    }
+    
+    func test_withUnmatchingPasswordsError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateUnmatchingPasswordError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "UNMATCHING_PASSWORD_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "UNMATCHING_PASSWORD_ERROR_DARK")
+    }
+    
     // MARK: Helpers
     func makeSUT(
         validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) }
@@ -149,6 +182,19 @@ private extension FormViewController {
         simulateTyping(on: usernameTextFieldController.textField, value: "non unique username")
         
         usernameTextFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
+    }
+    
+    func simulatePasswordMinLengthError() {
+        simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "12345")
+    }
+    
+    func simulatePasswordMaxLengthError() {
+        simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "very very very long password")
+    }
+    
+    func simulateUnmatchingPasswordError() {
+        simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "12345678")
+        simulateTyping(on: passwordFieldsController.confirmPasswordTextField, value: "123456789")
     }
 }
 
