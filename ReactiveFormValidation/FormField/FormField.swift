@@ -8,13 +8,25 @@
 import Foundation
 import UIKit
 import RxCocoa
+import RxSwift
 
 class FormField: UIView {
+    private let disposeBag = DisposeBag()
+    
+    var displayErrorLabel: Observable<Bool>? {
+        didSet {
+            bindDisplayErrorLabel()
+        }
+    }
+    var errorMessage: Observable<String>? {
+        didSet {
+            bindErrorMessage()
+        }
+    }
+    
     private(set) lazy var textField: UITextField = {
         let textField = UITextField()
-        
-        textField.borderStyle = .roundedRect
-        
+                
         return textField
     }()
     private(set) lazy var errorLabel: UILabel = {
@@ -41,7 +53,6 @@ class FormField: UIView {
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             textField.topAnchor.constraint(equalTo: topAnchor),
-            textField.heightAnchor.constraint(equalToConstant: 32)
         ])
         
         NSLayoutConstraint.activate([
@@ -55,5 +66,19 @@ class FormField: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    private func bindDisplayErrorLabel() {
+        displayErrorLabel?
+            .subscribe(onNext: { [weak self] hasError in
+                self?.errorLabel.isHidden = !hasError
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindErrorMessage() {
+        errorMessage?
+            .bind(to: errorLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }

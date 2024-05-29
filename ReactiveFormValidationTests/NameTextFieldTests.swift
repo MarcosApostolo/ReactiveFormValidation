@@ -65,8 +65,8 @@ final class NameTextFieldTests: XCTestCase {
         XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
     }
     
-    private func assertNoErrorOn(_ sut: NameTextFieldController) {
-        XCTAssertTrue(sut.errorLabel.isHidden)
+    private func assertNoErrorOn(_ sut: NameTextFieldController, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(sut.errorLabel.isHidden, file: file, line: line)
     }
 
     private class TestHelperViewController: UIViewController {
@@ -75,7 +75,7 @@ final class NameTextFieldTests: XCTestCase {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            view.addSubview(textFieldController.textFieldView)
+            view.addSubview(textFieldController.formField)
         }
         
         var errorLabel: UILabel {

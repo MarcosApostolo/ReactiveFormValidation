@@ -28,6 +28,7 @@ class NameTextFieldViewModel {
             .combineLatest(fieldIsValid, textFieldIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
             }
+            .skip(1)
             .distinctUntilChanged()
     }
 
@@ -35,7 +36,7 @@ class NameTextFieldViewModel {
         "Name"
     }
     
-    var nameErrorRequiredError: String {
-        "Name is required!"
+    var errorMessage: Observable<String> {
+        .just("Name is required!")
     }
 }

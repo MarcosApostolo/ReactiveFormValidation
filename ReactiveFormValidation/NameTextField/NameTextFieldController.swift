@@ -14,16 +14,16 @@ class NameTextFieldController {
     
     var viewModel = NameTextFieldViewModel()
     
-    private(set) lazy var textFieldView: TextFieldView = {
-        return TextFieldView()
+    private(set) lazy var formField: FormField = {
+        return FormField()
     }()
     
     var textField: UITextField {
-        textFieldView.textField
+        formField.textField
     }
     
     var errorLabel: UILabel {
-        textFieldView.errorLabel
+        formField.errorLabel
     }
     
     init() {
@@ -32,7 +32,8 @@ class NameTextFieldController {
     
     func bind() {
         textField.placeholder = viewModel.nameTextFieldPlaceholder
-        errorLabel.text = viewModel.nameErrorRequiredError
+        formField.displayErrorLabel = viewModel.displayErrorLabel
+        formField.errorMessage = viewModel.errorMessage
         
         textField.rx.text.orEmpty
             .bind(to: viewModel.textFieldValue)
@@ -54,13 +55,6 @@ class NameTextFieldController {
             .controlEvent(.editingDidEnd)
             .map { false }
             .bind(to: viewModel.textFieldIsFocused)
-            .disposed(by: disposeBag)
-
-        viewModel
-            .displayErrorLabel
-            .skip(1)
-            .map { !$0 }
-            .bind(to: errorLabel.rx.isHidden)
             .disposed(by: disposeBag)
     }
     
