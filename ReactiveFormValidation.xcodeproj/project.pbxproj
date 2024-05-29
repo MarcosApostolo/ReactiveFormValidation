@@ -65,6 +65,9 @@
 		4AC8EAD22C0557260073106C /* test_withValidForm_VALID_FORM_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EACD2C0557260073106C /* test_withValidForm_VALID_FORM_DARK@3x.png */; };
 		4AC8EAD32C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EACE2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png */; };
 		4AC8EAD42C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8EACF2C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png */; };
+		4ACC15CC2C07DBFD00A7FEEB /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC15CB2C07DBFD00A7FEEB /* FormField.swift */; };
+		4ACC15CE2C07DC7800A7FEEB /* RefactoredNameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC15CD2C07DC7800A7FEEB /* RefactoredNameTextFieldController.swift */; };
+		4ACC15D02C07DC9400A7FEEB /* RefactoredNameTextFieldControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC15CF2C07DC9400A7FEEB /* RefactoredNameTextFieldControllerTests.swift */; };
 		4AFF0E292BF5537D00F46A8B /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */; };
 		4AFF0E2B2BF5594400F46A8B /* FormUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */; };
 		4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */; };
@@ -148,6 +151,9 @@
 		4AC8EACD2C0557260073106C /* test_withValidForm_VALID_FORM_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withValidForm_VALID_FORM_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withValidForm_VALID_FORM_DARK@3x.png"; sourceTree = "<group>"; };
 		4AC8EACE2C0557260073106C /* test_withValidForm_VALID_FORM_IPHONE_SE@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withValidForm_VALID_FORM_IPHONE_SE@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withValidForm_VALID_FORM_IPHONE_SE@3x.png"; sourceTree = "<group>"; };
 		4AC8EACF2C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withValidForm_VALID_FORM_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withValidForm_VALID_FORM_LIGHT@3x.png"; sourceTree = "<group>"; };
+		4ACC15CB2C07DBFD00A7FEEB /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		4ACC15CD2C07DC7800A7FEEB /* RefactoredNameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoredNameTextFieldController.swift; sourceTree = "<group>"; };
+		4ACC15CF2C07DC9400A7FEEB /* RefactoredNameTextFieldControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoredNameTextFieldControllerTests.swift; sourceTree = "<group>"; };
 		4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUIComposer.swift; sourceTree = "<group>"; };
 		4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldTests.swift; sourceTree = "<group>"; };
@@ -271,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				4AA1A9A22BF94F9A0052D813 /* Helpers */,
+				4ACC15CA2C07DBF200A7FEEB /* FormField */,
 				4AFF0E362BF59D5A00F46A8B /* TextField */,
 				4AA1A9992BF94C9E0052D813 /* EmailTextField */,
 				4AA1A9942BF94C120052D813 /* NameTextField */,
@@ -302,6 +309,7 @@
 				4A0002182BFA5585002AA0CA /* UsernameTextFieldTests.swift */,
 				4A606B772BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift */,
 				4A4AD11D2C0136E5000A58B2 /* FormSnapshotTests.swift */,
+				4ACC15CF2C07DC9400A7FEEB /* RefactoredNameTextFieldControllerTests.swift */,
 			);
 			path = ReactiveFormValidationTests;
 			sourceTree = "<group>";
@@ -311,6 +319,7 @@
 			children = (
 				4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */,
 				4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */,
+				4ACC15CD2C07DC7800A7FEEB /* RefactoredNameTextFieldController.swift */,
 			);
 			path = NameTextField;
 			sourceTree = "<group>";
@@ -330,6 +339,14 @@
 				4AA1A9A32BF94FA40052D813 /* ValidationHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4ACC15CA2C07DBF200A7FEEB /* FormField */ = {
+			isa = PBXGroup;
+			children = (
+				4ACC15CB2C07DBFD00A7FEEB /* FormField.swift */,
+			);
+			path = FormField;
 			sourceTree = "<group>";
 		};
 		4AFF0E362BF59D5A00F46A8B /* TextField */ = {
@@ -580,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ACC15CC2C07DBFD00A7FEEB /* FormField.swift in Sources */,
 				4A810B822BF54FEB00469895 /* FormViewController.swift in Sources */,
 				4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */,
 				4AFF0E3E2BF5A33300F46A8B /* TextFieldView.swift in Sources */,
@@ -600,6 +618,7 @@
 				4A606B7D2BFD4E9C00AEE729 /* PasswordFieldsViewModel.swift in Sources */,
 				4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */,
 				4A4AD1222C013DC4000A58B2 /* PasswordsView.swift in Sources */,
+				4ACC15CE2C07DC7800A7FEEB /* RefactoredNameTextFieldController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +633,7 @@
 				4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */,
 				4AA1A9A12BF94ED70052D813 /* Helpers.swift in Sources */,
 				4A4AD11E2C0136E5000A58B2 /* FormSnapshotTests.swift in Sources */,
+				4ACC15D02C07DC9400A7FEEB /* RefactoredNameTextFieldControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
