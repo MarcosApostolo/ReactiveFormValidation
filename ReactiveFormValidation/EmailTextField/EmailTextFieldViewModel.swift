@@ -26,10 +26,11 @@ class EmailTextFieldViewModel {
             .combineLatest(fieldIsValid, textFieldIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
             }
+            .skip(1)
             .distinctUntilChanged()
     }
     
-    var errorLabel: Observable<String> {
+    var errorMessage: Observable<String> {
         return textFieldValue.asObservable().map({ value in
             if value.isEmpty {
                 return "Email is required!"

@@ -77,7 +77,7 @@ final class EmailTextFieldTests: XCTestCase {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            view.addSubview(textFieldController.textFieldView)
+            view.addSubview(textFieldController.formField)
         }
         
         var errorLabel: UILabel {
