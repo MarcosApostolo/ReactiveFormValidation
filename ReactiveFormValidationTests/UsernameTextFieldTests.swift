@@ -143,7 +143,7 @@ final class UsernameTextFieldTests: XCTestCase {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            view.addSubview(textFieldController.textFieldView)
+            view.addSubview(textFieldController.formField)
             view.addSubview(textFieldController.validateUsernameButton)
         }
         

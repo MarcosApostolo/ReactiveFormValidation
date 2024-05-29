@@ -45,9 +45,11 @@ class UsernameTextFieldViewModel {
                 return !isValid && !isFocused
             }
             .distinctUntilChanged()
+            .subscribe(on: MainScheduler.instance)
+            .skip(1)
     }
     
-    var errorLabel: Observable<String> {
+    var errorMessage: Observable<String> {
         return textFieldValue.asObservable().map({ value in
             if value.isEmpty {
                 return "Username is required!"
@@ -70,6 +72,11 @@ class UsernameTextFieldViewModel {
             ) { $0 && $1 }
             .distinctUntilChanged()
             .share()
+    }
+    
+    var displayUsernameStatusError: Observable<Bool> {
+        return usernameStatus
+            .map({ $0 == .used })
     }
     
     func onValidateUsername() {
@@ -95,7 +102,11 @@ class UsernameTextFieldViewModel {
         "Username"
     }
     
-    var usernameError: String {
-        "Username is already used."
+    var usernameError: Observable<String> {
+        usernameStatus
+        .subscribe(on: MainScheduler.instance)
+        .map({ status in
+            status == .used ? "Username is already used." : ""
+        })
     }
 }

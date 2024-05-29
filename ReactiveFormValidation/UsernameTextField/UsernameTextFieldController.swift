@@ -19,8 +19,8 @@ class UsernameTextFieldController {
         }
     }
     
-    private(set) lazy var textFieldView: TextFieldView = {
-        return TextFieldView()
+    private(set) lazy var formField: FormField = {
+        return FormField()
     }()
     
     private(set) lazy var validateUsernameButton: ValidateUsernameButton = {
@@ -28,16 +28,16 @@ class UsernameTextFieldController {
     }()
     
     var textField: UITextField {
-        textFieldView.textField
+        formField.textField
     }
     
     var errorLabel: UILabel {
-        textFieldView.errorLabel
+        formField.errorLabel
     }
     
     init() {
-        textFieldView.textField.rightView = validateUsernameButton
-        textFieldView.textField.rightViewMode = .always
+        formField.textField.rightView = validateUsernameButton
+        formField.textField.rightViewMode = .always
     }
     
     func bind() {
@@ -68,36 +68,13 @@ class UsernameTextFieldController {
             .map { false }
             .bind(to: viewModel.textFieldIsFocused)
             .disposed(by: disposeBag)
-
-        viewModel
-            .displayErrorLabel
-            .subscribe(on: MainScheduler.instance)
-            .skip(1)
-            .map { !$0 }
-            .bind(to: errorLabel.rx.isHidden)
-            .disposed(by: disposeBag)
         
-        viewModel
-            .errorLabel
-            .subscribe(on: MainScheduler.instance)
-            .bind(to: errorLabel.rx.text)
-            .disposed(by: disposeBag)
+        formField.displayErrorLabel = Observable.merge([viewModel.displayErrorLabel, viewModel.displayUsernameStatusError])
         
-        viewModel
-            .usernameStatus
-            .map({ $0 == .used })
-            .map({ !$0 })
-            .bind(to: errorLabel.rx.isHidden)
-            .disposed(by: disposeBag)
-        
-        viewModel
-            .usernameStatus
-            .subscribe(on: MainScheduler.instance)
-            .map({ status in
-                status == .used ? viewModel.usernameError : ""
-            })
-            .bind(to: errorLabel.rx.text)
-            .disposed(by: disposeBag)
+        formField.errorMessage = Observable.merge([
+            viewModel.errorMessage,
+            viewModel.usernameError
+        ])
         
         validateUsernameButton.rx
             .tap

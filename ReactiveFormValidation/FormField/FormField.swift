@@ -23,7 +23,7 @@ class FormField: UIView {
             bindErrorMessage()
         }
     }
-    
+        
     private(set) lazy var textField: UITextField = {
         let textField = UITextField()
                 
