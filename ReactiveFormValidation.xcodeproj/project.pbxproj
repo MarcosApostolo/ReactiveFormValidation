@@ -12,8 +12,8 @@
 		4A00021E2BFA56AB002AA0CA /* UsernameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00021D2BFA56AB002AA0CA /* UsernameTextFieldController.swift */; };
 		4A0002222BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0002212BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift */; };
 		4A2DE87C2BFC07A20044D337 /* UsernameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2DE87B2BFC07A20044D337 /* UsernameStatus.swift */; };
-		4A2E8DE72C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E8DE52C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_LIGHT@3x.png */; };
-		4A2E8DE82C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E8DE62C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_DARK@3x.png */; };
+		4A2E8DEA2C092CC200C4E73B /* test_withFocusedFormField_dark_FOCUSED_FORM_FIELD_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E8DE92C092CC200C4E73B /* test_withFocusedFormField_dark_FOCUSED_FORM_FIELD_DARK@3x.png */; };
+		4A2E8DEC2C092D0B00C4E73B /* test_withFocusedFormField_light_FOCUSED_FORM_FIELD_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E8DEB2C092D0B00C4E73B /* test_withFocusedFormField_light_FOCUSED_FORM_FIELD_LIGHT@3x.png */; };
 		4A4AD11E2C0136E5000A58B2 /* FormSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4AD11D2C0136E5000A58B2 /* FormSnapshotTests.swift */; };
 		4A4AD1222C013DC4000A58B2 /* PasswordFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4AD1212C013DC4000A58B2 /* PasswordFormField.swift */; };
 		4A606B782BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A606B772BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift */; };
@@ -97,8 +97,8 @@
 		4A00021D2BFA56AB002AA0CA /* UsernameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextFieldController.swift; sourceTree = "<group>"; };
 		4A0002212BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextFieldViewModel.swift; sourceTree = "<group>"; };
 		4A2DE87B2BFC07A20044D337 /* UsernameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameStatus.swift; sourceTree = "<group>"; };
-		4A2E8DE52C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withFocusedFormField_FOCUSED_FORM_FIELD_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withFocusedFormField_FOCUSED_FORM_FIELD_LIGHT@3x.png"; sourceTree = "<group>"; };
-		4A2E8DE62C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withFocusedFormField_FOCUSED_FORM_FIELD_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withFocusedFormField_FOCUSED_FORM_FIELD_DARK@3x.png"; sourceTree = "<group>"; };
+		4A2E8DE92C092CC200C4E73B /* test_withFocusedFormField_dark_FOCUSED_FORM_FIELD_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withFocusedFormField_dark_FOCUSED_FORM_FIELD_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withFocusedFormField_dark_FOCUSED_FORM_FIELD_DARK@3x.png"; sourceTree = "<group>"; };
+		4A2E8DEB2C092D0B00C4E73B /* test_withFocusedFormField_light_FOCUSED_FORM_FIELD_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withFocusedFormField_light_FOCUSED_FORM_FIELD_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withFocusedFormField_light_FOCUSED_FORM_FIELD_LIGHT@3x.png"; sourceTree = "<group>"; };
 		4A4AD11D2C0136E5000A58B2 /* FormSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSnapshotTests.swift; sourceTree = "<group>"; };
 		4A4AD1212C013DC4000A58B2 /* PasswordFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFormField.swift; sourceTree = "<group>"; };
 		4A606B772BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldsControllerTests.swift; sourceTree = "<group>"; };
@@ -257,8 +257,8 @@
 				4AC8EACF2C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png */,
 				4AA2B89B2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png */,
 				4AA2B89C2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png */,
-				4A2E8DE62C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_DARK@3x.png */,
-				4A2E8DE52C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_LIGHT@3x.png */,
+				4A2E8DE92C092CC200C4E73B /* test_withFocusedFormField_dark_FOCUSED_FORM_FIELD_DARK@3x.png */,
+				4A2E8DEB2C092D0B00C4E73B /* test_withFocusedFormField_light_FOCUSED_FORM_FIELD_LIGHT@3x.png */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -492,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC8EAC62C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_DARK@3x.png in Resources */,
+				4A2E8DEA2C092CC200C4E73B /* test_withFocusedFormField_dark_FOCUSED_FORM_FIELD_DARK@3x.png in Resources */,
 				4AC8EACA2C05560E0073106C /* test_withUnmatchingPasswordsError_UNMATCHING_PASSWORD_ERROR_LIGHT@3x.png in Resources */,
 				4A8E01122C038527006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_DARK@3x.png in Resources */,
 				4A8E01292C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png in Resources */,
@@ -502,11 +503,10 @@
 				4A8E010E2C038527006D6447 /* test_withNameRequiredError_NAME_REQUIRED_ERROR_LIGHT@3x.png in Resources */,
 				4A8E010D2C038527006D6447 /* test_withEmailRequiredError_EMAIL_REQUIRED_ERROR_LIGHT@3x.png in Resources */,
 				4A8E01162C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_DARK@3x.png in Resources */,
-				4A2E8DE82C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_DARK@3x.png in Resources */,
 				4AC8EAC52C0555190073106C /* test_withPasswordMaxLengthError_PASSWORD_MAX_LENGTH_ERROR_LIGHT@3x.png in Resources */,
-				4A2E8DE72C09275300C4E73B /* test_withFocusedFormField_FOCUSED_FORM_FIELD_LIGHT@3x.png in Resources */,
 				4A8E01112C038527006D6447 /* test_formWithInitialState_INITIAL_STATE_IPHONE_SE_1STGEN@3x.png in Resources */,
 				4AC8EAD42C0557260073106C /* test_withValidForm_VALID_FORM_LIGHT@3x.png in Resources */,
+				4A2E8DEC2C092D0B00C4E73B /* test_withFocusedFormField_light_FOCUSED_FORM_FIELD_LIGHT@3x.png in Resources */,
 				4AA2B89E2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_LIGHT@3x.png in Resources */,
 				4AC8EAC22C0545B00073106C /* test_withPasswordMinLengthError_PASSWORD_MIN_LENGTH_ERROR_LIGHT@3x.png in Resources */,
 				4A8E010F2C038527006D6447 /* test_withInvalidEmailError_INVALID_EMAIL_ERROR_LIGHT@3x.png in Resources */,

@@ -18,6 +18,9 @@ class TextField: UITextField {
         super.init(coder: coder)
     }
     
+    private let focusedBorderWidth: CGFloat = 1
+    private let unfocusedBorderWidth: CGFloat = 0.25
+    
     let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 8)
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -34,7 +37,7 @@ class TextField: UITextField {
     
     func setup() {
         layer.cornerRadius = 5
-        layer.borderWidth = 0.25
+        layer.borderWidth = unfocusedBorderWidth
         layer.borderColor = UIColor.lightGray.cgColor
         
         translatesAutoresizingMaskIntoConstraints = false
@@ -51,10 +54,10 @@ class TextField: UITextField {
     }
     
     public func applyFocusedStyle() {
-        layer.borderWidth = 2
+        layer.borderWidth = focusedBorderWidth
     }
     
     public func applyUnfocusedStyle() {
-        layer.borderWidth = 1
+        layer.borderWidth = unfocusedBorderWidth
     }
 }

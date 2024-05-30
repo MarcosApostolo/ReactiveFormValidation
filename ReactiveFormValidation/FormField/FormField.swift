@@ -24,7 +24,7 @@ class FormField: UIView {
         }
     }
         
-    private(set) lazy var textField: UITextField = {
+    private(set) lazy var textField: TextField = {
         let textField = TextField()
                 
         return textField
@@ -62,15 +62,39 @@ class FormField: UIView {
             errorLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
             errorLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 12)
         ])
+        
+        bind()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    private func bind() {
+        textField.rx
+            .controlEvent(.editingDidBegin)
+            .subscribe(onNext: { [weak self] in
+                self?.textField.applyFocusedStyle()
+            })
+            .disposed(by: disposeBag)
+        
+        textField.rx
+            .controlEvent(.editingDidEnd)
+            .subscribe(onNext: { [weak self] in
+                self?.textField.applyUnfocusedStyle()
+            })
+            .disposed(by: disposeBag)
+    }
+    
     private func bindDisplayErrorLabel() {
         displayErrorLabel?
             .subscribe(onNext: { [weak self] hasError in
+                if hasError {
+                    self?.textField.applyErrorStyle()
+                } else {
+                    self?.textField.applyValidStyle()
+                }
+                
                 self?.errorLabel.isHidden = !hasError
             })
             .disposed(by: disposeBag)

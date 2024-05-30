@@ -34,7 +34,6 @@ class PasswordFormField: UIView {
     private(set) lazy var confirmPasswordTextField: UITextField = {
         let textField = TextField()
         
-        textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
         
         return textField
