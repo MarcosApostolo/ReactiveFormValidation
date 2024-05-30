@@ -11,17 +11,17 @@ import RxSwift
 @testable import ReactiveFormValidation
 
 final class FormSnapshotTests: FBSnapshotTestCase {
-//    func test_formWithInitialState() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "INITIAL_STATE_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "INITIAL_STATE_DARK")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE)), identifier: "INITIAL_STATE_IPHONE_SE")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE1)), identifier: "INITIAL_STATE_IPHONE_SE_1STGEN")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhone15ProMax)), identifier: "INITIAL_STATE_IPHONE_PRO_MAX")
-//    }
+    func test_formWithInitialState() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "INITIAL_STATE_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "INITIAL_STATE_DARK")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE)), identifier: "INITIAL_STATE_IPHONE_SE")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE1)), identifier: "INITIAL_STATE_IPHONE_SE_1STGEN")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhone15ProMax)), identifier: "INITIAL_STATE_IPHONE_PRO_MAX")
+    }
 //
 //    func test_withNameRequiredError() {
 //        let sut = makeSUT()

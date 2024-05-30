@@ -24,7 +24,15 @@ class PasswordFormField: UIView {
     }
     
     private(set) lazy var newPasswordTextField: UITextField = {
-        let textField = UITextField()
+        let textField = TextField()
+        
+        textField.isSecureTextEntry = true
+        
+        return textField
+    }()
+    
+    private(set) lazy var confirmPasswordTextField: UITextField = {
+        let textField = TextField()
         
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
@@ -34,15 +42,6 @@ class PasswordFormField: UIView {
     
     private(set) lazy var newPasswordVisibilityButton = PasswordVisibilityButton()
     private(set) lazy var confirmPasswordVisibilityButton = PasswordVisibilityButton()
-    
-    private(set) lazy var confirmPasswordTextField: UITextField = {
-        let textField = UITextField()
-        
-        textField.borderStyle = .roundedRect
-        textField.isSecureTextEntry = true
-        
-        return textField
-    }()
     
     private(set) lazy var errorLabel: UILabel = {
         let label = UILabel()

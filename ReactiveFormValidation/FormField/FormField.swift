@@ -25,7 +25,7 @@ class FormField: UIView {
     }
         
     private(set) lazy var textField: UITextField = {
-        let textField = UITextField()
+        let textField = TextField()
                 
         return textField
     }()

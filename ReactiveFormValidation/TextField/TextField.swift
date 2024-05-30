@@ -33,8 +33,8 @@ class TextField: UITextField {
     }
     
     func setup() {
-        layer.cornerRadius = 8
-        layer.borderWidth = 1
+        layer.cornerRadius = 5
+        layer.borderWidth = 0.25
         layer.borderColor = UIColor.lightGray.cgColor
         
         translatesAutoresizingMaskIntoConstraints = false
