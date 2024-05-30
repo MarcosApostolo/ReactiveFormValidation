@@ -45,13 +45,13 @@ class FormViewController: UIViewController {
         view.addSubview(nameTextFieldController.formField)
         view.addSubview(emailTextFieldController.formField)
         view.addSubview(usernameTextFieldController.formField)
-        view.addSubview(passwordFieldsController.passwordsView)
+        view.addSubview(passwordFieldsController.passwordFormField)
         view.addSubview(submitButton)
         
         nameTextFieldController.formField.translatesAutoresizingMaskIntoConstraints = false
         emailTextFieldController.formField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextFieldController.formField.translatesAutoresizingMaskIntoConstraints = false
-        passwordFieldsController.passwordsView.translatesAutoresizingMaskIntoConstraints = false
+        passwordFieldsController.passwordFormField.translatesAutoresizingMaskIntoConstraints = false
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
@@ -75,9 +75,9 @@ class FormViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            passwordFieldsController.passwordsView.topAnchor.constraint(equalTo: usernameTextFieldController.formField.bottomAnchor),
-            passwordFieldsController.passwordsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            passwordFieldsController.passwordsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            passwordFieldsController.passwordFormField.topAnchor.constraint(equalTo: usernameTextFieldController.formField.bottomAnchor),
+            passwordFieldsController.passwordFormField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            passwordFieldsController.passwordFormField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
         
         NSLayoutConstraint.activate([

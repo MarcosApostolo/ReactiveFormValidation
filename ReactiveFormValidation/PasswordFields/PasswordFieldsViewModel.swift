@@ -39,10 +39,11 @@ class PasswordFieldsViewModel {
             .combineLatest(passwordsAreValid, newPasswordValueIsFocused) { isValid, isFocused in
                 return !isValid && !isFocused
             }
+            .skip(1)
             .distinctUntilChanged()
     }
     
-    var errorLabel: Observable<String> {
+    var errorMessage: Observable<String> {
         return Observable.combineLatest(newPasswordValue, confirmPasswordValue) { newValue, confirmValue in
             if !PasswordValidatorPolicy.isPasswordMinLengthValid(newValue) {
                 return "Password length must be at least \(PasswordValidatorPolicy.minLength) characters"

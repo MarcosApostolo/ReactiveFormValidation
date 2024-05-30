@@ -6,8 +6,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class PasswordView: UIView {
+class PasswordFormField: UIView {
+    private let disposeBag = DisposeBag()
+    
+    var displayLabelError: Observable<Bool>? {
+        didSet {
+            bindDisplayLabelError()
+        }
+    }
+    var errorMessage: Observable<String>? {
+        didSet {
+            bindErrorMessage()
+        }
+    }
+    
     private(set) lazy var newPasswordTextField: UITextField = {
         let textField = UITextField()
         
@@ -75,5 +90,19 @@ class PasswordView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    private func bindDisplayLabelError() {
+        displayLabelError?
+            .subscribe(onNext: { [weak self] hasError in
+                self?.errorLabel.isHidden = !hasError
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindErrorMessage() {
+        errorMessage?
+            .bind(to: errorLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }

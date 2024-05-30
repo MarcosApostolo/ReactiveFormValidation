@@ -14,27 +14,7 @@ class PasswordFieldsController {
     
     let viewModel = PasswordFieldsViewModel()
     
-    let passwordsView = PasswordView()
-    
-    var newPasswordTextField: UITextField {
-        passwordsView.newPasswordTextField
-    }
-    
-    var errorLabel: UILabel {
-        passwordsView.errorLabel
-    }
-    
-    var confirmPasswordTextField: UITextField {
-        passwordsView.confirmPasswordTextField
-    }
-    
-    var newPasswordVisibilityButton: PasswordVisibilityButton {
-        passwordsView.newPasswordVisibilityButton
-    }
-    
-    var confirmPasswordVisibilityButton: PasswordVisibilityButton {
-        passwordsView.confirmPasswordVisibilityButton
-    }
+    let passwordFormField = PasswordFormField()
     
     init() {
         bind()
@@ -63,18 +43,9 @@ class PasswordFieldsController {
             .map { false }
             .bind(to: viewModel.newPasswordValueIsFocused)
             .disposed(by: disposeBag)
-
-        viewModel
-            .displayErrorLabel
-            .skip(1)
-            .map { !$0 }
-            .bind(to: errorLabel.rx.isHidden)
-            .disposed(by: disposeBag)
         
-        viewModel
-            .errorLabel
-            .bind(to: errorLabel.rx.text)
-            .disposed(by: disposeBag)
+        passwordFormField.displayLabelError = viewModel.displayErrorLabel
+        passwordFormField.errorMessage = viewModel.errorMessage
         
         confirmPasswordTextField.rx.text.orEmpty
             .distinctUntilChanged()
@@ -149,5 +120,27 @@ class PasswordFieldsController {
         
         confirmPasswordTextField.rightView = confirmPasswordVisibilityButton
         confirmPasswordTextField.rightViewMode = .always
+    }
+}
+
+extension PasswordFieldsController {
+    var newPasswordTextField: UITextField {
+        passwordFormField.newPasswordTextField
+    }
+    
+    var errorLabel: UILabel {
+        passwordFormField.errorLabel
+    }
+    
+    var confirmPasswordTextField: UITextField {
+        passwordFormField.confirmPasswordTextField
+    }
+    
+    var newPasswordVisibilityButton: PasswordVisibilityButton {
+        passwordFormField.newPasswordVisibilityButton
+    }
+    
+    var confirmPasswordVisibilityButton: PasswordVisibilityButton {
+        passwordFormField.confirmPasswordVisibilityButton
     }
 }
