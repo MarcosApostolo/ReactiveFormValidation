@@ -85,7 +85,10 @@ class PasswordFormField: UIView {
         ])
         
         newPasswordTextField.rightView = newPasswordVisibilityButton
+        newPasswordTextField.rightViewMode = .always
+        
         confirmPasswordTextField.rightView = confirmPasswordVisibilityButton
+        confirmPasswordTextField.rightViewMode = .always
     }
     
     required init?(coder: NSCoder) {

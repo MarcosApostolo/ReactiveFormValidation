@@ -21,6 +21,9 @@ class PasswordFieldsController {
     }
     
     func bind() {
+        newPasswordTextField.placeholder = viewModel.newPasswordPlaceholder
+        confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
+        
         newPasswordTextField.rx.text.orEmpty
             .distinctUntilChanged()
             .bind(to: viewModel.newPasswordValue)
@@ -111,15 +114,6 @@ class PasswordFieldsController {
                     .onNext(!self.newPasswordTextField.isSecureTextEntry)
             })
             .disposed(by: disposeBag)
-                
-        newPasswordTextField.placeholder = viewModel.newPasswordPlaceholder
-        confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
-        
-        newPasswordTextField.rightView = newPasswordVisibilityButton
-        newPasswordTextField.rightViewMode = .always
-        
-        confirmPasswordTextField.rightView = confirmPasswordVisibilityButton
-        confirmPasswordTextField.rightViewMode = .always
     }
 }
 
