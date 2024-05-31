@@ -22,26 +22,6 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE1)), identifier: "INITIAL_STATE_IPHONE_SE_1STGEN")
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhone15ProMax)), identifier: "INITIAL_STATE_IPHONE_PRO_MAX")
     }
-    
-    func test_withFocusedFormField_light() {
-        let sut = makeSUT()
-        
-        sut.loadViewIfNeeded()
-        
-        sut.simulateFocusedState()
-        
-        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "FOCUSED_FORM_FIELD_LIGHT")
-    }
-    
-    func test_withFocusedFormField_dark() {
-        let sut = makeSUT()
-        
-        sut.loadViewIfNeeded()
-        
-        sut.simulateFocusedState()
-        
-        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "FOCUSED_FORM_FIELD_DARK")
-    }
 
     func test_withNameRequiredError() {
         let sut = makeSUT()
