@@ -21,7 +21,9 @@ class TextField: UITextField {
     private let focusedBorderWidth: CGFloat = 1
     private let unfocusedBorderWidth: CGFloat = 0.25
     
-    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 8)
+    var padding: UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 5, bottom: 0, right: rightView?.frame.width ?? 8)
+    }
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)

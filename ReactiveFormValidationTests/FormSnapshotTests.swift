@@ -42,87 +42,87 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "FOCUSED_FORM_FIELD_DARK")
     }
-//
-//    func test_withNameRequiredError() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateNameRequiredError()
-//
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "NAME_REQUIRED_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "NAME_REQUIRED_ERROR_DARK")
-//    }
-//    
-//    func test_withEmailRequiredError() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateEmailRequiredError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "EMAIL_REQUIRED_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "EMAIL_REQUIRED_ERROR_DARK")
-//    }
-//    
-//    func test_withInvalidEmailError() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateInvalidEmailError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "INVALID_EMAIL_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "INVALID_EMAIL_ERROR_DARK")
-//    }
-//    
-//    func test_withUsernameRequiredError() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateUsernameRequiredError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "USERNAME_REQUIRED_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "USERNAME_REQUIRED_ERROR_DARK")
-//    }
-//    
-//    func test_withLongUsernameError() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateLongUsernameError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "LONG_USERNAME_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "LONG_USERNAME_ERROR_DARK")
-//    }
-//    
-//    func test_withNonUniqueUsernameError() {
-//        let sut = makeSUT(validateUniqueUsername: { _ in
-//            .just(.used)
-//        })
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateNonUniqueUsernameError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "NON_UNIQUE_USERNAME_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "NON_UNIQUE_USERNAME_ERROR_DARK")
-//    }
-//    
-//    func test_withUsernameValidationLoading() {
-//        let sut = makeSUT(validateUniqueUsername: { _ in
-//            .never()
-//        })
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateNonUniqueUsernameError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "USERNAME_VALIDATION_LOADING_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "USERNAME_VALIDATION_LOADING_DARK")
-//    }
+
+    func test_withNameRequiredError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateNameRequiredError()
+
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "NAME_REQUIRED_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "NAME_REQUIRED_ERROR_DARK")
+    }
+    
+    func test_withEmailRequiredError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateEmailRequiredError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "EMAIL_REQUIRED_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "EMAIL_REQUIRED_ERROR_DARK")
+    }
+    
+    func test_withInvalidEmailError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateInvalidEmailError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "INVALID_EMAIL_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "INVALID_EMAIL_ERROR_DARK")
+    }
+    
+    func test_withUsernameRequiredError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateUsernameRequiredError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "USERNAME_REQUIRED_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "USERNAME_REQUIRED_ERROR_DARK")
+    }
+    
+    func test_withLongUsernameError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateLongUsernameError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "LONG_USERNAME_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "LONG_USERNAME_ERROR_DARK")
+    }
+    
+    func test_withNonUniqueUsernameError() {
+        let sut = makeSUT(validateUniqueUsername: { _ in
+            .just(.used)
+        })
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateNonUniqueUsernameError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "NON_UNIQUE_USERNAME_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "NON_UNIQUE_USERNAME_ERROR_DARK")
+    }
+    
+    func test_withUsernameValidationLoading() {
+        let sut = makeSUT(validateUniqueUsername: { _ in
+            .never()
+        })
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateNonUniqueUsernameError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "USERNAME_VALIDATION_LOADING_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "USERNAME_VALIDATION_LOADING_DARK")
+    }
 //    
 //    func test_withPasswordMinLengthError() {
 //        let sut = makeSUT()
