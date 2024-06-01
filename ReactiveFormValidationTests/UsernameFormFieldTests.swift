@@ -110,6 +110,15 @@ final class UsernameFormFieldTests: XCTestCase {
         simulateTyping(on: sut.textField, value: "unique username")
         sut.usernameButton.sendActions(for: .touchUpInside)
     }
+    
+    func test_correctPropertiesOnTextField() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(sut.textField.autocapitalizationType, .none)
+        XCTAssertEqual(sut.textField.autocorrectionType, .no)
+    }
 
     // MARK: Helpers
     private func makeSUT(

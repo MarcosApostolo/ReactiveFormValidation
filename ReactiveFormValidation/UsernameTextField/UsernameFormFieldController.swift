@@ -46,6 +46,8 @@ class UsernameFormFieldController {
         }
         
         textField.placeholder = viewModel.textFieldPlaceholder
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
         
         textField.rx.text.orEmpty
             .bind(to: viewModel.textFieldValue)
