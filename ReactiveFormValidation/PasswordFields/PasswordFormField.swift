@@ -11,19 +11,8 @@ import RxCocoa
 
 class PasswordFormField: UIView {
     private let disposeBag = DisposeBag()
-    
-    var displayLabelError: Observable<Bool>? {
-        didSet {
-            bindDisplayLabelError()
-        }
-    }
-    var errorMessage: Observable<String>? {
-        didSet {
-            bindErrorMessage()
-        }
-    }
-    
-    private(set) lazy var newPasswordTextField: UITextField = {
+
+    private(set) lazy var newPasswordTextField: TextField = {
         let textField = TextField()
         
         textField.isSecureTextEntry = true
@@ -31,7 +20,7 @@ class PasswordFormField: UIView {
         return textField
     }()
     
-    private(set) lazy var confirmPasswordTextField: UITextField = {
+    private(set) lazy var confirmPasswordTextField: TextField = {
         let textField = TextField()
         
         textField.isSecureTextEntry = true
@@ -87,23 +76,41 @@ class PasswordFormField: UIView {
         
         confirmPasswordTextField.rightView = confirmPasswordVisibilityButton
         confirmPasswordTextField.rightViewMode = .always
+        
+        bind()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    private func bindDisplayLabelError() {
-        displayLabelError?
-            .subscribe(onNext: { [weak self] hasError in
-                self?.errorLabel.isHidden = !hasError
+    private func bind() {
+        newPasswordTextField.rx
+            .controlEvent(.editingDidBegin)
+            .subscribe(onNext: { [weak self] in
+                self?.newPasswordTextField.applyFocusedStyle()
             })
             .disposed(by: disposeBag)
-    }
-    
-    private func bindErrorMessage() {
-        errorMessage?
-            .bind(to: errorLabel.rx.text)
+        
+        newPasswordTextField.rx
+            .controlEvent(.editingDidEnd)
+            .subscribe(onNext: { [weak self] in
+                self?.newPasswordTextField.applyUnfocusedStyle()
+            })
+            .disposed(by: disposeBag)
+        
+        confirmPasswordTextField.rx
+            .controlEvent(.editingDidBegin)
+            .subscribe(onNext: { [weak self] in
+                self?.confirmPasswordTextField.applyFocusedStyle()
+            })
+            .disposed(by: disposeBag)
+        
+        confirmPasswordTextField.rx
+            .controlEvent(.editingDidEnd)
+            .subscribe(onNext: { [weak self] in
+                self?.confirmPasswordTextField.applyUnfocusedStyle()
+            })
             .disposed(by: disposeBag)
     }
 }

@@ -8,9 +8,18 @@
 import Foundation
 import RxSwift
 
+enum PasswordFormFieldValidationState {
+    case error
+    case valid
+    case initial
+}
+
 class PasswordFieldsViewModel {
+    private let disposeBag = DisposeBag()
+    
     var newPasswordValue = BehaviorSubject(value: "")
     var newPasswordValueIsTouched = BehaviorSubject(value: false)
+    var confirmPasswordValueIsTouched = BehaviorSubject(value: false)
     var newPasswordValueIsFocused = BehaviorSubject(value: false)
     
     var confirmPasswordValue = BehaviorSubject(value: "")
@@ -60,6 +69,40 @@ class PasswordFieldsViewModel {
             return ""
         }
         .distinctUntilChanged()
+    }
+    
+    var displayNewPasswordState: Observable<PasswordFormFieldValidationState> {
+        return Observable
+            .combineLatest(
+                newPasswordValue,
+                newPasswordValueIsTouched,
+                newPasswordValueIsFocused
+            ) { newValue, isTouched, isFocused in
+                if !isTouched {
+                    return .initial
+                }
+                
+                if isFocused {
+                    return .valid
+                }
+                
+                return PasswordValidatorPolicy.isPasswordMinLengthValid(newValue)
+                    && PasswordValidatorPolicy.isPasswordMaxLengthValid(newValue) ? .valid : .error
+            }
+            .debug("displayNewPasswordState")
+            .distinctUntilChanged()
+            .share()
+    }
+    
+    var displayStateOnPasswords: Observable<PasswordFormFieldValidationState> {
+        return Observable
+            .combineLatest(newPasswordValue, confirmPasswordValue, confirmPasswordValueIsTouched) { newValue, confirmValue, confirmIsTouched in
+                if !confirmIsTouched {
+                    return .initial
+                }
+                
+                return newValue == confirmValue ? .valid : .error
+            }
     }
 
     var newPasswordPlaceholder: String {

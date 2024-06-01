@@ -14,15 +14,15 @@ final class PasswordFieldsControllerTests: XCTestCase {
                 
         sut.loadViewIfNeeded()
         
-        assertNoErrorOn(sut.textFieldController)
+        assertInitialState(sut.textFieldController)
         
-        simulateTyping(on: sut.newPasswordTextField, value: "")
+        simulateTyping(on: sut.formField.newPasswordTextField, value: "")
         
-        assertThat(sut.textFieldController, hasError: "Password length must be at least 8 characters")
+        assertErrorOnNewPassword(sut.textFieldController, hasError: "Password length must be at least 8 characters")
         
-        simulateTyping(on: sut.newPasswordTextField, value: "1234567")
+        simulateTyping(on: sut.formField.newPasswordTextField, value: "1234567")
         
-        assertThat(sut.textFieldController, hasError: "Password length must be at least 8 characters")
+        assertErrorOnNewPassword(sut.textFieldController, hasError: "Password length must be at least 8 characters")
     }
     
     func test_moreThanMaxLengthPassword_displayMaxLengthErrorMessage() {
@@ -33,14 +33,14 @@ final class PasswordFieldsControllerTests: XCTestCase {
                 
         sut.loadViewIfNeeded()
         
-        assertNoErrorOn(sut.textFieldController)
+        assertInitialState(sut.textFieldController)
         
-        simulateTyping(on: sut.newPasswordTextField, value: passwordWithMoreThanMaxLength)
+        simulateTyping(on: sut.formField.newPasswordTextField, value: passwordWithMoreThanMaxLength)
         
-        assertThat(sut.textFieldController, hasError: "Password length must be no longer than 16 characters")
+        assertErrorOnNewPassword(sut.textFieldController, hasError: "Password length must be no longer than 16 characters")
         
-        simulateTyping(on: sut.newPasswordTextField, value: passwordEqualToMaxLength)
-        simulateTyping(on: sut.confirmPasswordTextField, value: passwordEqualToMaxLength)
+        simulateTyping(on: sut.formField.newPasswordTextField, value: passwordEqualToMaxLength)
+        simulateTyping(on: sut.formField.confirmPasswordTextField, value: passwordEqualToMaxLength)
         
         assertNoErrorOn(sut.textFieldController)
     }
@@ -50,13 +50,13 @@ final class PasswordFieldsControllerTests: XCTestCase {
         
         sut.loadViewIfNeeded()
         
-        assertNoErrorOn(sut.textFieldController)
+        assertInitialState(sut.textFieldController)
         
-        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.formField.newPasswordTextField, value: "12345678")
         
-        simulateTyping(on: sut.confirmPasswordTextField, value: "123456789")
+        simulateTyping(on: sut.formField.confirmPasswordTextField, value: "123456789")
         
-        assertThat(sut.textFieldController, hasError: "Passwords don't match.")
+        assertErrorOnBothTextFields(sut.textFieldController, hasError: "Passwords don't match.")
     }
     
     func test_passwordsAreValid_doesNotDisplayErrorMessage() {
@@ -66,8 +66,8 @@ final class PasswordFieldsControllerTests: XCTestCase {
         
         assertNoErrorOn(sut.textFieldController)
         
-        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
-        simulateTyping(on: sut.confirmPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.formField.newPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.formField.confirmPasswordTextField, value: "12345678")
         
         assertNoErrorOn(sut.textFieldController)
     }
@@ -77,16 +77,51 @@ final class PasswordFieldsControllerTests: XCTestCase {
         
         sut.loadViewIfNeeded()
         
-        XCTAssertTrue(sut.newPasswordTextField.isSecureTextEntry)
-        XCTAssertTrue(sut.confirmPasswordTextField.isSecureTextEntry)
+        XCTAssertTrue(sut.formField.newPasswordTextField.isSecureTextEntry)
+        XCTAssertTrue(sut.formField.confirmPasswordTextField.isSecureTextEntry)
         
         sut.toggleNewPasswordVisibility()
         
-        XCTAssertFalse(sut.newPasswordTextField.isSecureTextEntry)
+        XCTAssertFalse(sut.formField.newPasswordTextField.isSecureTextEntry)
         
         sut.toggleConfirmPasswordVisibility()
         
-        XCTAssertFalse(sut.confirmPasswordTextField.isSecureTextEntry)
+        XCTAssertFalse(sut.formField.confirmPasswordTextField.isSecureTextEntry)
+    }
+    
+    func test_initiallyWithUnfocusedStateOnTextField() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertTrue(sut.formField.unfocusedStyleIsAppliedOnNewPasswordTextField)
+        XCTAssertTrue(sut.formField.unfocusedStyleIsAppliedOnConfirmPasswordTextField)
+    }
+    
+    func test_whenNewPasswordFocused_displayFocusedStyle() {
+        let sut = makeSUT()
+        
+        putInViewHierarchy(sut)
+        
+        sut.loadViewIfNeeded()
+        
+        sut.formField.newPasswordTextField.becomeFirstResponder()
+        
+        XCTAssertTrue(sut.formField.focusedStyleIsAppliedOnNewPasswordTextField)
+        XCTAssertTrue(sut.formField.unfocusedStyleIsAppliedOnConfirmPasswordTextField)
+    }
+    
+    func test_whenConfirmPasswordFocused_displayFocusedStyle() {
+        let sut = makeSUT()
+        
+        putInViewHierarchy(sut)
+        
+        sut.loadViewIfNeeded()
+        
+        sut.formField.confirmPasswordTextField.becomeFirstResponder()
+        
+        XCTAssertTrue(sut.formField.unfocusedStyleIsAppliedOnNewPasswordTextField)
+        XCTAssertTrue(sut.formField.focusedStyleIsAppliedOnConfirmPasswordTextField)
     }
         
     // MARK: Helpers
@@ -96,13 +131,36 @@ final class PasswordFieldsControllerTests: XCTestCase {
         return sut
     }
     
+    private func assertInitialState(_ sut: PasswordFieldsController, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(sut.errorLabel.isHidden, file: file, line: line)
+        XCTAssertFalse(sut.passwordFormField.errorIsAppliedOnNewPasswordTextField, file: file, line: line)
+        XCTAssertFalse(sut.passwordFormField.errorIsAppliedOnConfirmPasswordTextField, file: file, line: line)
+    }
+    
+    private func assertErrorOnNewPassword(_ sut: PasswordFieldsController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertFalse(sut.errorLabel.isHidden, file: file, line: line)
+        XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
+        XCTAssertTrue(sut.passwordFormField.errorIsAppliedOnNewPasswordTextField, file: file, line: line)
+        XCTAssertFalse(sut.passwordFormField.errorIsAppliedOnConfirmPasswordTextField, file: file, line: line)
+    }
+    
+    private func assertErrorOnBothTextFields(_ sut: PasswordFieldsController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertFalse(sut.errorLabel.isHidden, file: file, line: line)
+        XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
+        XCTAssertTrue(sut.passwordFormField.errorIsAppliedOnNewPasswordTextField, file: file, line: line)
+        XCTAssertTrue(sut.passwordFormField.errorIsAppliedOnConfirmPasswordTextField, file: file, line: line)
+    }
+    
     private func assertThat(_ sut: PasswordFieldsController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
         XCTAssertFalse(sut.errorLabel.isHidden, file: file, line: line)
         XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
+        XCTAssertTrue(sut.passwordFormField.errorIsAppliedOnNewPasswordTextField, file: file, line: line)
     }
     
     private func assertNoErrorOn(_ sut: PasswordFieldsController, file: StaticString = #file, line: UInt = #line) {
         XCTAssertTrue(sut.errorLabel.isHidden, file: file, line: line)
+        XCTAssertFalse(sut.passwordFormField.errorIsAppliedOnNewPasswordTextField, file: file, line: line)
+        XCTAssertFalse(sut.passwordFormField.errorIsAppliedOnConfirmPasswordTextField, file: file, line: line)
     }
     
     private class TestHelperViewController: UIViewController {
@@ -111,28 +169,54 @@ final class PasswordFieldsControllerTests: XCTestCase {
         override func viewDidLoad() {
             super.viewDidLoad()
 
-            view.addSubview(textFieldController.errorLabel)
-            view.addSubview(textFieldController.newPasswordTextField)
+            view.addSubview(textFieldController.passwordFormField)
         }
         
-        var errorLabel: UILabel {
-            textFieldController.errorLabel
-        }
-        
-        var newPasswordTextField: UITextField {
-            textFieldController.newPasswordTextField
-        }
-        
-        var confirmPasswordTextField: UITextField {
-            textFieldController.confirmPasswordTextField
-        }
-        
-        func toggleNewPasswordVisibility() {
-            textFieldController.newPasswordVisibilityButton.sendActions(for: .touchUpInside)
+        var formField: PasswordFormField {
+            return textFieldController.passwordFormField
         }
         
         func toggleConfirmPasswordVisibility() {
             textFieldController.confirmPasswordVisibilityButton.sendActions(for: .touchUpInside)
         }
+        
+        func toggleNewPasswordVisibility() {
+            textFieldController.newPasswordVisibilityButton.sendActions(for: .touchUpInside)
+        }
+    }
+}
+
+
+private extension PasswordFormField {
+    var unfocusedStyleIsAppliedOnNewPasswordTextField: Bool {
+        newPasswordTextField.layer.borderWidth == 0.25
+    }
+    
+    var focusedStyleIsAppliedOnNewPasswordTextField: Bool {
+        newPasswordTextField.layer.borderWidth == 1
+    }
+    
+    var unfocusedStyleIsAppliedOnConfirmPasswordTextField: Bool {
+        confirmPasswordTextField.layer.borderWidth == 0.25
+    }
+    
+    var focusedStyleIsAppliedOnConfirmPasswordTextField: Bool {
+        confirmPasswordTextField.layer.borderWidth == 1
+    }
+    
+    var errorIsAppliedOnNewPasswordTextField: Bool {
+        newPasswordTextField.layer.borderColor == UIColor.red.cgColor
+    }
+    
+    var errorIsAppliedOnConfirmPasswordTextField: Bool {
+        confirmPasswordTextField.layer.borderColor == UIColor.red.cgColor
+    }
+    
+    var validStyleIsAppliedOnNewPasswordTextField: Bool {
+        newPasswordTextField.layer.borderColor == UIColor.blue.cgColor
+    }
+    
+    var validStyleIsAppliedOnConfirmPasswordTextField: Bool {
+        confirmPasswordTextField.layer.borderColor == UIColor.blue.cgColor
     }
 }

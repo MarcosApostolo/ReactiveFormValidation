@@ -34,6 +34,12 @@ class PasswordFieldsController {
             .map { true }
             .bind(to: viewModel.newPasswordValueIsTouched)
             .disposed(by: disposeBag)
+        
+        confirmPasswordTextField.rx
+            .controlEvent(.editingDidBegin)
+            .map { true }
+            .bind(to: viewModel.confirmPasswordValueIsTouched)
+            .disposed(by: disposeBag)
 
         newPasswordTextField.rx
             .controlEvent(.editingDidBegin)
@@ -47,8 +53,15 @@ class PasswordFieldsController {
             .bind(to: viewModel.newPasswordValueIsFocused)
             .disposed(by: disposeBag)
         
-        passwordFormField.displayLabelError = viewModel.displayErrorLabel
-        passwordFormField.errorMessage = viewModel.errorMessage
+        viewModel.displayErrorLabel
+            .subscribe(onNext: { [weak self] hasError in
+                self?.errorLabel.isHidden = !hasError
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.errorMessage
+            .bind(to: errorLabel.rx.text)
+            .disposed(by: disposeBag)
         
         confirmPasswordTextField.rx.text.orEmpty
             .distinctUntilChanged()
@@ -114,11 +127,39 @@ class PasswordFieldsController {
                     .onNext(!self.newPasswordTextField.isSecureTextEntry)
             })
             .disposed(by: disposeBag)
+        
+        viewModel
+            .displayNewPasswordState
+            .subscribe(onNext: { [weak self] state in
+                switch state {
+                case .error:
+                    self?.newPasswordTextField.applyErrorStyle()
+                case .valid:
+                    self?.newPasswordTextField.applyValidStyle()
+                case .initial: break
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .displayStateOnPasswords
+            .subscribe(onNext: { [weak self] state in
+                switch state {
+                case .error:
+                    self?.confirmPasswordTextField.applyErrorStyle()
+                    self?.newPasswordTextField.applyErrorStyle()
+                case .valid:
+                    self?.confirmPasswordTextField.applyValidStyle()
+                    self?.newPasswordTextField.applyValidStyle()
+                case .initial: break
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 extension PasswordFieldsController {
-    var newPasswordTextField: UITextField {
+    var newPasswordTextField: TextField {
         passwordFormField.newPasswordTextField
     }
     
@@ -126,7 +167,7 @@ extension PasswordFieldsController {
         passwordFormField.errorLabel
     }
     
-    var confirmPasswordTextField: UITextField {
+    var confirmPasswordTextField: TextField {
         passwordFormField.confirmPasswordTextField
     }
     
