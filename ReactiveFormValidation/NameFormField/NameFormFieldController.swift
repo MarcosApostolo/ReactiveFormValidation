@@ -32,6 +32,9 @@ class NameFormFieldController {
     
     func bind() {
         textField.placeholder = viewModel.nameTextFieldPlaceholder
+        textField.textContentType = .name
+        textField.autocapitalizationType = .words
+        textField.autocorrectionType = .no
         formField.displayErrorLabel = viewModel.displayErrorLabel
         formField.errorMessage = viewModel.errorMessage
         

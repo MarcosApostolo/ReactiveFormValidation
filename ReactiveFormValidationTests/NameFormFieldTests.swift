@@ -53,6 +53,16 @@ final class NameFormFieldTests: XCTestCase {
         assertNoErrorOn(sut.formFieldController)
     }
     
+    func test_correctPropertiesOnTextField() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(sut.textField.textContentType, .name)
+        XCTAssertEqual(sut.textField.autocapitalizationType, .words)
+        XCTAssertEqual(sut.textField.autocorrectionType, .no)
+    }
+    
     // MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> TestHelperViewController {
         let sut = TestHelperViewController()
