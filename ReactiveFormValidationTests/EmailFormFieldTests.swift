@@ -54,6 +54,17 @@ final class EmailFormFieldTests: XCTestCase {
         assertNoErrorOn(sut.formFieldController)
     }
     
+    func test_correctPropertiesOnTextField() {
+        let sut = makeSUT()
+                
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(sut.textField.textContentType, .emailAddress)
+        XCTAssertEqual(sut.textField.autocapitalizationType, .none)
+        XCTAssertEqual(sut.textField.autocorrectionType, .no)
+        XCTAssertEqual(sut.textField.keyboardType, .emailAddress)
+    }
+    
     // MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> TestHelperViewController {
         let sut = TestHelperViewController()

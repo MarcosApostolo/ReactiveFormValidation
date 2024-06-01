@@ -31,6 +31,11 @@ class EmailFormFieldController {
     }
     
     func bind() {
+        textField.textContentType = .emailAddress
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.keyboardType = .emailAddress
+        
         textField.rx.text.orEmpty
             .bind(to: viewModel.textFieldValue)
             .disposed(by: disposeBag)
