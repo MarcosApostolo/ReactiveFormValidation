@@ -73,7 +73,6 @@
 		4AFF0E292BF5537D00F46A8B /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */; };
 		4AFF0E2B2BF5594400F46A8B /* FormUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */; };
 		4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */; };
-		4AFF0E3E2BF5A33300F46A8B /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3D2BF5A33300F46A8B /* TextFieldView.swift */; };
 		A5757476E3D443BEAD2D3564 /* Pods_ReactiveFormValidationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -161,7 +160,6 @@
 		4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUIComposer.swift; sourceTree = "<group>"; };
 		4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldTests.swift; sourceTree = "<group>"; };
-		4AFF0E3D2BF5A33300F46A8B /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		89B352D663BCF56C45553C74 /* Pods_ReactiveFormValidation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59DDAE8DE35E77CC67A8CA4 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,7 +363,6 @@
 		4AFF0E362BF59D5A00F46A8B /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				4AFF0E3D2BF5A33300F46A8B /* TextFieldView.swift */,
 				4ACC15D22C07DCF100A7FEEB /* TextField.swift */,
 			);
 			path = TextField;
@@ -615,7 +612,6 @@
 				4A810B822BF54FEB00469895 /* FormViewController.swift in Sources */,
 				4ACC15D32C07DCF100A7FEEB /* TextField.swift in Sources */,
 				4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */,
-				4AFF0E3E2BF5A33300F46A8B /* TextFieldView.swift in Sources */,
 				4A606B7B2BFD4CEC00AEE729 /* PasswordFieldsController.swift in Sources */,
 				4A606B7F2BFD5FAF00AEE729 /* PasswordValidatorPolicy.swift in Sources */,
 				4A2DE87C2BFC07A20044D337 /* UsernameStatus.swift in Sources */,
