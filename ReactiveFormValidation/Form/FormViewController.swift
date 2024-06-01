@@ -29,7 +29,6 @@ class FormViewController: UIViewController {
         let button = UIButton()
         
         button.isEnabled = false
-        button.setTitle("Continue", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .blue
         button.layer.cornerRadius = 24
@@ -93,11 +92,7 @@ class FormViewController: UIViewController {
             return
         }
         
-        nameFormFieldController.textField.rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.nameTextFieldValue)
-            .disposed(by: disposeBag)
+        submitButton.setTitle(viewModel.buttonLabel, for: .normal)
         
         nameFormFieldController.viewModel
             .fieldIsValid

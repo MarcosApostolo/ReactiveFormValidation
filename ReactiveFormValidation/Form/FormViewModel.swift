@@ -9,7 +9,6 @@ import Foundation
 import RxSwift
 
 class FormViewModel {
-    var nameTextFieldValue = BehaviorSubject(value: "")
     var nameTextFieldisValid = BehaviorSubject(value: false)
     var emaiTextFieldisValid = BehaviorSubject(value: false)
     var usernameTextFieldIsValid = BehaviorSubject(value: false)
@@ -23,5 +22,9 @@ class FormViewModel {
                 usernameTextFieldIsValid,
                 passwordFieldsAreValid
             ) { $0 && $1 && $2 && $3 }
+    }
+    
+    var buttonLabel: String {
+        "Continue"
     }
 }
