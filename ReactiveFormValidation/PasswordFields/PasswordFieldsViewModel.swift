@@ -89,7 +89,6 @@ class PasswordFieldsViewModel {
                 return PasswordValidatorPolicy.isPasswordMinLengthValid(newValue)
                     && PasswordValidatorPolicy.isPasswordMaxLengthValid(newValue) ? .valid : .error
             }
-            .debug("displayNewPasswordState")
             .distinctUntilChanged()
             .share()
     }
