@@ -282,7 +282,6 @@
 		4A810B7C2BF54FEB00469895 /* ReactiveFormValidation */ = {
 			isa = PBXGroup;
 			children = (
-				4ACC15D12C07DCE000A7FEEB /* New Group */,
 				4ACC15CA2C07DBF200A7FEEB /* FormField */,
 				4AFF0E362BF59D5A00F46A8B /* TextField */,
 				4AA1A9992BF94C9E0052D813 /* EmailTextField */,
@@ -345,13 +344,6 @@
 				4ACC15CB2C07DBFD00A7FEEB /* FormField.swift */,
 			);
 			path = FormField;
-			sourceTree = "<group>";
-		};
-		4ACC15D12C07DCE000A7FEEB /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		4AFF0E362BF59D5A00F46A8B /* TextField */ = {
