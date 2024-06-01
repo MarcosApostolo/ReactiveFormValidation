@@ -103,65 +103,65 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "USERNAME_VALIDATION_LOADING_LIGHT")
         FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "USERNAME_VALIDATION_LOADING_DARK")
     }
-//    
-//    func test_withPasswordMinLengthError() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulatePasswordMinLengthError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORD_MIN_LENGTH_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORD_MIN_LENGTH_ERROR_DARK")
-//    }
-//    
-//    func test_withPasswordMaxLengthError() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulatePasswordMaxLengthError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORD_MAX_LENGTH_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORD_MAX_LENGTH_ERROR_DARK")
-//    }
-//    
-//    func test_withUnmatchingPasswordsError() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateUnmatchingPasswordError()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "UNMATCHING_PASSWORD_ERROR_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "UNMATCHING_PASSWORD_ERROR_DARK")
-//    }
-//    
-//    func test_withPasswordsVisible() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.makePasswordsVisible()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORDS_VISIBLE_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORDS_VISIBLE_DARK")
-//    }
-//    
-//    func test_withValidForm() {
-//        let sut = makeSUT()
-//        
-//        sut.loadViewIfNeeded()
-//        
-//        sut.simulateValidForm()
-//        
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "VALID_FORM_LIGHT")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "VALID_FORM_DARK")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE)), identifier: "VALID_FORM_IPHONE_SE")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE1)), identifier: "VALID_FORM_IPHONE_SE_1STGEN")
-//        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhone15ProMax)), identifier: "VALID_FORM_IPHONE_PRO_MAX")
-//    }
-//    
+    
+    func test_withPasswordMinLengthError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulatePasswordMinLengthError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORD_MIN_LENGTH_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORD_MIN_LENGTH_ERROR_DARK")
+    }
+    
+    func test_withPasswordMaxLengthError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulatePasswordMaxLengthError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORD_MAX_LENGTH_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORD_MAX_LENGTH_ERROR_DARK")
+    }
+    
+    func test_withUnmatchingPasswordsError() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateUnmatchingPasswordError()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "UNMATCHING_PASSWORD_ERROR_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "UNMATCHING_PASSWORD_ERROR_DARK")
+    }
+    
+    func test_withPasswordsVisible() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.makePasswordsVisible()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "PASSWORDS_VISIBLE_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "PASSWORDS_VISIBLE_DARK")
+    }
+    
+    func test_withValidForm() {
+        let sut = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateValidForm()
+        
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light)), identifier: "VALID_FORM_LIGHT")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .dark)), identifier: "VALID_FORM_DARK")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE)), identifier: "VALID_FORM_IPHONE_SE")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhoneSE1)), identifier: "VALID_FORM_IPHONE_SE_1STGEN")
+        FBSnapshotVerifyView(snapshotConfig(sut, configuration: .iPhone(style: .light, device: .iPhone15ProMax)), identifier: "VALID_FORM_IPHONE_PRO_MAX")
+    }
+    
     // MARK: Helpers
     func makeSUT(
         validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) }
