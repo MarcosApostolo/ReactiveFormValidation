@@ -195,18 +195,18 @@ private extension FormViewController {
     }
     
     func simulateUsernameRequiredError() {
-        usernameTextFieldController.viewModel?.textFieldIsFocused.onNext(true)
-        usernameTextFieldController.viewModel?.textFieldIsFocused.onNext(false)
+        usernameFormFieldController.viewModel?.textFieldIsFocused.onNext(true)
+        usernameFormFieldController.viewModel?.textFieldIsFocused.onNext(false)
     }
     
     func simulateLongUsernameError() {
-        simulateTyping(on: usernameTextFieldController.textField, value: "username with more than thirty two characters")
+        simulateTyping(on: usernameFormFieldController.textField, value: "username with more than thirty two characters")
     }
     
     func simulateNonUniqueUsernameError() {
-        simulateTyping(on: usernameTextFieldController.textField, value: "non unique username")
+        simulateTyping(on: usernameFormFieldController.textField, value: "non unique username")
         
-        usernameTextFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
+        usernameFormFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
     }
     
     func simulatePasswordMinLengthError() {
@@ -225,8 +225,8 @@ private extension FormViewController {
     func simulateValidForm() {
         simulateTyping(on: nameFormFieldController.textField, value: "A name")
         simulateTyping(on: emailFormFieldController.textField, value: "email@email.com")
-        simulateTyping(on: usernameTextFieldController.textField, value: "a username")
-        usernameTextFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
+        simulateTyping(on: usernameFormFieldController.textField, value: "a username")
+        usernameFormFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
         simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "12345678")
         simulateTyping(on: passwordFieldsController.confirmPasswordTextField, value: "12345678")
     }

@@ -10,10 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class UsernameTextFieldController {
+class UsernameFormFieldController {
     private let disposeBag = DisposeBag()
     
-    var viewModel: UsernameTextFieldViewModel? {
+    var viewModel: UsernameFormFieldViewModel? {
         didSet {
             bind()
         }

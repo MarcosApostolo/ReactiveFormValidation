@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class UsernameTextFieldViewModel {
+class UsernameFormFieldViewModel {
     private enum validationError: Error {
         case requestError
     }

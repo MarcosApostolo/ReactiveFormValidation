@@ -120,11 +120,11 @@ private extension FormViewController {
     }
     
     var usernameTextField: UITextField {
-        self.usernameTextFieldController.textField
+        self.usernameFormFieldController.textField
     }
     
     var validateUsernameButton: UIButton {
-        self.usernameTextFieldController.validateUsernameButton
+        self.usernameFormFieldController.validateUsernameButton
     }
     
     var newPasswordTextField: UITextField {

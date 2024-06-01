@@ -9,7 +9,7 @@ import XCTest
 import RxSwift
 @testable import ReactiveFormValidation
 
-final class UsernameTextFieldTests: XCTestCase {    
+final class UsernameFormFieldTests: XCTestCase {    
     private let disposeBag = DisposeBag()
     
     func test_emptyUsernameAndNotFocused_displayRequiredErrorMessage() {
@@ -89,7 +89,7 @@ final class UsernameTextFieldTests: XCTestCase {
     func test_onUniqueValidation_displayLoading() {
         let sut = TestHelperViewController()
         
-        let viewModel = UsernameTextFieldViewModel(validateUniqueUsername: { _ in
+        let viewModel = UsernameFormFieldViewModel(validateUniqueUsername: { _ in
             Single<UsernameStatus>.create(subscribe: { single in
                 XCTAssertTrue(sut.loadingIndicator.isAnimating)
                 
@@ -119,7 +119,7 @@ final class UsernameTextFieldTests: XCTestCase {
     ) -> TestHelperViewController {
         let sut = TestHelperViewController()
         
-        let viewModel = UsernameTextFieldViewModel(validateUniqueUsername: validateUniqueUsername)
+        let viewModel = UsernameFormFieldViewModel(validateUniqueUsername: validateUniqueUsername)
         
         sut.textFieldController.viewModel = viewModel
         
@@ -128,17 +128,17 @@ final class UsernameTextFieldTests: XCTestCase {
         return sut
     }
     
-    private func assertThat(_ sut: UsernameTextFieldController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
+    private func assertThat(_ sut: UsernameFormFieldController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
         XCTAssertFalse(sut.errorLabel.isHidden, file: file, line: line)
         XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
     }
     
-    private func assertNoErrorOn(_ sut: UsernameTextFieldController, file: StaticString = #file, line: UInt = #line) {
+    private func assertNoErrorOn(_ sut: UsernameFormFieldController, file: StaticString = #file, line: UInt = #line) {
         XCTAssertTrue(sut.errorLabel.isHidden, file: file, line: line)
     }
     
     private class TestHelperViewController: UIViewController {
-        let textFieldController = UsernameTextFieldController()
+        let textFieldController = UsernameFormFieldController()
                 
         override func viewDidLoad() {
             super.viewDidLoad()

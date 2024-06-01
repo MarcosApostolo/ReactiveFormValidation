@@ -12,9 +12,9 @@ class FormUIComposer {
     static func makeView(validateUniqueUsername: @escaping (String) -> Single<UsernameStatus>) -> FormViewController {
         let vc = FormViewController()
         
-        let usernameViewModel = UsernameTextFieldViewModel(validateUniqueUsername: validateUniqueUsername)
+        let usernameViewModel = UsernameFormFieldViewModel(validateUniqueUsername: validateUniqueUsername)
                 
-        vc.usernameTextFieldController.viewModel = usernameViewModel
+        vc.usernameFormFieldController.viewModel = usernameViewModel
         
         let viewModel = FormViewModel()
         
