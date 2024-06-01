@@ -112,11 +112,11 @@ private extension FormViewController {
     }
     
     var emailErrorLabel: UILabel {
-        self.emailTextFieldController.errorLabel
+        self.emailFormFieldController.errorLabel
     }
     
     var emailTextField: UITextField {
-        self.emailTextFieldController.textField
+        self.emailFormFieldController.textField
     }
     
     var usernameTextField: UITextField {

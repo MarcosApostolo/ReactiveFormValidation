@@ -9,7 +9,7 @@ import XCTest
 import UIKit
 @testable import ReactiveFormValidation
 
-final class EmailTextFieldTests: XCTestCase {
+final class EmailFormFieldTests: XCTestCase {
     func test_emptyEmailFieldAndNotFocused_displayErrorMessage() {
         let sut = makeSUT()
         
@@ -17,7 +17,7 @@ final class EmailTextFieldTests: XCTestCase {
         
         sut.loadViewIfNeeded()
         
-        assertNoErrorOn(sut.textFieldController)
+        assertNoErrorOn(sut.formFieldController)
         
         sut.textField.becomeFirstResponder()
         
@@ -26,7 +26,7 @@ final class EmailTextFieldTests: XCTestCase {
         
         sut.textField.resignFirstResponder()
         
-        assertThat(sut.textFieldController, hasError: "Email is required!")
+        assertThat(sut.formFieldController, hasError: "Email is required!")
         XCTAssertFalse(sut.textField.isFirstResponder)
     }
     
@@ -35,11 +35,11 @@ final class EmailTextFieldTests: XCTestCase {
                 
         sut.loadViewIfNeeded()
 
-        assertNoErrorOn(sut.textFieldController)
+        assertNoErrorOn(sut.formFieldController)
         
         simulateTyping(on: sut.textField, value: "invalidEmail")
 
-        assertThat(sut.textFieldController, hasError: "Please type an valid email")
+        assertThat(sut.formFieldController, hasError: "Please type an valid email")
     }
     
     func test_validEmail_doesNotDisplayErrorMessage() {
@@ -47,11 +47,11 @@ final class EmailTextFieldTests: XCTestCase {
                 
         sut.loadViewIfNeeded()
         
-        assertNoErrorOn(sut.textFieldController)
+        assertNoErrorOn(sut.formFieldController)
         
         simulateTyping(on: sut.textField, value: "email@email.com")
         
-        assertNoErrorOn(sut.textFieldController)
+        assertNoErrorOn(sut.formFieldController)
     }
     
     // MARK: Helpers
@@ -61,31 +61,31 @@ final class EmailTextFieldTests: XCTestCase {
         return sut
     }
     
-    private func assertThat(_ sut: EmailTextFieldController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
+    private func assertThat(_ sut: EmailFormFieldController, hasError error: String, file: StaticString = #file, line: UInt = #line) {
         XCTAssertFalse(sut.errorLabel.isHidden, file: file, line: line)
         XCTAssertEqual(sut.errorLabel.text, error, file: file, line: line)
         
     }
     
-    private func assertNoErrorOn(_ sut: EmailTextFieldController) {
+    private func assertNoErrorOn(_ sut: EmailFormFieldController) {
         XCTAssertTrue(sut.errorLabel.isHidden)
     }
 
     private class TestHelperViewController: UIViewController {
-        private(set) var textFieldController = EmailTextFieldController()
+        private(set) var formFieldController = EmailFormFieldController()
         
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            view.addSubview(textFieldController.formField)
+            view.addSubview(formFieldController.formField)
         }
         
         var errorLabel: UILabel {
-            textFieldController.errorLabel
+            formFieldController.errorLabel
         }
         
         var textField: UITextField {
-            textFieldController.textField
+            formFieldController.textField
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class EmailTextFieldViewModel {
+class EmailFormFieldViewModel {
     var textFieldValue = BehaviorSubject(value: "")
     var textFieldIsTouched = BehaviorSubject(value: false)
     var textFieldIsFocused = BehaviorSubject(value: false)

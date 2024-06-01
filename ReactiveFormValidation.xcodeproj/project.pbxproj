@@ -47,8 +47,8 @@
 		4A8E012A2C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E01282C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png */; };
 		4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */; };
 		4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */; };
-		4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */; };
-		4AA1A99D2BF94CCF0052D813 /* EmailTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */; };
+		4AA1A99B2BF94CAB0052D813 /* EmailFormFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99A2BF94CAB0052D813 /* EmailFormFieldViewModel.swift */; };
+		4AA1A99D2BF94CCF0052D813 /* EmailFormFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99C2BF94CCF0052D813 /* EmailFormFieldController.swift */; };
 		4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */; };
 		4AA1A9A12BF94ED70052D813 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9A02BF94ED70052D813 /* Helpers.swift */; };
 		4AA2B89A2C067B540002DCB7 /* PasswordVisibilityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2B8992C067B540002DCB7 /* PasswordVisibilityButton.swift */; };
@@ -72,7 +72,7 @@
 		4ACC15D92C07E0D500A7FEEB /* SnapshotWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC15D82C07E0D500A7FEEB /* SnapshotWindow.swift */; };
 		4AFF0E292BF5537D00F46A8B /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */; };
 		4AFF0E2B2BF5594400F46A8B /* FormUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */; };
-		4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */; };
+		4AFF0E3C2BF5A19700F46A8B /* EmailFormFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF0E3B2BF5A19700F46A8B /* EmailFormFieldTests.swift */; };
 		A5757476E3D443BEAD2D3564 /* Pods_ReactiveFormValidationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,8 +135,8 @@
 		4A8E01282C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png"; sourceTree = "<group>"; };
 		4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldViewModel.swift; sourceTree = "<group>"; };
 		4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldController.swift; sourceTree = "<group>"; };
-		4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldViewModel.swift; sourceTree = "<group>"; };
-		4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldViewController.swift; sourceTree = "<group>"; };
+		4AA1A99A2BF94CAB0052D813 /* EmailFormFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormFieldViewModel.swift; sourceTree = "<group>"; };
+		4AA1A99C2BF94CCF0052D813 /* EmailFormFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormFieldController.swift; sourceTree = "<group>"; };
 		4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldTests.swift; sourceTree = "<group>"; };
 		4AA1A9A02BF94ED70052D813 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		4AA2B8992C067B540002DCB7 /* PasswordVisibilityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVisibilityButton.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		4ACC15D82C07E0D500A7FEEB /* SnapshotWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotWindow.swift; sourceTree = "<group>"; };
 		4AFF0E282BF5537D00F46A8B /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		4AFF0E2A2BF5594400F46A8B /* FormUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUIComposer.swift; sourceTree = "<group>"; };
-		4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldTests.swift; sourceTree = "<group>"; };
+		4AFF0E3B2BF5A19700F46A8B /* EmailFormFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormFieldTests.swift; sourceTree = "<group>"; };
 		89B352D663BCF56C45553C74 /* Pods_ReactiveFormValidation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7542DE65C1BA6DC3EB6CCE /* Pods_ReactiveFormValidationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59DDAE8DE35E77CC67A8CA4 /* Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveFormValidation_ReactiveFormValidationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,7 +284,7 @@
 			children = (
 				4ACC15CA2C07DBF200A7FEEB /* FormField */,
 				4AFF0E362BF59D5A00F46A8B /* TextField */,
-				4AA1A9992BF94C9E0052D813 /* EmailTextField */,
+				4AA1A9992BF94C9E0052D813 /* EmailFormField */,
 				4AA1A9942BF94C120052D813 /* NameTextField */,
 				4A00021C2BFA5699002AA0CA /* UsernameTextField */,
 				4A606B792BFD4CDD00AEE729 /* PasswordFields */,
@@ -309,7 +309,7 @@
 				4A0002132BFA4AB5002AA0CA /* Helpers */,
 				4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */,
 				4A810B942BF54FEC00469895 /* FormIntegrationTests.swift */,
-				4AFF0E3B2BF5A19700F46A8B /* EmailTextFieldTests.swift */,
+				4AFF0E3B2BF5A19700F46A8B /* EmailFormFieldTests.swift */,
 				4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */,
 				4A0002182BFA5585002AA0CA /* UsernameTextFieldTests.swift */,
 				4A606B772BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift */,
@@ -328,14 +328,14 @@
 			path = NameTextField;
 			sourceTree = "<group>";
 		};
-		4AA1A9992BF94C9E0052D813 /* EmailTextField */ = {
+		4AA1A9992BF94C9E0052D813 /* EmailFormField */ = {
 			isa = PBXGroup;
 			children = (
-				4AA1A99A2BF94CAB0052D813 /* EmailTextFieldViewModel.swift */,
-				4AA1A99C2BF94CCF0052D813 /* EmailTextFieldViewController.swift */,
+				4AA1A99A2BF94CAB0052D813 /* EmailFormFieldViewModel.swift */,
+				4AA1A99C2BF94CCF0052D813 /* EmailFormFieldController.swift */,
 				4A6968D92C0B9C7100340794 /* EmailValidation.swift */,
 			);
-			path = EmailTextField;
+			path = EmailFormField;
 			sourceTree = "<group>";
 		};
 		4ACC15CA2C07DBF200A7FEEB /* FormField */ = {
@@ -602,7 +602,7 @@
 				4A606B7F2BFD5FAF00AEE729 /* PasswordValidatorPolicy.swift in Sources */,
 				4A2DE87C2BFC07A20044D337 /* UsernameStatus.swift in Sources */,
 				4AA2B89A2C067B540002DCB7 /* PasswordVisibilityButton.swift in Sources */,
-				4AA1A99D2BF94CCF0052D813 /* EmailTextFieldViewController.swift in Sources */,
+				4AA1A99D2BF94CCF0052D813 /* EmailFormFieldController.swift in Sources */,
 				4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */,
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
 				4A8E01222C03D08A006D6447 /* ValidateUsernameButton.swift in Sources */,
@@ -613,7 +613,7 @@
 				4AFF0E292BF5537D00F46A8B /* FormViewModel.swift in Sources */,
 				4A810B802BF54FEB00469895 /* SceneDelegate.swift in Sources */,
 				4A606B7D2BFD4E9C00AEE729 /* PasswordFieldsViewModel.swift in Sources */,
-				4AA1A99B2BF94CAB0052D813 /* EmailTextFieldViewModel.swift in Sources */,
+				4AA1A99B2BF94CAB0052D813 /* EmailFormFieldViewModel.swift in Sources */,
 				4A4AD1222C013DC4000A58B2 /* PasswordFormField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,7 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0002192BFA5585002AA0CA /* UsernameTextFieldTests.swift in Sources */,
-				4AFF0E3C2BF5A19700F46A8B /* EmailTextFieldTests.swift in Sources */,
+				4AFF0E3C2BF5A19700F46A8B /* EmailFormFieldTests.swift in Sources */,
 				4ACC15D72C07E0B500A7FEEB /* SnapshotConfiguration.swift in Sources */,
 				4A810B952BF54FEC00469895 /* FormIntegrationTests.swift in Sources */,
 				4A606B782BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift in Sources */,

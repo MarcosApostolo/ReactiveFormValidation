@@ -186,12 +186,12 @@ private extension FormViewController {
     }
     
     func simulateEmailRequiredError() {
-        emailTextFieldController.viewModel.textFieldIsFocused.onNext(true)
-        emailTextFieldController.viewModel.textFieldIsFocused.onNext(false)
+        emailFormFieldController.viewModel.textFieldIsFocused.onNext(true)
+        emailFormFieldController.viewModel.textFieldIsFocused.onNext(false)
     }
     
     func simulateInvalidEmailError() {
-        simulateTyping(on: emailTextFieldController.textField, value: "invalid email")
+        simulateTyping(on: emailFormFieldController.textField, value: "invalid email")
     }
     
     func simulateUsernameRequiredError() {
@@ -224,7 +224,7 @@ private extension FormViewController {
     
     func simulateValidForm() {
         simulateTyping(on: nameTextFieldController.textField, value: "A name")
-        simulateTyping(on: emailTextFieldController.textField, value: "email@email.com")
+        simulateTyping(on: emailFormFieldController.textField, value: "email@email.com")
         simulateTyping(on: usernameTextFieldController.textField, value: "a username")
         usernameTextFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
         simulateTyping(on: passwordFieldsController.newPasswordTextField, value: "12345678")

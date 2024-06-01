@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 import RxSwift
 
-class EmailTextFieldController {
+class EmailFormFieldController {
     private let disposeBag = DisposeBag()
     
-    var viewModel = EmailTextFieldViewModel()
+    var viewModel = EmailFormFieldViewModel()
     
     private(set) lazy var formField: FormField = {
         return FormField()

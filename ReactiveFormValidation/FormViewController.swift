@@ -19,7 +19,7 @@ class FormViewController: UIViewController {
     
     private(set) var nameTextFieldController = NameTextFieldController()
     
-    private(set) var emailTextFieldController = EmailTextFieldController()
+    private(set) var emailFormFieldController = EmailFormFieldController()
     
     private(set) var usernameTextFieldController = UsernameTextFieldController()
     
@@ -43,13 +43,13 @@ class FormViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubview(nameTextFieldController.formField)
-        view.addSubview(emailTextFieldController.formField)
+        view.addSubview(emailFormFieldController.formField)
         view.addSubview(usernameTextFieldController.formField)
         view.addSubview(passwordFieldsController.passwordFormField)
         view.addSubview(submitButton)
         
         nameTextFieldController.formField.translatesAutoresizingMaskIntoConstraints = false
-        emailTextFieldController.formField.translatesAutoresizingMaskIntoConstraints = false
+        emailFormFieldController.formField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextFieldController.formField.translatesAutoresizingMaskIntoConstraints = false
         passwordFieldsController.passwordFormField.translatesAutoresizingMaskIntoConstraints = false
         submitButton.translatesAutoresizingMaskIntoConstraints = false
@@ -63,15 +63,15 @@ class FormViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            emailTextFieldController.formField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            emailTextFieldController.formField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            emailTextFieldController.formField.topAnchor.constraint(equalTo: nameTextFieldController.formField.bottomAnchor),
+            emailFormFieldController.formField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emailFormFieldController.formField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emailFormFieldController.formField.topAnchor.constraint(equalTo: nameTextFieldController.formField.bottomAnchor),
         ])
         
         NSLayoutConstraint.activate([
             usernameTextFieldController.formField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             usernameTextFieldController.formField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            usernameTextFieldController.formField.topAnchor.constraint(equalTo: emailTextFieldController.formField.bottomAnchor),
+            usernameTextFieldController.formField.topAnchor.constraint(equalTo: emailFormFieldController.formField.bottomAnchor),
         ])
         
         NSLayoutConstraint.activate([
@@ -104,7 +104,7 @@ class FormViewController: UIViewController {
             .bind(to: viewModel.nameTextFieldisValid)
             .disposed(by: disposeBag)
         
-        emailTextFieldController.viewModel
+        emailFormFieldController.viewModel
             .fieldIsValid
             .bind(to: viewModel.emaiTextFieldisValid)
             .disposed(by: disposeBag)
