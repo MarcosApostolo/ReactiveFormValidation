@@ -102,6 +102,7 @@
 		4A606B7C2BFD4E9C00AEE729 /* PasswordFieldsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldsViewModel.swift; sourceTree = "<group>"; };
 		4A606B7E2BFD5FAF00AEE729 /* PasswordValidatorPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorPolicy.swift; sourceTree = "<group>"; };
 		4A6968D92C0B9C7100340794 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		4A6968DB2C0B9CE500340794 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A810B7A2BF54FEB00469895 /* ReactiveFormValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveFormValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A810B7D2BF54FEB00469895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A810B7F2BF54FEB00469895 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +261,7 @@
 		4A810B712BF54FEB00469895 = {
 			isa = PBXGroup;
 			children = (
+				4A6968DB2C0B9CE500340794 /* README.md */,
 				4A810B7C2BF54FEB00469895 /* ReactiveFormValidation */,
 				4A810B932BF54FEC00469895 /* ReactiveFormValidationTests */,
 				4A810B7B2BF54FEB00469895 /* Products */,
