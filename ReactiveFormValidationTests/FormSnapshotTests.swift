@@ -181,8 +181,8 @@ final class FormSnapshotTests: FBSnapshotTestCase {
 
 private extension FormViewController {
     func simulateNameRequiredError() {
-        nameTextFieldController.viewModel.textFieldIsFocused.onNext(true)
-        nameTextFieldController.viewModel.textFieldIsFocused.onNext(false)
+        nameFormFieldController.viewModel.textFieldIsFocused.onNext(true)
+        nameFormFieldController.viewModel.textFieldIsFocused.onNext(false)
     }
     
     func simulateEmailRequiredError() {
@@ -223,7 +223,7 @@ private extension FormViewController {
     }
     
     func simulateValidForm() {
-        simulateTyping(on: nameTextFieldController.textField, value: "A name")
+        simulateTyping(on: nameFormFieldController.textField, value: "A name")
         simulateTyping(on: emailFormFieldController.textField, value: "email@email.com")
         simulateTyping(on: usernameTextFieldController.textField, value: "a username")
         usernameTextFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
@@ -239,6 +239,6 @@ private extension FormViewController {
     }
     
     func simulateFocusedState() {
-        nameTextFieldController.textField.becomeFirstResponder()
+        nameFormFieldController.textField.becomeFirstResponder()
     }
 }

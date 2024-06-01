@@ -45,11 +45,11 @@
 		4A8E01222C03D08A006D6447 /* ValidateUsernameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E01212C03D08A006D6447 /* ValidateUsernameButton.swift */; };
 		4A8E01292C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E01272C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png */; };
 		4A8E012A2C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E01282C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png */; };
-		4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */; };
-		4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */; };
+		4AA1A9962BF94C230052D813 /* NameFormFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9952BF94C230052D813 /* NameFormFieldViewModel.swift */; };
+		4AA1A9982BF94C480052D813 /* NameFormFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9972BF94C480052D813 /* NameFormFieldController.swift */; };
 		4AA1A99B2BF94CAB0052D813 /* EmailFormFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99A2BF94CAB0052D813 /* EmailFormFieldViewModel.swift */; };
 		4AA1A99D2BF94CCF0052D813 /* EmailFormFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99C2BF94CCF0052D813 /* EmailFormFieldController.swift */; };
-		4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */; };
+		4AA1A99F2BF94D0E0052D813 /* NameFormFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A99E2BF94D0E0052D813 /* NameFormFieldTests.swift */; };
 		4AA1A9A12BF94ED70052D813 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A9A02BF94ED70052D813 /* Helpers.swift */; };
 		4AA2B89A2C067B540002DCB7 /* PasswordVisibilityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2B8992C067B540002DCB7 /* PasswordVisibilityButton.swift */; };
 		4AA2B89D2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA2B89B2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png */; };
@@ -133,11 +133,11 @@
 		4A8E01212C03D08A006D6447 /* ValidateUsernameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUsernameButton.swift; sourceTree = "<group>"; };
 		4A8E01272C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_DARK@3x.png"; sourceTree = "<group>"; };
 		4A8E01282C03D526006D6447 /* test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withUsernameValidationLoading_USERNAME_VALIDATION_LOADING_LIGHT@3x.png"; sourceTree = "<group>"; };
-		4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldViewModel.swift; sourceTree = "<group>"; };
-		4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldController.swift; sourceTree = "<group>"; };
+		4AA1A9952BF94C230052D813 /* NameFormFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameFormFieldViewModel.swift; sourceTree = "<group>"; };
+		4AA1A9972BF94C480052D813 /* NameFormFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameFormFieldController.swift; sourceTree = "<group>"; };
 		4AA1A99A2BF94CAB0052D813 /* EmailFormFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormFieldViewModel.swift; sourceTree = "<group>"; };
 		4AA1A99C2BF94CCF0052D813 /* EmailFormFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormFieldController.swift; sourceTree = "<group>"; };
-		4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldTests.swift; sourceTree = "<group>"; };
+		4AA1A99E2BF94D0E0052D813 /* NameFormFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameFormFieldTests.swift; sourceTree = "<group>"; };
 		4AA1A9A02BF94ED70052D813 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		4AA2B8992C067B540002DCB7 /* PasswordVisibilityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVisibilityButton.swift; sourceTree = "<group>"; };
 		4AA2B89B2C0687820002DCB7 /* test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png"; path = "_64/ReactiveFormValidationTests.FormSnapshotTests/test_withPasswordsVisible_PASSWORDS_VISIBLE_DARK@3x.png"; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 				4ACC15CA2C07DBF200A7FEEB /* FormField */,
 				4AFF0E362BF59D5A00F46A8B /* TextField */,
 				4AA1A9992BF94C9E0052D813 /* EmailFormField */,
-				4AA1A9942BF94C120052D813 /* NameTextField */,
+				4AA1A9942BF94C120052D813 /* NameFormField */,
 				4A00021C2BFA5699002AA0CA /* UsernameTextField */,
 				4A606B792BFD4CDD00AEE729 /* PasswordFields */,
 				4A810B7D2BF54FEB00469895 /* AppDelegate.swift */,
@@ -310,7 +310,7 @@
 				4A810BAD2BF551EC00469895 /* ReactiveFormValidation.xctestplan */,
 				4A810B942BF54FEC00469895 /* FormIntegrationTests.swift */,
 				4AFF0E3B2BF5A19700F46A8B /* EmailFormFieldTests.swift */,
-				4AA1A99E2BF94D0E0052D813 /* NameTextFieldTests.swift */,
+				4AA1A99E2BF94D0E0052D813 /* NameFormFieldTests.swift */,
 				4A0002182BFA5585002AA0CA /* UsernameTextFieldTests.swift */,
 				4A606B772BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift */,
 				4A4AD11D2C0136E5000A58B2 /* FormSnapshotTests.swift */,
@@ -319,13 +319,13 @@
 			path = ReactiveFormValidationTests;
 			sourceTree = "<group>";
 		};
-		4AA1A9942BF94C120052D813 /* NameTextField */ = {
+		4AA1A9942BF94C120052D813 /* NameFormField */ = {
 			isa = PBXGroup;
 			children = (
-				4AA1A9952BF94C230052D813 /* NameTextFieldViewModel.swift */,
-				4AA1A9972BF94C480052D813 /* NameTextFieldController.swift */,
+				4AA1A9952BF94C230052D813 /* NameFormFieldViewModel.swift */,
+				4AA1A9972BF94C480052D813 /* NameFormFieldController.swift */,
 			);
-			path = NameTextField;
+			path = NameFormField;
 			sourceTree = "<group>";
 		};
 		4AA1A9992BF94C9E0052D813 /* EmailFormField */ = {
@@ -597,13 +597,13 @@
 				4ACC15CC2C07DBFD00A7FEEB /* FormField.swift in Sources */,
 				4A810B822BF54FEB00469895 /* FormViewController.swift in Sources */,
 				4ACC15D32C07DCF100A7FEEB /* TextField.swift in Sources */,
-				4AA1A9962BF94C230052D813 /* NameTextFieldViewModel.swift in Sources */,
+				4AA1A9962BF94C230052D813 /* NameFormFieldViewModel.swift in Sources */,
 				4A606B7B2BFD4CEC00AEE729 /* PasswordFieldsController.swift in Sources */,
 				4A606B7F2BFD5FAF00AEE729 /* PasswordValidatorPolicy.swift in Sources */,
 				4A2DE87C2BFC07A20044D337 /* UsernameStatus.swift in Sources */,
 				4AA2B89A2C067B540002DCB7 /* PasswordVisibilityButton.swift in Sources */,
 				4AA1A99D2BF94CCF0052D813 /* EmailFormFieldController.swift in Sources */,
-				4AA1A9982BF94C480052D813 /* NameTextFieldController.swift in Sources */,
+				4AA1A9982BF94C480052D813 /* NameFormFieldController.swift in Sources */,
 				4A810B7E2BF54FEB00469895 /* AppDelegate.swift in Sources */,
 				4A8E01222C03D08A006D6447 /* ValidateUsernameButton.swift in Sources */,
 				4A0002222BFA56E7002AA0CA /* UsernameTextFieldViewModel.swift in Sources */,
@@ -627,7 +627,7 @@
 				4ACC15D72C07E0B500A7FEEB /* SnapshotConfiguration.swift in Sources */,
 				4A810B952BF54FEC00469895 /* FormIntegrationTests.swift in Sources */,
 				4A606B782BFD4C2400AEE729 /* PasswordFieldsControllerTests.swift in Sources */,
-				4AA1A99F2BF94D0E0052D813 /* NameTextFieldTests.swift in Sources */,
+				4AA1A99F2BF94D0E0052D813 /* NameFormFieldTests.swift in Sources */,
 				4AA1A9A12BF94ED70052D813 /* Helpers.swift in Sources */,
 				4A4AD11E2C0136E5000A58B2 /* FormSnapshotTests.swift in Sources */,
 				4AB348D02C09F3CB00F490A2 /* FormFieldTests.swift in Sources */,

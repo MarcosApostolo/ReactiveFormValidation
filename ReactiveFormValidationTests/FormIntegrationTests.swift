@@ -104,11 +104,11 @@ extension XCTestCase {
 
 private extension FormViewController {
     var nameErrorLabel: UILabel {
-        self.nameTextFieldController.errorLabel
+        self.nameFormFieldController.errorLabel
     }
     
     var nameTextField: UITextField {
-        self.nameTextFieldController.textField
+        self.nameFormFieldController.textField
     }
     
     var emailErrorLabel: UILabel {

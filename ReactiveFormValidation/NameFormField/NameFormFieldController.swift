@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 import RxSwift
 
-class NameTextFieldController {
+class NameFormFieldController {
     private let disposeBag = DisposeBag()
     
-    var viewModel = NameTextFieldViewModel()
+    var viewModel = NameFormFieldViewModel()
     
     private(set) lazy var formField: FormField = {
         return FormField()
