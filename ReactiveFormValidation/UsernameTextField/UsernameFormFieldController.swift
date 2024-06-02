@@ -74,9 +74,15 @@ class UsernameFormFieldController {
         
         validateUsernameButton.rx
             .tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.onValidateUsername()
-            })
+            .take(1)
+            .map(viewModel.startLoading)
+            .flatMap(viewModel.getTextFieldValue)
+            .flatMap(viewModel.onValidateUsername)
+            .subscribe(
+                onNext: viewModel.onValidateSuccess,
+                onError: viewModel.onValidateError,
+                onCompleted: viewModel.onValidateComplete
+            )
             .disposed(by: disposeBag)
         
         viewModel
@@ -91,6 +97,5 @@ class UsernameFormFieldController {
         })
         .disposed(by: disposeBag)
     }
-    
 }
 

@@ -75,25 +75,14 @@ class UsernameFormFieldViewModel {
             .map({ $0 == .used })
     }
     
-    func onValidateUsername() {
-        do {
-            isLoading.onNext(true)
-            
-            let text = try self.textFieldValue.value()
-            
-            self.validateUniqueUsername?(text)
-                .subscribe(onSuccess: { [weak self] status in
-                    self?.usernameStatus.onNext(status)
-                    self?.isLoading.onNext(false)
-                }, onFailure: { [weak self] _ in
-                    self?.isLoading.onNext(false)
-                })
-                .disposed(by: disposeBag)
-        } catch {
-            isLoading.onNext(false)
+    func onValidateUsername(username: String) -> Observable<UsernameStatus> {
+        guard let validateUniqueUsername = validateUniqueUsername else {
+            return Observable<UsernameStatus>.empty()
         }
+        
+        return validateUniqueUsername(username).asObservable()
     }
-
+    
     var textFieldPlaceholder: String {
         "Username"
     }
@@ -104,5 +93,30 @@ class UsernameFormFieldViewModel {
         .map({ status in
             status == .used ? "Username is already used." : ""
         })
+    }
+    
+    func getTextFieldValue() -> Observable<String> {
+        textFieldValue.asObservable()
+    }
+    
+    func validate() -> Observable<Bool> {
+        fieldIsValid.asObservable()
+    }
+    
+    func startLoading() {
+        isLoading.onNext(true)
+    }
+    
+    func onValidateSuccess(status: UsernameStatus) {
+        usernameStatus.onNext(status)
+        isLoading.onNext(false)
+    }
+    
+    func onValidateError(error: Error) {
+        isLoading.onNext(false)
+    }
+    
+    func onValidateComplete() {
+        isLoading.onNext(false)
     }
 }
