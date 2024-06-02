@@ -99,8 +99,10 @@ class UsernameFormFieldViewModel {
         textFieldValue.asObservable()
     }
     
-    func validate() -> Observable<Bool> {
+    func validate() -> Observable<Void> {
         fieldIsValid.asObservable()
+            .filter({ $0 })
+            .map({ _ in })
     }
     
     func startLoading() {

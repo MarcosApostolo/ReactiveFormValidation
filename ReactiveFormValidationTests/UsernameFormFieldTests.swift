@@ -111,6 +111,31 @@ final class UsernameFormFieldTests: XCTestCase {
         sut.usernameButton.sendActions(for: .touchUpInside)
     }
     
+    func test_doesNotCallValidate_whenFieldIsInvalid() {
+        var numberOfCalls = 0
+        
+        let single = Single<UsernameStatus>.create(subscribe: { single in
+            numberOfCalls += 1
+            single(.success(.unused))
+            
+            return Disposables.create()
+        })
+        
+        let sut = makeSUT(validateUniqueUsername: { _ in
+            return single
+        })
+        
+        sut.loadViewIfNeeded()
+        
+        assertNoErrorOn(sut.textFieldController)
+        
+        simulateTyping(on: sut.textField, value: "username with more than thirty two characters")
+        
+        sut.usernameButton.sendActions(for: .touchUpInside)
+        
+        XCTAssertEqual(numberOfCalls, 0)
+    }
+    
     func test_correctPropertiesOnTextField() {
         let sut = makeSUT()
         

@@ -75,6 +75,7 @@ class UsernameFormFieldController {
         validateUsernameButton.rx
             .tap
             .take(1)
+            .flatMap(viewModel.validate)
             .map(viewModel.startLoading)
             .flatMap(viewModel.getTextFieldValue)
             .flatMap(viewModel.onValidateUsername)
