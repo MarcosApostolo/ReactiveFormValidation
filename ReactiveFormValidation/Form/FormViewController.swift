@@ -127,34 +127,34 @@ class FormViewController: UIViewController {
                 self?.submitButton.alpha = isValid ? 1.0 : 0.5
             })
             .disposed(by: disposeBag)
-        
+                
         submitButton.rx.tap
             .take(1)
-            .flatMap({ [weak self] in
-                guard let strongSelf = self, let viewModel = strongSelf.viewModel else {
-                    return Observable.just(false)
-                }
-                
-                return viewModel.formIsValid
-            })
-            .filter({ $0 })
-            .flatMap({ [weak self] (_) -> Observable<RegisterInfo?> in
+            .flatMap(viewModel.validate)
+            .flatMap({ [weak self] () -> Observable<RegisterInfo?> in
                 guard let strongSelf = self else { return Observable.just(nil) }
                 
-                return Observable.combineLatest(strongSelf.nameFormFieldController.viewModel.textFieldValue, strongSelf.emailFormFieldController.viewModel.textFieldValue, strongSelf.usernameFormFieldController.viewModel.textFieldValue, strongSelf.passwordFieldsController.viewModel.newPasswordValue)
-                    .map({ name, email, username, password in
-                        RegisterInfo(name: name, email: email, username: username, passsowrd: password)
-                    })
+                return strongSelf.getRegisterInfo()
             })
-            .subscribe(on: MainScheduler.instance)
             .compactMap({ $0 })
-            .flatMap({ [viewModel] info in
-                viewModel.registerService(info)
-            })
+            .subscribe(on: MainScheduler.instance)
+            .flatMap(viewModel.registerService)
             .subscribe(onNext: { [weak self] in
                 self?.onNavigateToMain()
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func getRegisterInfo() -> Observable<RegisterInfo?> {
+        Observable.combineLatest(
+            nameFormFieldController.viewModel.textFieldValue,
+            emailFormFieldController.viewModel.textFieldValue,
+            usernameFormFieldController.viewModel.textFieldValue,
+            passwordFieldsController.viewModel.newPasswordValue
+        )
+        .map({ name, email, username, password in
+            RegisterInfo(name: name, email: email, username: username, passsowrd: password)
+        })
     }
     
     @objc func dismissKeyboard() {

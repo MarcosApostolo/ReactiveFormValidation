@@ -33,4 +33,12 @@ class FormViewModel {
     var buttonLabel: String {
         "Continue"
     }
+    
+    func validate() -> Observable<Void> {
+        formIsValid
+            .asObservable()
+            .filter({ $0 })
+            .map({ _ in })
+    }
+    
 }
