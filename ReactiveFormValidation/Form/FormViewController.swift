@@ -87,6 +87,10 @@ class FormViewController: UIViewController {
         ])
     }
     
+    func onNavigateToMain() {
+        
+    }
+    
     func bind() {
         guard let viewModel = viewModel else {
             return
@@ -147,8 +151,8 @@ class FormViewController: UIViewController {
             .flatMap({ [viewModel] info in
                 viewModel.registerService(info)
             })
-            .subscribe(onNext: {
-                print("deu bom")
+            .subscribe(onNext: { [weak self] in
+                self?.onNavigateToMain()
             })
             .disposed(by: disposeBag)
     }
