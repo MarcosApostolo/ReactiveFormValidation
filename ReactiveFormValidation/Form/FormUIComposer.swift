@@ -8,15 +8,42 @@
 import Foundation
 import RxSwift
 
+struct RegisterInfo: Equatable {
+    let name: String
+    let email: String
+    let username: String
+    let passsowrd: String
+}
+
+protocol RegisterService {
+    func onRegister(registerInfo: RegisterInfo, completion: @escaping (Result<Void, Error>) -> Void)
+}
+
 class FormUIComposer {
-    static func makeView(validateUniqueUsername: @escaping (String) -> Single<UsernameStatus>) -> FormViewController {
+    static func makeView(
+        validateUniqueUsername: @escaping (String) -> Single<UsernameStatus>,
+        registerService: RegisterService
+    ) -> FormViewController {
         let vc = FormViewController()
         
-        let usernameViewModel = UsernameFormFieldViewModel(validateUniqueUsername: validateUniqueUsername)
+        let registerServiceAdapter: (RegisterInfo) -> Single<Void> = { registerInfo in
+            Single<Void>.create(subscribe: { single in
+                registerService.onRegister(registerInfo: registerInfo, completion: { result in
+                    switch result {
+                    case .success:
+                        single(.success(()))
+                    case let .failure(error):
+                        single(.failure(error))
+                    }
+                })
                 
-        vc.usernameFormFieldController.viewModel = usernameViewModel
+                return Disposables.create()
+            })
+        }
         
-        let viewModel = FormViewModel()
+        vc.usernameFormFieldController.viewModel.validateUniqueUsername = validateUniqueUsername
+        
+        let viewModel = FormViewModel(registerService: registerServiceAdapter)
         
         vc.viewModel = viewModel
         

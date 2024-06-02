@@ -71,13 +71,68 @@ final class FormIntegrationTests: XCTestCase {
         XCTAssertFalse(sut.submitButton.isEnabled)
     }
     
+    func test_onSubmitButtonTap_callsRegisterWithValues() {
+        let service = RegisterServiceSpy()
+        
+        let sut = makeSUT(
+            validateUniqueUsername: { _ in
+                .just(.unused)
+            },
+            registerService: service
+        )
+        
+        sut.loadViewIfNeeded()
+        
+        simulateTyping(on: sut.nameTextField, value: "any name")
+        simulateTyping(on: sut.emailTextField, value: "email@email.com")
+        simulateTyping(on: sut.usernameTextField, value: "unique username")
+        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.confirmPasswordTextField, value: "12345678")
+        
+        sut.validateUsername()
+        
+        sut.submitButton.sendActions(for: .touchUpInside)
+                
+        XCTAssertEqual(service.completions.count, 1)
+        XCTAssertEqual(service.arguments.last, RegisterInfo(name: "any name", email: "email@email.com", username: "unique username", passsowrd: "12345678"))
+    }
+    
+    func test_onSubmitButtonTap_preventRegister_whenFormIsInvalid() {
+        let service = RegisterServiceSpy()
+        
+        let sut = makeSUT(
+            validateUniqueUsername: { _ in
+                .just(.unused)
+            },
+            registerService: service
+        )
+        
+        sut.loadViewIfNeeded()
+        
+        simulateTyping(on: sut.nameTextField, value: "any name")
+        simulateTyping(on: sut.emailTextField, value: "email@email.com")
+        simulateTyping(on: sut.usernameTextField, value: "unique username")
+        simulateTyping(on: sut.newPasswordTextField, value: "12345678")
+        simulateTyping(on: sut.confirmPasswordTextField, value: "1234567")
+        
+        sut.validateUsername()
+        
+        sut.submitButton.sendActions(for: .touchUpInside)
+                
+        XCTAssertEqual(service.completions.count, 0)
+    }
+    
     // MARK: Helpers
     func makeSUT(
         validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) },
+        registerService: RegisterService = RegisterServiceSpy(),
         file: StaticString = #file,
         line: UInt = #line
     ) -> FormViewController {
-        let sut = FormUIComposer.makeView(validateUniqueUsername: validateUniqueUsername)
+        let sut = FormUIComposer.makeView(
+            validateUniqueUsername: validateUniqueUsername,
+            registerService: registerService
+        )
         
         checkForMemoryLeaks(sut, file: file, line: line)
         
@@ -90,6 +145,16 @@ final class FormIntegrationTests: XCTestCase {
         window?.rootViewController = vc
         
         window?.addSubview(vc.view)
+    }
+    
+    private class RegisterServiceSpy: RegisterService {
+        var completions = [(Result<Void, any Error>) -> Void]()
+        var arguments = [RegisterInfo]()
+        
+        func onRegister(registerInfo: RegisterInfo, completion: @escaping (Result<Void, any Error>) -> Void) {
+            completions.append(completion)
+            arguments.append(registerInfo)
+        }
     }
 }
 
@@ -133,5 +198,9 @@ private extension FormViewController {
     
     var confirmPasswordTextField: UITextField {
         self.passwordFieldsController.confirmPasswordTextField
+    }
+    
+    func validateUsername() {
+        usernameFormFieldController.validateUsernameButton.sendActions(for: .touchUpInside)
     }
 }

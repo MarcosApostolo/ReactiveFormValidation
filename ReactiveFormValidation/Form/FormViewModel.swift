@@ -13,6 +13,12 @@ class FormViewModel {
     var emaiTextFieldisValid = BehaviorSubject(value: false)
     var usernameTextFieldIsValid = BehaviorSubject(value: false)
     var passwordFieldsAreValid = BehaviorSubject(value: false)
+    
+    let registerService: (RegisterInfo) -> Single<Void>
+    
+    init(registerService: @escaping (RegisterInfo) -> Single<Void>) {
+        self.registerService = registerService
+    }
 
     var formIsValid: Observable<Bool> {
         return Observable

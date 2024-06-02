@@ -21,12 +21,8 @@ class UsernameFormFieldViewModel {
     
     private let disposeBag = DisposeBag()
     
-    let validateUniqueUsername: (String) -> Single<UsernameStatus>
-    
-    init(validateUniqueUsername: @escaping (String) -> Single<UsernameStatus>) {
-        self.validateUniqueUsername = validateUniqueUsername
-    }
-    
+    var validateUniqueUsername: ((String) -> Single<UsernameStatus>)?
+
     var fieldIsValid: Observable<Bool> {
         return Observable
             .combineLatest(
@@ -85,7 +81,7 @@ class UsernameFormFieldViewModel {
             
             let text = try self.textFieldValue.value()
             
-            self.validateUniqueUsername(text)
+            self.validateUniqueUsername?(text)
                 .subscribe(onSuccess: { [weak self] status in
                     self?.usernameStatus.onNext(status)
                     self?.isLoading.onNext(false)

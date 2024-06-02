@@ -89,7 +89,9 @@ final class UsernameFormFieldTests: XCTestCase {
     func test_onUniqueValidation_displayLoading() {
         let sut = TestHelperViewController()
         
-        let viewModel = UsernameFormFieldViewModel(validateUniqueUsername: { _ in
+        let viewModel = UsernameFormFieldViewModel()
+        
+        sut.textFieldController.viewModel.validateUniqueUsername = { _ in
             Single<UsernameStatus>.create(subscribe: { single in
                 XCTAssertTrue(sut.loadingIndicator.isAnimating)
                 
@@ -99,9 +101,7 @@ final class UsernameFormFieldTests: XCTestCase {
                     XCTAssertFalse(sut.loadingIndicator.isAnimating)
                 }
             })
-        })
-        
-        sut.textFieldController.viewModel = viewModel
+        }
         
         sut.loadViewIfNeeded()
         
@@ -128,9 +128,9 @@ final class UsernameFormFieldTests: XCTestCase {
     ) -> TestHelperViewController {
         let sut = TestHelperViewController()
         
-        let viewModel = UsernameFormFieldViewModel(validateUniqueUsername: validateUniqueUsername)
+        let viewModel = UsernameFormFieldViewModel()
         
-        sut.textFieldController.viewModel = viewModel
+        sut.textFieldController.viewModel.validateUniqueUsername = validateUniqueUsername
         
         checkForMemoryLeaks(sut, file: file, line: line)
                         

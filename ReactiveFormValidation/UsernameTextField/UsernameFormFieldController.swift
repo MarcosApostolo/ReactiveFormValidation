@@ -13,11 +13,7 @@ import RxCocoa
 class UsernameFormFieldController {
     private let disposeBag = DisposeBag()
     
-    var viewModel: UsernameFormFieldViewModel? {
-        didSet {
-            bind()
-        }
-    }
+    let viewModel = UsernameFormFieldViewModel()
     
     private(set) lazy var formField: FormField = {
         return FormField()
@@ -38,13 +34,11 @@ class UsernameFormFieldController {
     init() {
         formField.textField.rightView = validateUsernameButton
         formField.textField.rightViewMode = .always
+        
+        bind()
     }
     
     func bind() {
-        guard let viewModel = viewModel else {
-            return
-        }
-        
         textField.placeholder = viewModel.textFieldPlaceholder
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
@@ -80,7 +74,9 @@ class UsernameFormFieldController {
         
         validateUsernameButton.rx
             .tap
-            .subscribe(onNext: { viewModel.onValidateUsername() })
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.onValidateUsername()
+            })
             .disposed(by: disposeBag)
         
         viewModel

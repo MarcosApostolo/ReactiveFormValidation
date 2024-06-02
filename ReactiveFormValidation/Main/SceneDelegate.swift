@@ -19,9 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let vc = FormUIComposer.makeView(validateUniqueUsername: { _ in
-            .just(.unused)
-            .delay(.seconds(5), scheduler: MainScheduler.instance)
-        })
+                .just(.unused)
+                .delay(.seconds(5), scheduler: MainScheduler.instance)
+            },
+            registerService: NullRegisterService()
+        )
         
         let window = UIWindow(windowScene: windowScene)
         
@@ -63,3 +65,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+class NullRegisterService: RegisterService {
+    func onRegister(registerInfo: RegisterInfo, completion: @escaping (Result<Void, any Error>) -> Void) {
+        completion(.success(()))
+    }
+}

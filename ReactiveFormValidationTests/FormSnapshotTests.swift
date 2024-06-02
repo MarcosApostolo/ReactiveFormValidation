@@ -166,7 +166,7 @@ final class FormSnapshotTests: FBSnapshotTestCase {
     func makeSUT(
         validateUniqueUsername: @escaping (String) -> Single<UsernameStatus> = { _ in .just(.unused) }
     ) -> FormViewController {
-        let sut = FormUIComposer.makeView(validateUniqueUsername: validateUniqueUsername)
+        let sut = FormUIComposer.makeView(validateUniqueUsername: validateUniqueUsername, registerService: RegisterServiceSpy())
         
         return sut
     }
@@ -176,6 +176,14 @@ final class FormSnapshotTests: FBSnapshotTestCase {
         let _ = SnapshotWindow(configuration: configuration, root: vc)
         
         return vc.view
+    }
+    
+    private class RegisterServiceSpy: RegisterService {
+        var completions = [(Result<Void, any Error>) -> Void]()
+        
+        func onRegister(registerInfo: RegisterInfo, completion: @escaping (Result<Void, any Error>) -> Void) {
+            completions.append(completion)
+        }
     }
 }
 
@@ -195,8 +203,8 @@ private extension FormViewController {
     }
     
     func simulateUsernameRequiredError() {
-        usernameFormFieldController.viewModel?.textFieldIsFocused.onNext(true)
-        usernameFormFieldController.viewModel?.textFieldIsFocused.onNext(false)
+        usernameFormFieldController.viewModel.textFieldIsFocused.onNext(true)
+        usernameFormFieldController.viewModel.textFieldIsFocused.onNext(false)
     }
     
     func simulateLongUsernameError() {

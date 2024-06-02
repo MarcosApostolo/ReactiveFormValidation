@@ -84,7 +84,7 @@ class FormViewController: UIViewController {
             submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             submitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24),
             submitButton.heightAnchor.constraint(equalToConstant: 48)
-        ])        
+        ])
     }
     
     func bind() {
@@ -104,7 +104,7 @@ class FormViewController: UIViewController {
             .bind(to: viewModel.emaiTextFieldisValid)
             .disposed(by: disposeBag)
         
-        usernameFormFieldController.viewModel?
+        usernameFormFieldController.viewModel
             .fieldsAreValid
             .bind(to: viewModel.usernameTextFieldIsValid)
             .disposed(by: disposeBag)
@@ -121,6 +121,34 @@ class FormViewController: UIViewController {
         viewModel.formIsValid
             .subscribe(onNext: { [weak self] isValid in
                 self?.submitButton.alpha = isValid ? 1.0 : 0.5
+            })
+            .disposed(by: disposeBag)
+        
+        submitButton.rx.tap
+            .take(1)
+            .flatMap({ [weak self] in
+                guard let strongSelf = self, let viewModel = strongSelf.viewModel else {
+                    return Observable.just(false)
+                }
+                
+                return viewModel.formIsValid
+            })
+            .filter({ $0 })
+            .flatMap({ [weak self] (_) -> Observable<RegisterInfo?> in
+                guard let strongSelf = self else { return Observable.just(nil) }
+                
+                return Observable.combineLatest(strongSelf.nameFormFieldController.viewModel.textFieldValue, strongSelf.emailFormFieldController.viewModel.textFieldValue, strongSelf.usernameFormFieldController.viewModel.textFieldValue, strongSelf.passwordFieldsController.viewModel.newPasswordValue)
+                    .map({ name, email, username, password in
+                        RegisterInfo(name: name, email: email, username: username, passsowrd: password)
+                    })
+            })
+            .subscribe(on: MainScheduler.instance)
+            .compactMap({ $0 })
+            .flatMap({ [viewModel] info in
+                viewModel.registerService(info)
+            })
+            .subscribe(onNext: {
+                print("deu bom")
             })
             .disposed(by: disposeBag)
     }
